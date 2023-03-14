@@ -7,6 +7,12 @@ Topics: everything everywhere all at once
 
 Your team's code and documentation will go here.
 
+## Team UML
+
+![BlindSpot_UML.pdf](https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/files/10973596/BlindSpot_UML.pdf)
+
+
+
 ## Team Timelines
 
 ![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)

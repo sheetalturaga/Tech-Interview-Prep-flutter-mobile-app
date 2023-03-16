@@ -26,7 +26,3 @@ Your team's code and documentation will go here.
 
 ## Traceability Matrix
 
-
-## Team Timelines
-
-![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)

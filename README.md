@@ -22,7 +22,7 @@ Your team's code and documentation will go here.
 ![BlindSpot_UML.pdf](https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/files/10973596/BlindSpot_UML.pdf)
 
 ## Gantt Diagram
-
+![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)
 
 ## Traceability Matrix
 

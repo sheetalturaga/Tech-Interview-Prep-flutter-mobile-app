@@ -18,6 +18,7 @@ Your team's code and documentation will go here.
 
 
 ## Team UML calss diagram
+![BlindSpot_ClassDiagram.pdf]（https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/blob/main/BlindSpot_ClassDiagram.pdf）
 
 ![BlindSpot_UML.pdf](https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/files/10973596/BlindSpot_UML.pdf)
 

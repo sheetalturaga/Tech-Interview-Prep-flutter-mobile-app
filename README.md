@@ -18,7 +18,8 @@ Your team's code and documentation will go here.
 
 
 ## Team UML calss diagram
-![BlindSpot_UML.pdf](https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/files/10973596/BlindSpot_UML.pdf)
+<img width="1063" alt="Screenshot 2023-03-16 at 2 14 06 PM" src="https://user-images.githubusercontent.com/98671143/225754244-68fae70a-f3f1-425b-b383-09d35d084b7a.png">
+
 
 ## Gantt Diagram
 ![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)

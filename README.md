@@ -2,15 +2,29 @@
 # Final Project
 
 Topics: everything everywhere all at once
-
 ## Instructions
 
 Your team's code and documentation will go here.
+## Purpose
 
-## Team UML
+
+## OVerall Description
+
+
+## Requirement
+
+
+## Wireframes
+
+
+## Team UML calss diagram
 
 ![BlindSpot_UML.pdf](https://github.com/CS5520-Seattle-Spring23/final-project-sailor-senshi/files/10973596/BlindSpot_UML.pdf)
 
+## Gantt Diagram
+
+
+## Traceability Matrix
 
 
 ## Team Timelines

@@ -1,13 +1,11 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9981754&assignment_repo_type=AssignmentRepo)
-# Final Project
-
-# BLINDSPOT APP : LEARNING THE GAP
+# Final Project: BLINDSPOT APP - LEARNING THE GAP
 
  ![BLINDSPOT-Brain](https://user-images.githubusercontent.com/46464544/227097873-20c15afa-33fb-4d8f-bc26-085f562cd145.gif)
 
 ## Purpose
 
-Purpose: The purpose of our Technical Interview Prep App is to provide a comprehensive and engaging platform for students preparing for technical interviews. Our app is designed to focus on concept-based learning including but not limited to, behavioral questions to help users gain an authentic understanding of the concept and allow them to focus on the non-coding-based questions rather than hardcore coding exercises. With our app, users can access a wealth of high-quality prep materials, including our extensive database of technical questions, and can add their own questions to the mix. Our goal is to help users build their confidence and prepare effectively for their upcoming technical interviews (leaving no blind spots), making it easier for them to succeed in their careers. 
+The purpose of our Technical Interview Prep App is to provide a comprehensive and engaging platform for students preparing for technical interviews. Our app is designed to focus on concept-based learning including but not limited to, behavioral questions to help users gain an authentic understanding of the concept and allow them to focus on the non-coding-based questions rather than hardcore coding exercises. With our app, users can access a wealth of high-quality prep materials, including our extensive database of technical questions, and can add their own questions to the mix. Our goal is to help users build their confidence and prepare effectively for their upcoming technical interviews (leaving no blind spots), making it easier for them to succeed in their careers. 
 
 
 ## Overall Description

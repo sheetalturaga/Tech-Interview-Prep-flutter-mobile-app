@@ -14,13 +14,13 @@ class _QuestionDisplayPageState extends State<QuestionDisplayPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      title: const Align(
-        alignment: Alignment.topRight,
-        child: Text(
-          "Question 1 / 10",
-          style: TextStyle(fontSize: 20, color: Colors.brown),
-        ),
-      ),
+      // title: const Align(
+      //   alignment: Alignment.topRight,
+      //   child: Text(
+      //     "Question 1 / 10",
+      //     style: TextStyle(fontSize: 20, color: Colors.brown),
+      //   ),
+      // ),
       appBar: AppBar(
         toolbarHeight: 500,
         backgroundColor: Colors.transparent,
@@ -28,27 +28,64 @@ class _QuestionDisplayPageState extends State<QuestionDisplayPage> {
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-            height: 250,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
-            child: const Center(
-                child: Text(
-              "Question displayed here",
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            )),
-          ),
+              height: 250,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blue,
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: IconButton(
+                              icon: const Icon(Icons.star),
+                              onPressed: () {},
+                              color: Colors.amber,
+                            ),
+                          )),
+                      const Spacer(),
+                      const Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            "1 / 10",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Center(
+                      heightFactor: 5,
+                      child: Text(
+                        "Question displayed here",
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      )),
+                ],
+              )),
         ),
       ),
-      // body: Container(
-      //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      //   child: Column(
-      //     crossAxisAlignment: CrossAxisAlignment.end,
-      //     children: const [
-      //       SizedBox(height: 30),
-      //       // Text("Question 1 / 10"),
-      //     ],
-      //   ),
-      // ),
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: const [
+            SizedBox(height: 30),
+            Expanded(
+              child: OptionsWidget(
+                Text("Question"),
+                
+            ))
+          ],
+        ),
+      ),
     );
   }
 }

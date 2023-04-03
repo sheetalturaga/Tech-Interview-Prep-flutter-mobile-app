@@ -70,7 +70,7 @@ class _ExplanationScreenState extends State<ExplanationScreen> {
               style: TextStyle(color: Colors.white),
             ),
             shape: StadiumBorder(),
-            fillColor: Colors.blue,
+            fillColor: Color.fromARGB(255, 62, 85, 218),
             padding: EdgeInsets.all(18.0),
             elevation: 0.0,
           ),

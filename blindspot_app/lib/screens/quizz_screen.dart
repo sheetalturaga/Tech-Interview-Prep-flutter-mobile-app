@@ -91,7 +91,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         fillColor: btnPressed[i]
-                            ? Colors.green
+                            ? Color.fromARGB(255, 40, 93, 193)
                             : AppColor.secondaryColor,
                         onPressed: !answered
                             ? () {
@@ -158,7 +158,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                       }
                     },
                     shape: StadiumBorder(),
-                    fillColor: Colors.blue,
+                    fillColor: Color.fromARGB(255, 84, 193, 99),
                     padding: EdgeInsets.all(18.0),
                     elevation: 0.0,
                     child: Text(

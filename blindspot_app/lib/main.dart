@@ -1,6 +1,7 @@
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'custom_widgets/custom_appbar.dart';
 
 void main() {
   runApp(const MyApp());

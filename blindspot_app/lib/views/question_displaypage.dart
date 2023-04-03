@@ -73,19 +73,18 @@ class _QuestionDisplayPageState extends State<QuestionDisplayPage> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: const [
-            SizedBox(height: 30),
-            Expanded(
-              child: OptionsWidget(
-                Text("Question"),
-                
-            ))
-          ],
-        ),
-      ),
+          // padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          // child: Column(
+          //   crossAxisAlignment: CrossAxisAlignment.end,
+          //   children: const [
+          //     SizedBox(height: 30),
+          //     Expanded(
+          //       child: OptionsWidget(
+          //         Text("Question"),
+
+          //     ))
+          //   ],
+          ),
     );
   }
 }

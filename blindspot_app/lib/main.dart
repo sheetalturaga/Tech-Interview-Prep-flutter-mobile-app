@@ -1,5 +1,5 @@
-import 'package:blindspot_app/views/question_displaypage.dart';
-import 'services/database_service.dart';
+import 'package:blindspot_app/constants.dart';
+import 'package:blindspot_app/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'custom_widgets/custom_appbar.dart';
 
@@ -14,29 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
+      title: 'Flutter Auth',
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+
+      ),
+      home: WelcomeScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    DatabaseService db = DatabaseService();
-    db.readQuestionFromTopic();
-    return QuestionDisplayPage();
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class AppColor {
-  static final pripmaryColor = Color.fromARGB(255, 83, 154, 226);
-  static final secondaryColor = Color.fromARGB(255, 145, 167, 188);
+  static final pripmaryColor = Color.fromARGB(255, 255, 255, 255);
+  static final secondaryColor = Color.fromARGB(255, 16, 101, 180);
+  static final thirdColor = Color.fromARGB(255, 191, 193, 195);
 }

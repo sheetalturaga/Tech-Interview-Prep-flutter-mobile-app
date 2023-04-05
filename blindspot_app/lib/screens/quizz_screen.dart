@@ -55,17 +55,15 @@ class _QuizzScreenState extends State<QuizzScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: Text(
-                      "Question ${index + 1}/10",
-                      textAlign: TextAlign.start,
+                      "${index + 1}/10",
+                      textAlign: TextAlign.right,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28.0,
+                        color: Color.fromARGB(255, 196, 122, 122),
+                        fontSize: 12.0,
                       ),
                     ),
                   ),
-                  Divider(
-                    color: Colors.white,
-                  ),
+
                   SizedBox(
                     height: 10.0,
                   ),
@@ -75,14 +73,14 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     child: Text(
                       "${questions[index].question}",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 171, 173, 43),
                         fontSize: 22.0,
                       ),
                     ),
                   ),
                   for (int i = 0; i < questions[index].answers!.length; i++)
                     Container(
-                      width: double.infinity,
+                      width: 300.0,
                       height: 50.0,
                       margin: EdgeInsets.only(
                           bottom: 20.0, left: 12.0, right: 12.0),
@@ -92,7 +90,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                         ),
                         fillColor: btnPressed[i]
                             ? Color.fromARGB(255, 40, 93, 193)
-                            : AppColor.secondaryColor,
+                            : AppColor.thirdColor,
                         onPressed: !answered
                             ? () {
                                 if (questions[index]
@@ -112,7 +110,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                             : null,
                         child: Text(questions[index].answers!.keys.toList()[i],
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 17, 16, 16),
                               fontSize: 18.0,
                             )),
                       ),

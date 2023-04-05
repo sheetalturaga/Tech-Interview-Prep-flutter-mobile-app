@@ -138,7 +138,7 @@ Text headerText(String text) {
     text,
     style: TextStyle(
       fontSize: 48,
-      color: Colors.white,
+      color: Color.fromARGB(255, 10, 10, 10),
       fontWeight: FontWeight.bold,
     ),
   );

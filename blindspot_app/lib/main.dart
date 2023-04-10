@@ -6,6 +6,8 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'firebase_options.dart';
 import 'package:flutter_facebook_sdk/flutter_facebook_sdk.dart';
 import 'package:provider/provider.dart';
+import 'custom_widgets/custom_appbar.dart';
+import 'package:blindspot_app/screens/main_menu.dart';
 
 
 void main() async {
@@ -25,9 +27,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: const MainMenu(),
     );
   }
 }

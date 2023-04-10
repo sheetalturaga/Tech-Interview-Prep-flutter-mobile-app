@@ -169,6 +169,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  firebase_database:
+    dependency: "direct main"
+    description:
+      name: firebase_database
+      sha256: b42f08b1e58dc022c83b8f4e0f7dcaf689b8ed7058255a059fbe07f22563be6e
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.0.16"
+  firebase_database_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_database_platform_interface
+      sha256: d9b78598713f29f2b0d3c119ba10ca89e2a201a8de5973d6376a395787f23017
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2+23"
+  firebase_database_web:
+    dependency: transitive
+    description:
+      name: firebase_database_web
+      sha256: c7d53bdb7feeb846390d2e09931b8146dcefbc2588793ee143f48652fc17e51e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1+25"
   firebase_dynamic_links:
     dependency: transitive
     description:
@@ -217,30 +241,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  firebase_database:
-    dependency: "direct main"
-    description:
-      name: firebase_database
-      sha256: b42f08b1e58dc022c83b8f4e0f7dcaf689b8ed7058255a059fbe07f22563be6e
-      url: "https://pub.dev"
-    source: hosted
-    version: "10.0.16"
-  firebase_database_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_database_platform_interface
-      sha256: d9b78598713f29f2b0d3c119ba10ca89e2a201a8de5973d6376a395787f23017
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.2+23"
-  firebase_database_web:
-    dependency: transitive
-    description:
-      name: firebase_database_web
-      sha256: c7d53bdb7feeb846390d2e09931b8146dcefbc2588793ee143f48652fc17e51e
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.1+25"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -365,8 +365,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-=======
   font_awesome_flutter:
     dependency: transitive
     description:
@@ -439,7 +437,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-<<<<<<< HEAD
   intl:
     dependency: transitive
     description:
@@ -448,9 +445,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.17.0"
-=======
->>>>>>> main
->>>>>>> ddf4d0ad58977454576593e094a032261fc9b2f3
   js:
     dependency: transitive
     description:
@@ -507,8 +501,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
-<<<<<<< HEAD
-=======
   path_drawing:
     dependency: transitive
     description:
@@ -532,12 +524,7 @@ packages:
       sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
     version: "5.1.0"
-=======
-    version: "3.1.0"
->>>>>>> main
->>>>>>> ddf4d0ad58977454576593e094a032261fc9b2f3
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -546,7 +533,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-<<<<<<< HEAD
   provider:
     dependency: "direct main"
     description:
@@ -555,10 +541,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
-=======
-<<<<<<< HEAD
-=======
->>>>>>> ddf4d0ad58977454576593e094a032261fc9b2f3
   quiver:
     dependency: transitive
     description:
@@ -567,7 +549,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
-<<<<<<< HEAD
   sign_in_with_apple:
     dependency: "direct main"
     description:
@@ -592,9 +573,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
-=======
->>>>>>> main
->>>>>>> ddf4d0ad58977454576593e094a032261fc9b2f3
   sky_engine:
     dependency: transitive
     description: flutter
@@ -690,8 +668,4 @@ packages:
     version: "6.2.2"
 sdks:
   dart: ">=2.19.3 <3.0.0"
-<<<<<<< HEAD
-  flutter: ">=1.20.0"
-=======
   flutter: ">=3.3.0"
->>>>>>> main

@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 import 'custom_widgets/custom_appbar.dart';
 import 'package:blindspot_app/screens/main_menu.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -22,7 +21,7 @@ void main() async {
     xfbml: true,
     version: "v15.0",
   );
- 
+
   runApp(const MyApp());
 }
 
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const MainMenu(),
+      home: WelcomeScreen(),
     );
   }
 }

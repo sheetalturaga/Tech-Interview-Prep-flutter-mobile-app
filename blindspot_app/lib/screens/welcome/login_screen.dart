@@ -1,3 +1,4 @@
+import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -54,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (result.status == LoginStatus.success) {
       print("Login successful!");
       print("Access token: ${result.accessToken}");
+
       // ... rest of your code
     } else {
       print("Login failed.");
@@ -64,8 +66,15 @@ class _LoginScreenState extends State<LoginScreen> {
       _accessToken = result.accessToken;
       final userData = await FacebookAuth.instance.getUserData();
       _userData = userData;
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return MainMenu();
+          },
+        ),
+      );
     } else {
-      print("can login fbbbb");
       print(result.status);
       print(result.message);
     }
@@ -221,6 +230,14 @@ class _LoginScreenState extends State<LoginScreen> {
           _isLoggedIn = true;
           _user = account;
         });
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return MainMenu();
+            },
+          ),
+        );
       } else {
         // TODO: Handle failed Google Sign-In
       }

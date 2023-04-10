@@ -1,5 +1,5 @@
 import 'package:blindspot_app/screens/welcome/about_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen_backup.dart';
+import 'package:blindspot_app/screens/welcome/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {

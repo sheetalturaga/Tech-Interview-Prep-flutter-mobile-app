@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "862447107769",
+    "project_id": "blindspot-authentication",
+    "storage_bucket": "blindspot-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862447107769:android:58ea72e4b6a2a4a8556568",
+        "android_client_info": {
+          "package_name": "com.example.blindspot_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862447107769-9s8081uv2ubvrv4armcqktq0819dc25s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmoTaNmMYRTqo1g4eu0pSW09wdzO1NEXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862447107769-9s8081uv2ubvrv4armcqktq0819dc25s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.blindspotApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

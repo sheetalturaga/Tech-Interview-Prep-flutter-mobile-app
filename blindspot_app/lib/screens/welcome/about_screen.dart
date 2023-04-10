@@ -54,7 +54,7 @@ class AboutScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 300),
+              padding: EdgeInsets.only(left: 20, right: 20, bottom: 200),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: const [

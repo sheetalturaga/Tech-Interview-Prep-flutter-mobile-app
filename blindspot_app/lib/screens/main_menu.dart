@@ -136,7 +136,7 @@ class _MainMenuState extends State<MainMenu> {
 Text headerText(String text) {
   return Text(
     text,
-    style: TextStyle(
+    style: const TextStyle(
       fontSize: 48,
       color: Color.fromARGB(255, 10, 10, 10),
       fontWeight: FontWeight.bold,

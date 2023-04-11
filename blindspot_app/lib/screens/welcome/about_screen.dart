@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:blindspot_app/screens/welcome/about_screen.dart';
+import 'package:get/get.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -54,68 +55,71 @@ class AboutScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 300),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.arrow_right,
-                            color: Colors.blue,
+              padding: EdgeInsets.only(bottom: 200),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.arrow_right,
+                              color: Colors.blue,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text:
-                              "Pick the topic of your choice and take the quiz\n",
-                          style: TextStyle(
-                            fontSize: 16,
-                            decoration: TextDecoration.none,
-                            fontFamily: 'Arial',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                          TextSpan(
+                            text:
+                                "Pick the topic of your choice and take the quiz\n",
+                            style: TextStyle(
+                              fontSize: 16,
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Arial',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.arrow_right,
-                            color: Colors.blue,
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.arrow_right,
+                              color: Colors.blue,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text:
-                              "Star mark the question that you want to dive deeper into, to save it to your notebook\n",
-                          style: TextStyle(
-                            fontSize: 16,
-                            decoration: TextDecoration.none,
-                            fontFamily: 'Arial',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                          TextSpan(
+                            text:
+                                "Star mark the question that you want to dive deeper into, to save it to your notebook\n",
+                            style: TextStyle(
+                              fontSize: 16,
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Arial',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.arrow_right,
-                            color: Colors.blue,
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.arrow_right,
+                              color: Colors.blue,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text:
-                              "Visit your profile to see how much progress you’ve made and also personalize your profile using the setting button\n",
-                          style: TextStyle(
-                            fontSize: 16,
-                            decoration: TextDecoration.none,
-                            fontFamily: 'Arial',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                          TextSpan(
+                            text:
+                                "Visit your profile to see how much progress you’ve made and also personalize your profile using the setting button\n",
+                            style: TextStyle(
+                              fontSize: 16,
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Arial',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,9 +1,14 @@
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/welcome/about_screen.dart';
 import 'package:blindspot_app/screens/welcome/login_screen.dart';
+import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class LandingScreen extends StatelessWidget {
+  const LandingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
@@ -31,7 +36,7 @@ class LandingScreen extends StatelessWidget {
               "BlindSpot",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 50,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
                 decoration: TextDecoration.none,
               ),
@@ -82,20 +87,27 @@ class LandingScreen extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 25),
                   ElevatedButton(
-                    onPressed: () {
-                      //TODO: Implement signup button functionality
-                    },
-                    child: const Text("Sign Up"),
+                    // TODO: Implement signup button functionality
+                    onPressed: () {},
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all(Size(150, 50)),
                       padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                          const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 24)),
                       textStyle:
                           MaterialStateProperty.all(TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
+                    child: const Text("Sign Up"),
+                  ),
+                  const SizedBox(height: 25),
+                  ArrowButton(
+                    onTap: () => {
+                      Get.offAndToNamed(HomeScreen.routeName),
+                    },
+                    childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
                   ),
                   const SizedBox(height: 100),
                   TextButton(
@@ -137,6 +149,30 @@ class LandingScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ArrowButton extends StatelessWidget {
+  const ArrowButton(
+      {super.key,
+      required this.childWidget,
+      this.color,
+      this.width = 60,
+      this.onTap});
+
+  final Widget childWidget;
+  final Color? color;
+  final double width;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      type: MaterialType.transparency,
+      clipBehavior: Clip.hardEdge,
+      shape: const CircleBorder(),
+      child: InkWell(onTap: onTap, child: childWidget),
     );
   }
 }

@@ -1,0 +1,249 @@
+{
+  "id": "topic002",
+  "topic":"Python",
+  "image_url": "",
+  "description": "Python Multiple Choice Questions (MCQ) to practice Python Concepts",
+  "questions":[
+    {
+      "id": "topic002q001",
+      "question": "What is the difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A list is immutable, while a tuple is mutable"
+        },
+        {
+          "identifier": "B",
+          "option": "A list can store elements of different data types, while a tuple can only store elements of the same data type"
+        },
+        {
+          "identifier": "C",
+          "option": "A list is ordered, while a tuple is unordered"
+        },
+        {
+          "identifier": "D",
+          "option": "A list is created using parentheses (), while a tuple is created using square brackets []"
+        }
+        ],
+        "correct_option": "B",
+        "explanation": "A list is a mutable collection of elements that can be of different data types, whereas a tuple is an immutable collection of elements that must be of the same data type."
+    },
+    {
+      "id": "topic002q002",
+      "question": "How do you open a file for reading in Python?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "file = open(\"filename.txt\", \"w\")"
+        },
+        {
+          "identifier": "B",
+          "option": " file = open(\"filename.txt\", \"r\")"
+        },
+        {
+          "identifier": "C",
+          "option": " file = open(\"filename.txt\", \"a\")"
+        },
+        {
+          "identifier": "D",
+          "option": "file = open(\"filename.txt\", \"x\")"
+        }
+        ],
+        "correct_option": "B",
+        "explanation": "To open a file for reading in Python, use the \"r\" mode in the open() function. This will create a file object that can be used to read the contents of the file."
+    },
+    {
+      "id": "topic002q003",
+      "question": "What is the output of the following code: \"hello\" * 3?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "hellohellohellohello"
+        },
+        {
+          "identifier": "B",
+          "option": "hellohellohello"
+        },
+        {
+          "identifier": "C",
+          "option": "hello 3"
+        },
+        {
+          "identifier": "D",
+          "option": "hello"
+        }
+        ],
+        "correct_option": "B",
+        "explanation": "The * operator is used for repetition in Python. When the string \"hello\" is multiplied by 3, it will be repeated 3 times, resulting in the output \"hellohellohello\"."
+    },
+    {
+      "id": "topic002q004",
+      "question": "What is a decorator in Python, and how is it used?",
+      "options": [
+        {
+        "identifier": "A",
+        "option": "A decorator is a design pattern used in object-oriented programming, and is used to encapsulate related methods and properties in a single class"
+        },
+        {
+          "identifier": "B",
+          "option": "A decorator is a function that takes another function as input and returns a modified version of the input function"
+        },
+        {
+          "identifier": "C",
+          "option": "A decorator is a module in Python that is used to create user-defined exceptions"
+        },
+        {
+          "identifier": "D",
+          "option": "A decorator is a type of data structure in Python that is used to store key-value pairs"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In Python, a decorator is a way to modify the behavior of a function without changing its source code. It is implemented as a function that takes another function as input, and returns a modified version of the input function."
+    },
+    {
+      "id": "topic002q005",
+      "question": "How do you check if a key exists in a Python dictionary?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "Use the in operator with the dictionary key"
+        },
+        {
+          "identifier": "B",
+          "option": "Use the get() method with the dictionary key"
+        },
+        {
+          "identifier": "C",
+          "option": "Use the keys() method with the dictionary"
+        },
+        {
+          "identifier": "D",
+          "option": "Use the values() method with the dictionary"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "In Python, you can check if a key exists in a dictionary by using the in operator with the dictionary key. For example: if 'key' in my_dict: will return True if the key 'key' is in the dictionary my_dict, and False otherwise."
+    },
+    {
+      "id": "topic002q006",
+      "question": "What is the purpose of the init() method in Python classes?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "It is used to create a new instance of the class"
+        },
+        {
+          "identifier": "B",
+          "option": "It is used to define instance variables for the class"
+        },
+        {
+          "identifier": "C",
+          "option": "It is used to define class variables for the class"
+        },
+        {
+          "identifier": "D",
+          "option": "It is used to define instance methods for the class"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The init() method is a special method in Python classes that is called when a new instance of the class is created. It is used to initialize the instance variables of the class, and can be used to perform any other necessary setup for the object."
+    },
+    {
+      "id": "topic002q007",
+      "question": "Which of the following is a valid way to define a function in Python?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "function (a, b) { return a + b }"
+        },
+        {
+          "identifier": "B",
+          "option": "def function (a, b) return a + b"
+        },
+        {
+          "identifier": "C",
+          "option": "def function (a, b): return a + b"
+        },
+        {
+          "identifier": "D",
+          "option": "function (a, b): return a + b"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The correct way to define a function in Python is to use the def keyword followed by the function name, and then the parameters enclosed in parentheses. The body of the function should be indented, and the function should return a value using the return keyword."
+    },
+    {
+      "id": "topic002q008",
+      "question": "What does the lambda keyword do in Python?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "It creates a new instance of a class"
+        },
+        {
+          "identifier": "B",
+          "option": "It defines a function inline"
+        },
+        {
+          "identifier": "C",
+          "option": "It raises an exception"
+        },
+        {
+          "identifier": "D",
+          "option": "It creates a new thread"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The lambda keyword is used to define anonymous functions in Python. These functions are typically used for simple operations, and can be defined inline without needing to create a separate function."
+    },
+    {
+      "id": "topic002q009",
+      "question": "What is the difference between an instance method and a class method in Python?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "An instance method operates on a specific instance of the class, while a class method operates on the entire class"
+        },
+        {
+          "identifier": "B",
+          "option": "An instance method is defined using the @classmethod decorator, while a class method is defined using the @instancemethod decorator"
+
+        },
+        {
+          "identifier": "C",
+          "option": "An instance method can only be called on a specific instance of the class, while a class method can be called on the class itself"
+        },
+        {
+          "identifier": "D",
+          "option": "An instance method has access to the class attributes, while a class method does not"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Instance methods are methods that are defined on the instances of a class, and are called using the dot notation with an instance of the class. Class methods are methods that are defined on the class itself, and are called using the dot notation with the class name."
+    },
+    {
+      "id": "topic002q010",
+      "question": "What is the output of the following code: [x**2 for x in range(5) if x % 2 == 0]?",
+      "options": [
+        {
+          "identifier":"A",
+          "option": "[0, 4, 16]"
+        },
+        {
+          "identifier": "B",
+          "option": "[1, 9, 25]"
+        },
+        {
+          "identifier": "C",
+          "option": "[0, 1, 4, 9, 16]"
+        },
+        {
+          "identifier": "D",
+          "option": "[2, 6]"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "This is a list comprehension in Python that generates a list of the squares of the even numbers from 0 to 4. The condition \"if x % 2 == 0\" filters out the odd numbers, and the expression \"x**2\" squares the even numbers."
+    }
+  ]
+}

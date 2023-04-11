@@ -1,0 +1,248 @@
+{
+  "id": "topic001",
+  "topic": "Java",
+  "image_url": "",
+  "description": "Concept based Java MCQs",
+  "questions": [
+    {
+      "id": "topic001q001",
+      "question": "What is the difference between a stack and a queue in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A stack is a linear data structure where elements are added and removed from the top, while a queue is a linear data structure where elements are added from the rear and removed from the front"
+        },
+        {
+          "identifier": "B",
+          "option": "A stack is a linear data structure where elements are added from the rear and removed from the front, while a queue is a linear data structure where elements are added and removed from the top"
+        },
+        {
+          "identifier": "C",
+          "option": "A stack is a non-linear data structure where elements are accessed in a random order, while a queue is a linear data structure where elements are added and removed in a specific order"
+        },
+        {
+          "identifier": "D",
+          "option": "A stack and a queue are two terms used interchangeably to describe the same type of data structure"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "A stack is a data structure that follows the Last-In-First-Out (LIFO) principle, while a queue follows the First-In-First-Out (FIFO) principle. In a stack, elements are added and removed from the top, while in a queue, elements are added from the rear and removed from the front."
+    },
+    {
+      "id": "topic001q002",
+      "question": "What is the purpose of the \"super\" keyword in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The \"super\" keyword is used to call a method in the superclass"
+        },
+        {
+          "identifier": "B",
+          "option": "The \"super\" keyword is used to refer to the current object"
+        },
+        {
+          "identifier": "C",
+          "option": "The \"super\" keyword is used to declare a method as static"
+        },
+        {
+          "identifier": "D",
+          "option": "The \"super\" keyword is used to declare a variable as constant"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The \"super\" keyword is used to call a method in the superclass. It is used when a method in a subclass has the same name as a method in its superclass and you want to call the superclass method from the subclass method."
+    },
+    {
+      "id": "topic001q003",
+      "question": "What is the difference between an abstract class and an interface in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "An abstract class can have method implementations, whereas an interface cannot"
+        },
+        {
+          "identifier": "B",
+          "option": "An abstract class can be extended by multiple classes, whereas an interface can only be implemented by a class"
+        },
+        {
+          "identifier": "C",
+          "option": "An abstract class can have instance variables, whereas an interface cannot"
+        },
+        {
+          "identifier": "D",
+          "option": "An abstract class can be instantiated, whereas an interface cannot"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "An abstract class can have method implementations, whereas an interface cannot. Additionally, an abstract class can be extended by multiple classes, whereas an interface can only be implemented by a class. An abstract class can have instance variables, whereas an interface cannot. Finally, an abstract class cannot be instantiated, whereas an interface cannot."
+    },
+    {
+      "id": "topic001q004",
+      "question": "What is a constructor in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A constructor is a method that is used to initialize an object"
+        },
+        {
+          "identifier": "B",
+          "option": "A constructor is a method that is used to destroy an object"
+        },
+        {
+          "identifier": "C",
+          "option": "A constructor is a method that is used to access a class variable"
+        },
+        {
+          "identifier": "D",
+          "option": "A constructor is a method that is used to override a superclass method"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "A constructor is a special method that is used to initialize an object. It has the same name as the class and is called automatically when an object is created."
+    },
+    {
+      "id": "topic001q005",
+      "question": "What is a package in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A package is a collection of classes and interfaces"
+        },
+        {
+          "identifier": "B",
+          "option": "A package is a collection of methods and variables"
+        },
+        {
+          "identifier": "C",
+          "option": "A package is a collection of objects and arrays"
+        },
+        {
+          "identifier": "D",
+          "option": "A package is a collection of loops and conditions"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "A package is a way of organizing related classes and interfaces. It helps to avoid naming conflicts and makes it easier to locate and reuse code. A package can contain other packages, as well as classes, interfaces, and other resources."
+    },
+    {
+      "id": "topic001q006",
+      "question": "What is the purpose of the 'synchronized' keyword in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "To specify that a method can only be called once"
+        },
+        {
+          "identifier": "B",
+          "option": "To ensure that a method can only be called by a single thread at a time"
+        },
+        {
+          "identifier": "C",
+          "option": "To define a method that cannot be overridden by subclasses"
+        },
+        {
+          "identifier": "D",
+          "option": "To define a variable that cannot be changed"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The 'synchronized' keyword in Java is used to ensure that a method can only be called by a single thread at a time. This prevents multiple threads from accessing the same data simultaneously, which can lead to synchronization issues."
+    },
+    {
+      "id": "topic001q007",
+      "question": "What does the \"static\" keyword mean in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The static keyword is used to declare variables that can only be accessed within the same class"
+        },
+        {
+          "identifier": "B",
+          "option": "The static keyword is used to indicate that a method cannot be overridden in a subclass"
+        },
+        {
+          "identifier": "C",
+          "option": "The static keyword is used to declare a class that cannot be instantiated"
+        },
+        {
+          "identifier": "D",
+          "option": "The static keyword is used to indicate that a method or variable belongs to the class itself, rather than an instance of the class"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The static keyword is used to indicate that a method or variable belongs to the class itself, rather than an instance of the class. Static methods and variables can be accessed without creating an instance of the class."
+    },
+    {
+      "id": "topic001q008",
+      "question": "What is the difference between an array and an ArrayList in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "An array is a fixed size data structure, while an ArrayList can grow or shrink dynamically"
+        },
+        {
+          "identifier": "B",
+          "option": "An array can store only primitive data types, while an ArrayList can store any object"
+        },
+        {
+          "identifier": "C",
+          "option": "An array is a one-dimensional data structure, while an ArrayList is a multi-dimensional data structure"
+        },
+        {
+          "identifier": "D",
+          "option": "An array is a collection of objects, while an ArrayList is a collection of classes"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "An array is a fixed size data structure that stores a collection of elements of the same data type. An ArrayList, on the other hand, can grow or shrink dynamically and can store any type of object."
+    },
+    {
+      "id": "topic001q009",
+      "question": "What is the purpose of the \"final\" keyword in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The \"final\" keyword is used to indicate that a method cannot be overridden in a subclass"
+        },
+        {
+          "identifier": "B",
+          "option": "The \"final\" keyword is used to indicate that a variable cannot be changed after it is initialized"
+        },
+        {
+          "identifier": "C",
+          "option": "The \"final\" keyword is used to indicate that a class cannot be inherited by a subclass"
+        },
+        {
+          "identifier": "D",
+          "option": "The \"final\" keyword is used to indicate that a method can only be accessed by the same class"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In Java, the \"final\" keyword can be used to declare a variable constant, which means that once initialized, its value cannot be changed. This is useful for creating variables that should not be modified throughout the program, such as mathematical constants or configuration settings."
+    },
+    {
+      "id": "topic001q010",
+      "question": "What is a try-catch block in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A try-catch block is used to declare a method as static"
+        },
+        {
+          "identifier": "B",
+          "option": "A try-catch block is used to declare a method as final"
+        },
+        {
+          "identifier": "C",
+          "option": "A try-catch block is used to handle exceptions in Java"
+        },
+        {
+          "identifier": "D",
+          "option": "A try-catch block is used to declare a method as synchronized"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "In Java, a try-catch block is used to handle exceptions that may occur during program execution. The try block contains the code that may throw an exception, while the catch block contains the code that handles the exception. If an exception is thrown in the try block, the catch block is executed to handle the exception, preventing the program from crashing or producing incorrect results."
+    }
+  ]
+}

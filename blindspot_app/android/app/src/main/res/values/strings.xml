@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">blindspot_app</string>
+    <string name="facebook_app_id">6506823019329362</string>
+    <string name="fb_login_protocol_scheme">fb6506823019329362</string>
+    <string name="facebook_client_token">9b758c3cbf2137eb7043e245ca011cc6</string>
+</resources>

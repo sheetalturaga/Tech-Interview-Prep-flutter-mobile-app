@@ -1,4 +1,7 @@
 import 'package:blindspot_app/constants.dart';
+import 'package:blindspot_app/screens/welcome/note_explain.dart';
+import 'package:blindspot_app/screens/welcome/notebook_screen.dart';
+import 'package:blindspot_app/screens/welcome/profile_screen.dart';
 import 'package:blindspot_app/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: NoteExplainScreen(),
     );
   }
 }

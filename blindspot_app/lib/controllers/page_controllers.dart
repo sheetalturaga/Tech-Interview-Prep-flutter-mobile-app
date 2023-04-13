@@ -15,4 +15,6 @@ class PageController extends GetxController {
   void navigateToLandingScreen() {
     Get.offAllNamed("/landingscreen");
   }
+
+  
 }

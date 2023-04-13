@@ -73,6 +73,13 @@ class Questions {
         correctOption = json['correct_option'],
         explanation = json['explanation'];
 
+  Questions.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> json)
+      : id = json['id'],
+        question = json['question'],
+        options = [],
+        correctOption = json['correct_option'],
+        explanation = json['explanation'];
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
@@ -95,6 +102,10 @@ class Options {
   Options.fromJson(Map<String, dynamic> json)
       : identifier = json['identifier'],
         option = json['option'];
+
+  Options.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> json)
+      : identifier = json['identifier'] as String?,
+        option = json['option'] as String?;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

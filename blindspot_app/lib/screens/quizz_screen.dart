@@ -8,7 +8,7 @@ import 'package:blindspot_app/screens/explanation_screen.dart';
 
 class QuizzScreen extends StatefulWidget {
   const QuizzScreen({Key? key}) : super(key: key);
-
+  static const String routeName = "/quizscreen";
   @override
   _QuizzScreenState createState() => _QuizzScreenState();
 }
@@ -46,7 +46,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                 answered = false;
               });
             },
-            physics: new NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -57,14 +57,14 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     child: Text(
                       "${index + 1}/10",
                       textAlign: TextAlign.right,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color.fromARGB(255, 196, 122, 122),
                         fontSize: 12.0,
                       ),
                     ),
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
                   SizedBox(
@@ -72,8 +72,8 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     height: 200.0,
                     child: Text(
                       "${questions[index].question}",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 171, 173, 43),
+                      style: const TextStyle(
+                        color: Colors.black,
                         fontSize: 22.0,
                       ),
                     ),
@@ -155,7 +155,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                         });
                       }
                     },
-                    shape: StadiumBorder(),
+                    shape: const StadiumBorder(),
                     fillColor: Color.fromARGB(255, 84, 193, 99),
                     padding: EdgeInsets.all(18.0),
                     elevation: 0.0,

@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 
 class ResultScreen extends StatefulWidget {
-  int score;
-  ResultScreen(this.score, {Key? key}) : super(key: key);
+  final int score;
+  const ResultScreen(this.score, {Key? key}) : super(key: key);
 
   @override
   _ResultScreenState createState() => _ResultScreenState();
@@ -20,7 +19,7 @@ class _ResultScreenState extends State<ResultScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             width: double.infinity,
             child: Text(
               "Congratulations",
@@ -32,25 +31,25 @@ class _ResultScreenState extends State<ResultScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 45.0,
           ),
-          Text(
+          const Text(
             "You Score is",
             style: TextStyle(color: Colors.white, fontSize: 34.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Text(
             "${widget.score}",
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.orange,
               fontSize: 85.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 100.0,
           ),
           RawMaterialButton(
@@ -58,20 +57,20 @@ class _ResultScreenState extends State<ResultScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MainMenu(),
+                    builder: (context) => const MainMenu(),
                   ));
             },
+            shape: const StadiumBorder(),
+            fillColor: Colors.blue,
+            padding: const EdgeInsets.all(18.0),
+            elevation: 0.0,
             // shape: StadiumBorder(),
             // color: AppColor.secondaryColor,
             // padding: EdgeInsets.all(18.0),
-            child: Text(
+            child: const Text(
               "Try another quiz",
               style: TextStyle(color: Colors.white),
             ),
-            shape: StadiumBorder(),
-            fillColor: Colors.blue,
-            padding: EdgeInsets.all(18.0),
-            elevation: 0.0,
           ),
         ],
       ),

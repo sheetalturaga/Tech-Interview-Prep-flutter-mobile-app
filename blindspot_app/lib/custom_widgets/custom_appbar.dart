@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:blindspot_app/models/question_schema.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,36 +18,5 @@ class ReviseSize extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper oldClipper) {
     return true;
-  }
-}
-
-class OptionsWidget extends StatelessWidget {
-  late QuestionSchema question;
-
-  OptionsWidget(Text text, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        Text(
-          "Option1",
-          style: TextStyle(fontSize: 20),
-        ),
-        Text(
-          "Option2",
-          style: TextStyle(fontSize: 20),
-        ),
-        Text(
-          "Option3",
-          style: TextStyle(fontSize: 20),
-        ),
-        Text(
-          "Option4",
-          style: TextStyle(fontSize: 20),
-        )
-      ],
-    );
   }
 }

@@ -1,0 +1,176 @@
+{
+  "id": "topic003",
+  "topic": "Object-Oriented Design (OOD)",
+  "image_url": "",
+  "description": "Multiple Choice Questions (MCQ) to practice Object-Oriented Design Concepts",
+  "questions": [
+    {
+      "id": "topic003q001",
+      "question": "Which of the following is an example of encapsulation in object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Inheritance"
+        },
+        {
+          "identifier": "B",
+          "option": "Polymorphism"
+        },
+        {
+          "identifier": "C",
+          "option": "Abstraction"
+        },
+        {
+          "identifier": "D",
+          "option": "Private Data Members and public getters and setters"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "Encapsulation is the process of hiding implementation details and exposing only necessary information to the outside world. Private data members and public getters and setters help achieve encapsulation."
+    },
+    {
+      "id": "topic003q002",
+      "question": "Which of the following best describes inheritance in object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The ability of an object to take on many forms"
+        },
+        {
+          "identifier": "B",
+          "option": "The ability to reuse code by creating new classes based on existing ones"
+        },
+        {
+          "identifier": "C",
+          "option": "The ability to group related classes into packages"
+        },
+        {
+          "identifier": "D",
+          "option": "The ability to access members of a class from outside the class"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Inheritance is the ability to create new classes based on existing ones. The new class inherits properties and behavior from the existing class, and can also add new properties and behavior of its own"
+    },
+    {
+      "id": "topic003q003",
+      "question": "Which of the following best describes polymorphism in object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The ability to take on many forms"
+        },
+        {
+          "identifier": "B",
+          "option": "The ability to reuse code by creating new classes based on existing ones"
+        },
+        {
+          "identifier": "C",
+          "option": "The ability to group related classes into packages"
+        },
+        {
+          "identifier": "D",
+          "option": "The ability to access members of a class from outside the class"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Polymorphism is the ability of an object to take on many forms. It allows different objects to respond to the same message in different ways."
+    },
+    {
+      "id": "topic003q004",
+      "question": "Which of the following is an example of abstraction in object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Private data members"
+        },
+        {
+          "identifier": "B",
+          "option": "Public getters and setters"
+        },
+        {
+          "identifier": "C",
+          "option": "Interfaces"
+        },
+        {
+          "identifier": "D",
+          "option": "Inheritance"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Abstraction is the process of hiding implementation details and exposing only necessary information to the outside world. Interfaces are a good example of abstraction because they define a set of methods that a class must implement without specifying how the methods should be implemented."
+    },
+    {
+      "id": "topic003q005",
+      "question": "Which of the following is not a principle of object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Encapsulation"
+        },
+        {
+          "identifier": "B",
+          "option": "Inheritance"
+        },
+        {
+          "identifier": "C",
+          "option": "Modularity"
+        },
+        {
+          "identifier": "D",
+          "option": "Efficiency"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "Efficiency is not a principle of object-oriented design. The main principles of object-oriented design are encapsulation, inheritance, polymorphism, and abstraction. Modularity is also an important principle that promotes the separation of concerns in software design."
+    },
+    {
+      "id": "topic003q006",
+      "question": "Which of the following best describes inheritance in object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "The ability of an object to take on many forms"
+        },
+        {
+          "identifier": "B",
+          "option": "The ability to reuse code by creating new classes based on existing ones"
+        },
+        {
+          "identifier": "C",
+          "option": "The ability to group related classes into packages"
+        },
+        {
+          "identifier": "D",
+          "option": "The ability to access members of a class from outside the class"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Inheritance is the ability to create new classes based on existing ones. The new class inherits properties and behavior from the existing class, and can also add new properties and behavior of its own."
+    },
+    {
+      "id": "topic003q007",
+      "question": "Which of the following is an example of the SOLID principles of object-oriented design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Single responsibility principle"
+        },
+        {
+          "identifier": "B",
+          "option": "Multiple inheritance principle"
+        },
+        {
+          "identifier": "C",
+          "option": "Function overloading principle"
+        },
+        {
+          "identifier": "D",
+          "option": "Method overloading principle"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The SOLID principles of object-oriented design are a set of guidelines that help developers create flexible and maintainable software. The Single Responsibility Principle (SRP) states that a class should have only one reason to change, meaning it should only have one responsibility or job."
+    }
+  ]
+}

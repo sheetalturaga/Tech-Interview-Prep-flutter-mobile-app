@@ -1,11 +1,11 @@
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen.dart';
 import 'package:blindspot_app/screens/welcome/profile_screen.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import '../main_menu.dart';
 
 class NoteBookScreen extends StatelessWidget {
+  const NoteBookScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,58 +66,60 @@ class NoteBookScreen extends StatelessWidget {
                       onDismissed: (_) {
                         // Handle button deletion
                       },
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Handle button press
-                        },
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size(double.infinity, 64),
-                          primary: Colors.lightBlueAccent,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(Icons.delete,
-                                size: 16), // Add delete icon here
-                            SizedBox(width: 8),
-                            Text(
-                              'p$i',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ),
                       background: Container(
                         color:
                             Colors.red, // Customize the delete background color
                         alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 16.0),
+                        child: const Padding(
+                          padding: EdgeInsets.only(right: 16.0),
                           child: Icon(
                             Icons.delete,
                             color: Colors.white,
                           ),
                         ),
                       ),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Handle button press
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 64),
+                          backgroundColor: Colors.lightBlueAccent,
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.delete,
+                                size: 16), // Add delete icon here
+                            const SizedBox(width: 8),
+                            Text(
+                              'p$i',
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 16), // Add some spacing between the buttons
+                  const SizedBox(
+                      height: 16), // Add some spacing between the buttons
                 ],
               ),
-            SizedBox(height: 60), // Add spacing below the buttons
+            const SizedBox(height: 60), // Add spacing below the buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon:
-                      Icon(Icons.arrow_back, color: Colors.lightBlue, size: 30),
+                  icon: const Icon(Icons.arrow_back,
+                      color: Colors.lightBlue, size: 30),
                   onPressed: () {
                     // Handle back button press
                   },
                 ),
-                SizedBox(width: 16), // Add some spacing between the buttons
+                const SizedBox(
+                    width: 16), // Add some spacing between the buttons
                 IconButton(
-                  icon: Icon(Icons.arrow_forward,
+                  icon: const Icon(Icons.arrow_forward,
                       color: Colors.lightBlue, size: 30),
                   onPressed: () {
                     // Handle forward button press
@@ -137,26 +139,26 @@ class NoteBookScreen extends StatelessWidget {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainMenu()),
+                MaterialPageRoute(builder: (context) => const MainMenu()),
               );
               break;
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
               );
               // Handle navigation to Notebook screen
               break;
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProfileScreen()),
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
               );
               // Handle navigation to User screen
               break;
           }
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

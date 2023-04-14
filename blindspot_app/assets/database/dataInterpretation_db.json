@@ -1,0 +1,248 @@
+{
+  "id": "topic004",
+  "topic": "Data Interpretation",
+  "image_url": "",
+  "description": "Multiple Choice Questions (MCQ) to practice Data Interpretation Basics",
+  "questions": [
+    {
+      "id": "topic004q001",
+      "question": "What is the median of the following set of numbers: 2, 4, 6, 8, 10?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "4"
+        },
+        {
+          "identifier": "B",
+          "option": "6"
+        },
+        {
+          "identifier": "C",
+          "option": "8"
+        },
+        {
+          "identifier": "D",
+          "option": "10"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The median of a set of numbers is the middle value when the numbers are arranged in ascending or descending order. In this case, the numbers arranged in ascending order are 2, 4, 6, 8, and 10. The middle value is 6, so the median is 6."
+    },
+    {
+      "id": "topic004q002",
+      "question": "What is the mode of the following set of numbers: 3, 3, 5, 7, 9?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "3"
+        },
+        {
+          "identifier": "B",
+          "option": "5"
+        },
+        {
+          "identifier": "C",
+          "option": "7"
+        },
+        {
+          "identifier": "D",
+          "option": "9"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The mode of a set of numbers is the value that appears most frequently. In this case, the number 3 appears twice, which is more than any other number, so the mode is 3."
+    },
+    {
+      "id": "topic004q003",
+      "question": "What is the range of the following set of numbers: 2, 4, 6, 8, 10?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "2"
+        },
+        {
+          "identifier": "B",
+          "option": "4"
+        },
+        {
+          "identifier": "C",
+          "option": "8"
+        },
+        {
+          "identifier": "D",
+          "option": "10"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The range of a set of numbers is the difference between the largest and smallest values in the set. In this case, the largest value is 10 and the smallest value is 2. The difference between them is 8, so the range is 8."
+    },
+    {
+      "id": "topic004q004",
+      "question": "What is the standard deviation of the following set of numbers: 3, 6, 9?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "1"
+        },
+        {
+          "identifier": "B",
+          "option": "2"
+        },
+        {
+          "identifier": "C",
+          "option": "3"
+        },
+        {
+          "identifier": "D",
+          "option": "4"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The standard deviation is a measure of the spread of a set of numbers. To calculate the standard deviation, we first find the mean of the set, which is (3+6+9)/3 = 6. Then we subtract the mean from each number, square the result, and find the average of those squared differences. Finally, we take the square root of that average. The calculation for this set is ((3-6)^2 + (6-6)^2 + (9-6)^2)/3 = 6, and the square root of 6 is approximately 2."
+    },
+    {
+      "id": "topic004q005",
+      "question": "Which type of chart is best for comparing the relative sizes of different categories in a data set?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Line Chart"
+        },
+        {
+          "identifier": "B",
+          "option": "Scatter Plot"
+        },
+        {
+          "identifier": "C",
+          "option": "Bar Chart"
+        },
+        {
+          "identifier": "D",
+          "option": "Pie Chart"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "A pie chart is a circular chart that is divided into slices, with each slice representing a category or proportion of a whole. It is best used for comparing the relative sizes of different categories in a data set, as the size of each slice corresponds to the size of the category it represents."
+    },
+    {
+      "id": "topic004q006",
+      "question": "What is the interquartile range of the following set of numbers: 3, 5, 7, 9, 11, 13?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "4"
+        },
+        {
+          "identifier": "B",
+          "option": "5"
+        },
+        {
+          "identifier": "C",
+          "option": "6"
+        },
+        {
+          "identifier": "D",
+          "option": "7"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The interquartile range is the difference between the 75th percentile and the 25th percentile of a set of numbers. To find these percentiles, we first need to find the median of the set, which is 8. Then we find the median of the lower half (3, 5, 7), which is 5, and the median of the upper half (9, 11, 13), which is 11. The 25th percentile is 5, and the 75th percentile is 11. The interquartile range is 11-5 = 6."
+    },
+    {
+      "id": "topic004q007",
+      "question": "What is the correlation coefficient between the following two variables: x = [1, 2, 3, 4, 5] and y = [2, 4, 6, 8, 10]?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "-1"
+        },
+        {
+          "identifier": "B",
+          "option": "0"
+        },
+        {
+          "identifier": "C",
+          "option": "1"
+        },
+        {
+          "identifier": "D",
+          "option": "None of the Above"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The correlation coefficient is a measure of the linear relationship between two variables. It ranges from -1 to 1, with values of -1 indicating a strong negative correlation, values of 0 indicating no correlation, and values of 1 indicating a strong positive correlation. In this case, the two variables have a perfect positive correlation, as y is always twice the value of x. Therefore, the correlation coefficient is 1."
+    },
+    {
+      "id": "topic004q008",
+      "question": "What is the probability of rolling a 6 on a fair six-sided die?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "1/6"
+        },
+        {
+          "identifier": "B",
+          "option": "1/5"
+        },
+        {
+          "identifier": "C",
+          "option": "1/4"
+        },
+        {
+          "identifier": "D",
+          "option": "1/3"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "A fair six-sided die has six equally likely outcomes, each with a probability of 1/6. Therefore, the probability of rolling a 6 is 1/6."
+    },
+    {
+      "id": "topic004q009",
+      "question": "What is the difference between a population and a sample in statistics?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A population is a subset of a sample."
+        },
+        {
+          "identifier": "B",
+          "option": "A sample is a subset of a population."
+        },
+        {
+          "identifier": "C",
+          "option": "A population is a collection of data points."
+        },
+        {
+          "identifier": "D",
+          "option": "A sample is a collection of data points."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In statistics, a population is the entire group of individuals or objects that we want to study, while a sample is a subset of the population that we actually observe and collect data from. The goal of statistical analysis is often to make inferences about the population based on information gathered from a sample."
+    },
+    {
+      "id": "topic004q010",
+      "question": "What is the mean of the following set of numbers: 5, 7, 9, 11, 13?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "8"
+        },
+        {
+          "identifier": "B",
+          "option": "9"
+        },
+        {
+          "identifier": "C",
+          "option": "10"
+        },
+        {
+          "identifier": "D",
+          "option": "11"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The mean of a set of numbers is the average value of those numbers. To find the mean, you add up all the numbers in the set and divide by the number of values. In this case, (5 + 7 + 9 + 11 + 13)/5 = 10, so the mean is 10."
+    }
+  ]
+}

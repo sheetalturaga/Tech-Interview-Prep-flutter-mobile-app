@@ -97,7 +97,7 @@ class LandingScreen extends StatelessWidget {
                           const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 24)),
                       textStyle:
-                          MaterialStateProperty.all(TextStyle(fontSize: 20)),
+                          MaterialStateProperty.all(const TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                     child: const Text("Sign Up"),
@@ -121,16 +121,16 @@ class LandingScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text("About"),
                     style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all(Colors.blue),
                       textStyle:
-                          MaterialStateProperty.all(TextStyle(fontSize: 16)),
+                          MaterialStateProperty.all(const TextStyle(fontSize: 16)),
                       padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                          const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
                     ),
+                    child: const Text("About"),
                   ),
                   const SizedBox(height: 20),
                   const Text(

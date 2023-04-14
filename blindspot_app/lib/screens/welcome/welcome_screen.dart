@@ -1,4 +1,5 @@
-import 'package:blindspot_app/screens/welcome/components/body.dart';
+import 'package:blindspot_app/screens/welcome/about_screen.dart';
+import 'package:blindspot_app/screens/welcome/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../ui/shared/color.dart';

@@ -1,0 +1,248 @@
+{
+  "id": "topic005",
+  "topic": "Behavioral Interview Prep",
+  "image_url": "",
+  "description": "Multiple Choice Questions (MCQ) to practice Behavioral interview prep",
+  "questions": [
+    {
+      "id": "topic005q001",
+      "question": "How do you handle conflicts with colleagues?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I try to avoid conflicts as much as possible"
+        },
+        {
+          "identifier": "B",
+          "option": "I confront my colleagues directly and assertively"
+        },
+        {
+          "identifier": "C",
+          "option": " I seek the help of a manager to mediate the conflict"
+        },
+        {
+          "identifier": "B",
+          "option": "This answer shows that the candidate is proactive in dealing with conflicts and has good communication skills."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The median of a set of numbers is the middle value when the numbers are arranged in ascending or descending order. In this case, the numbers arranged in ascending order are 2, 4, 6, 8, and 10. The middle value is 6, so the median is 6."
+    },
+    {
+      "id": "topic005q002",
+      "question": "How do you handle criticism of your work?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I become defensive and argue with the person criticizing me"
+        },
+        {
+          "identifier": "B",
+          "option": "I take the criticism to heart and let it affect my self-esteem"
+        },
+        {
+          "identifier": "C",
+          "option": "I listen to the criticism and try to learn from it to improve my work"
+        },
+        {
+          "identifier": "D",
+          "option": "I ignore the criticism and continue working the same way"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer demonstrates a growth mindset and a willingness to learn from feedback."
+    },
+    {
+      "id": "topic005q003",
+      "question": "How do you handle tight deadlines and competing priorities?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I work long hours and sacrifice my personal life to meet the deadline"
+        },
+        {
+          "identifier": "B",
+          "option": "I ask for an extension on the deadline"
+        },
+        {
+          "identifier": "C",
+          "option": "I prioritize tasks and delegate where possible to meet the deadline"
+        },
+        {
+          "identifier": "D",
+          "option": "I give up and admit defeat"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer shows good time management skills and the ability to work effectively under pressure."
+    },
+    {
+      "id": "topic005q004",
+      "question": "How do you handle a situation where you don't know the answer to a problem?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I pretend to know the answer to save face"
+        },
+        {
+          "identifier": "B",
+          "option": "I panic and become flustered"
+        },
+        {
+          "identifier": "C",
+          "option": "I admit that I don't know the answer and seek help from colleagues or resources"
+        },
+        {
+          "identifier": "D",
+          "option": "I make up an answer that sounds plausible"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer shows honesty and a willingness to ask for help when needed."
+    },
+    {
+      "id": "topic005q005",
+      "question": "How do you handle a difficult customer or client?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I become defensive and argumentative with the customer"
+        },
+        {
+          "identifier": "B",
+          "option": "I ignore the customer and hope they go away"
+        },
+        {
+          "identifier": "C",
+          "option": "I listen to the customer's concerns and try to find a solution to their problem"
+        },
+        {
+          "identifier": "D",
+          "option": "I pass the customer off to a colleague or manager"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer shows good customer service skills and a willingness to help resolve the customer's issue."
+    },
+    {
+      "id": "topic005q006",
+      "question": "How do you handle stress in the workplace?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I don't get stressed"
+        },
+        {
+          "identifier": "B",
+          "option": "I take frequent breaks and avoid stressors"
+        },
+        {
+          "identifier": "C",
+          "option": "I use stress management techniques such as deep breathing and exercise"
+        },
+        {
+          "identifier": "D",
+          "option": "I lash out at colleagues when stressed"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer demonstrates that the candidate has a proactive approach to managing stress in the workplace and is able to cope with it in a healthy way."
+    },
+    {
+      "id": "topic005q007",
+      "question": "How do you handle conflicts with coworkers?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I avoid conflicts by keeping to myself"
+        },
+        {
+          "identifier": "B",
+          "option": "I escalate conflicts to management"
+        },
+        {
+          "identifier": "C",
+          "option": "I approach conflicts in a calm and respectful manner and work towards finding a solution"
+        },
+        {
+          "identifier": "D",
+          "option": "I always win conflicts by being the loudest voice in the room"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer shows that the candidate is able to handle conflicts professionally and in a mature manner, rather than resorting to aggression or avoidance."
+    },
+    {
+      "id": "topic005q008",
+      "question": "Describe a time when you had to work with a difficult colleague.",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I never had to work with a difficult colleague"
+        },
+        {
+          "identifier": "B",
+          "option": "I complained to management about the difficult colleague"
+        },
+        {
+          "identifier": "C",
+          "option": "I tried to avoid working with the difficult colleague"
+        },
+        {
+          "identifier": "D",
+          "option": "I tried to build a positive relationship with the difficult colleague and find a way to work together effectively"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "This answer demonstrates that the candidate is able to handle difficult situations and maintain a positive attitude, even when working with challenging colleagues."
+    },
+    {
+      "id": "topic005q009",
+      "question": "How do you handle constructive criticism?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I become defensive and argue with the critic"
+        },
+        {
+          "identifier": "B",
+          "option": "I ignore the criticism and continue with my work"
+        },
+        {
+          "identifier": "C",
+          "option": "I listen to the criticism and use it as an opportunity to improve my work"
+        },
+        {
+          "identifier": "D",
+          "option": "I become upset and discouraged by the criticism"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer shows that the candidate is open to feedback and is willing to use it to improve their work."
+    },
+    {
+      "id": "topic005q010",
+      "question": "Describe a time when you had to manage multiple tasks at once.",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "I have never had to manage multiple tasks at once"
+        },
+        {
+          "identifier": "B",
+          "option": "I asked for help from colleagues to manage the tasks"
+        },
+        {
+          "identifier": "C",
+          "option": "I prioritized tasks and used time management techniques to manage the workload"
+        },
+        {
+          "identifier": "D",
+          "option": "I completed the tasks in a random order without prioritizing them"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "This answer demonstrates that the candidate is able to handle multiple tasks simultaneously and has the skills to manage their workload efficiently."
+    }
+  ]
+}

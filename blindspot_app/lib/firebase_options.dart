@@ -44,44 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBUe5SFEv-mMRiUKtYFlz_3a0gAkjw5m4g',
-    appId: '1:687784936826:web:5ff897ab51e32c019442c3',
-    messagingSenderId: '687784936826',
-    projectId: 'cs5520-sailorsenshi-blindspot',
-    authDomain: 'cs5520-sailorsenshi-blindspot.firebaseapp.com',
-    databaseURL: 'https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com',
-    storageBucket: 'cs5520-sailorsenshi-blindspot.appspot.com',
-    measurementId: 'G-K16SE49L8L',
+    apiKey: 'AIzaSyBPjC_iuhFHQLzugziGstC8WPKORXXDtlQ',
+    appId: '1:862447107769:web:45135f3e2bfbb39c556568',
+    messagingSenderId: '862447107769',
+    projectId: 'blindspot-authentication',
+    authDomain: 'blindspot-authentication.firebaseapp.com',
+    storageBucket: 'blindspot-authentication.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAutg2MTh0dxvX4Cg63S1rfjNyq98iVGoY',
-    appId: '1:687784936826:android:fcd4a683c597d2c19442c3',
-    messagingSenderId: '687784936826',
-    projectId: 'cs5520-sailorsenshi-blindspot',
-    databaseURL: 'https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com',
-    storageBucket: 'cs5520-sailorsenshi-blindspot.appspot.com',
+    apiKey: 'AIzaSyAmoTaNmMYRTqo1g4eu0pSW09wdzO1NEXE',
+    appId: '1:862447107769:android:58ea72e4b6a2a4a8556568',
+    messagingSenderId: '862447107769',
+    projectId: 'blindspot-authentication',
+    storageBucket: 'blindspot-authentication.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCYaL6WyixGPx7xIkDM3I0SSb02_NwytZE',
-    appId: '1:687784936826:ios:2430624afc807fd89442c3',
-    messagingSenderId: '687784936826',
-    projectId: 'cs5520-sailorsenshi-blindspot',
-    databaseURL: 'https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com',
-    storageBucket: 'cs5520-sailorsenshi-blindspot.appspot.com',
-    iosClientId: '687784936826-6osjraa55gjuqvdsh84nqijrhcvfpvmf.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBFFP8oCMi8V4ofJVPpQAu4lE5E9HBP8xk',
+    appId: '1:862447107769:ios:1a58085374555d43556568',
+    messagingSenderId: '862447107769',
+    projectId: 'blindspot-authentication',
+    storageBucket: 'blindspot-authentication.appspot.com',
+    iosClientId: '862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28.apps.googleusercontent.com',
     iosBundleId: 'com.example.blindspotApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCYaL6WyixGPx7xIkDM3I0SSb02_NwytZE',
-    appId: '1:687784936826:ios:2430624afc807fd89442c3',
-    messagingSenderId: '687784936826',
-    projectId: 'cs5520-sailorsenshi-blindspot',
-    databaseURL: 'https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com',
-    storageBucket: 'cs5520-sailorsenshi-blindspot.appspot.com',
-    iosClientId: '687784936826-6osjraa55gjuqvdsh84nqijrhcvfpvmf.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBFFP8oCMi8V4ofJVPpQAu4lE5E9HBP8xk',
+    appId: '1:862447107769:ios:1a58085374555d43556568',
+    messagingSenderId: '862447107769',
+    projectId: 'blindspot-authentication',
+    storageBucket: 'blindspot-authentication.appspot.com',
+    iosClientId: '862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28.apps.googleusercontent.com',
     iosBundleId: 'com.example.blindspotApp',
   );
 }

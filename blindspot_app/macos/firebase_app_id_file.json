@@ -1,7 +1,13 @@
 {
   "file_generated_by": "FlutterFire CLI",
   "purpose": "FirebaseAppID & ProjectID for this Firebase app in this directory",
+<<<<<<< HEAD
   "GOOGLE_APP_ID": "1:687784936826:ios:2430624afc807fd89442c3",
   "FIREBASE_PROJECT_ID": "cs5520-sailorsenshi-blindspot",
   "GCM_SENDER_ID": "687784936826"
+=======
+  "GOOGLE_APP_ID": "1:862447107769:ios:1a58085374555d43556568",
+  "FIREBASE_PROJECT_ID": "blindspot-authentication",
+  "GCM_SENDER_ID": "862447107769"
+>>>>>>> main
 }

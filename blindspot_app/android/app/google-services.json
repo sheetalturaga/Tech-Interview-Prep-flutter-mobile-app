@@ -1,38 +1,64 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "687784936826",
     "firebase_url": "https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com",
     "project_id": "cs5520-sailorsenshi-blindspot",
     "storage_bucket": "cs5520-sailorsenshi-blindspot.appspot.com"
+=======
+    "project_number": "862447107769",
+    "project_id": "blindspot-authentication",
+    "storage_bucket": "blindspot-authentication.appspot.com"
+>>>>>>> main
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:687784936826:android:fcd4a683c597d2c19442c3",
+=======
+        "mobilesdk_app_id": "1:862447107769:android:58ea72e4b6a2a4a8556568",
+>>>>>>> main
         "android_client_info": {
           "package_name": "com.example.blindspot_app"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "687784936826-40dr8f529tmsqvp0c3blgnnbrflcn0f2.apps.googleusercontent.com",
+=======
+          "client_id": "862447107769-9s8081uv2ubvrv4armcqktq0819dc25s.apps.googleusercontent.com",
+>>>>>>> main
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyAutg2MTh0dxvX4Cg63S1rfjNyq98iVGoY"
+=======
+          "current_key": "AIzaSyAmoTaNmMYRTqo1g4eu0pSW09wdzO1NEXE"
+>>>>>>> main
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "687784936826-40dr8f529tmsqvp0c3blgnnbrflcn0f2.apps.googleusercontent.com",
               "client_type": 3
             },
             {
               "client_id": "687784936826-6osjraa55gjuqvdsh84nqijrhcvfpvmf.apps.googleusercontent.com",
+=======
+              "client_id": "862447107769-9s8081uv2ubvrv4armcqktq0819dc25s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28.apps.googleusercontent.com",
+>>>>>>> main
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.blindspotApp"

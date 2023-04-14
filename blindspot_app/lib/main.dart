@@ -3,12 +3,16 @@ import 'package:blindspot_app/bindings/appinit_bindings.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
 import 'package:blindspot_app/screens/data_upload_screen.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/quizz_screen.dart';
+import 'package:blindspot_app/screens/welcome/note_explain.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+
+import 'controllers/topic_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +20,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   InitAppBindings().dependencies();
+  await FacebookAuth.instance.webAndDesktopInitialize(
+    appId: "6506823019329362",
+    cookie: true,
+    xfbml: true,
+    version: "v15.0",
+  );
 
   runApp(const MyApp());
 }
@@ -27,12 +37,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'blindspot_app',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
-      // home: const QuizzScreen(),
+      // home: HomeScreen(),
+      // home: NoteExplainScreen(),
     );
   }
 }

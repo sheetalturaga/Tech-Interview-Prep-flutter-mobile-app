@@ -52,6 +52,7 @@ dependencies:
   get: ^4.6.5
   cached_network_image: ^3.2.3
   firebase_storage: ^11.1.0
+  percent_indicator: ^4.2.3
   
 
 dev_dependencies:

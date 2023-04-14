@@ -1,10 +1,8 @@
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/welcome/about_screen.dart';
 import 'package:blindspot_app/screens/welcome/login_screen.dart';
-import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -12,6 +10,7 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
+    // ignore: sized_box_for_whitespace
     return Container(
       height: size.height,
       width: double.infinity,
@@ -61,7 +60,7 @@ class LandingScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 40),
+              padding: const EdgeInsets.only(bottom: 40),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -77,22 +76,22 @@ class LandingScreen extends StatelessWidget {
                       );
                       //TODO: Implement button functionality
                     },
-                    child: const Text("Login"),
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(150, 50)),
+                      minimumSize: MaterialStateProperty.all(const Size(150, 50)),
                       padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                          const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
                       textStyle:
-                          MaterialStateProperty.all(TextStyle(fontSize: 20)),
+                          MaterialStateProperty.all(const TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
+                    child: const Text("Login"),
                   ),
                   const SizedBox(height: 25),
                   ElevatedButton(
-                    // TODO: Implement signup button functionality
+                    // TODO:Implement signup button functionality
                     onPressed: () {},
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(150, 50)),
+                      minimumSize: MaterialStateProperty.all(const Size(150, 50)),
                       padding: MaterialStateProperty.all(
                           const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 24)),
@@ -116,7 +115,7 @@ class LandingScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return AboutScreen();
+                            return const AboutScreen();
                           },
                         ),
                       );

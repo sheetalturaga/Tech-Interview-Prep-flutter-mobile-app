@@ -1,7 +1,5 @@
 import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:blindspot_app/models/quiz_model.dart';
-import 'package:blindspot_app/ui/shared/color.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -89,18 +87,7 @@ class TopicCard extends GetView<TopicController> {
             },
             child: Stack(
               children: [
-                // Image.network(
-                //   model.imageUrl!,
-                //   height: 150,
-                //   fit: BoxFit.cover,
-                //   width: MediaQuery.of(context).size.width,
-                // ),
                 Container(
-                  // height: 150,
-                  // decoration: const BoxDecoration(
-                  //   gradient: mainBackgroundGradient,
-                  // ),
-                  // color: Colors.pink,
                   height: 150,
                   decoration: const BoxDecoration(
                       gradient: LinearGradient(colors: [

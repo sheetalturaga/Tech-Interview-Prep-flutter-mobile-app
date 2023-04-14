@@ -1,4 +1,3 @@
-import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 // import 'package:shimmer/shimmer.dart';
 

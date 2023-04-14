@@ -7,6 +7,7 @@ class QuestionDisplayPage extends StatefulWidget {
   const QuestionDisplayPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _QuestionDisplayPageState createState() => _QuestionDisplayPageState();
 }
 

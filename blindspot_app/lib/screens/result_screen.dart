@@ -3,8 +3,8 @@ import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 
 class ResultScreen extends StatefulWidget {
-  int score;
-  ResultScreen(this.score, {Key? key}) : super(key: key);
+  final int score;
+  const ResultScreen(this.score, {Key? key}) : super(key: key);
 
   @override
   _ResultScreenState createState() => _ResultScreenState();

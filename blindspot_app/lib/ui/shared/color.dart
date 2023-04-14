@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +8,9 @@ const cardbackground1 = Color.fromARGB(1, 64, 201, 255);
 const cardbackground2 = Color.fromARGB(1, 232, 28, 255);
 
 class AppColor {
-  static final pripmaryColor = Color.fromRGBO(22, 131, 233, 100);
-  static final secondaryColor = Color.fromARGB(255, 16, 101, 180);
-  static final thirdColor = Color.fromARGB(255, 191, 193, 195);
+  static const pripmaryColor = Color.fromRGBO(22, 131, 233, 100);
+  static const secondaryColor = Color.fromARGB(255, 16, 101, 180);
+  static const thirdColor = Color.fromARGB(255, 191, 193, 195);
 }
 
 const mainBackgroundGradient = LinearGradient(
@@ -23,8 +21,7 @@ const mainBackgroundGradient = LinearGradient(
       background2,
     ]);
 
-var CardBackgroundGradient = LinearGradient(
-    colors: [
-      cardbackground1,
-      cardbackground2,
-    ]);
+var cardBackgroundGradient = const LinearGradient(colors: [
+  cardbackground1,
+  cardbackground2,
+]);

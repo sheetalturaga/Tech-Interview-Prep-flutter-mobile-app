@@ -1,20 +1,16 @@
 import 'package:blindspot_app/screens/main_menu.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:provider/provider.dart';
-// import 'package:twitter_login/twitter_login.dart';
-import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-
 import 'package:flutter/material.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:firebase_auth/firebase_auth.dart'
     hide EmailAuthProvider, PhoneAuthProvider;
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -26,7 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _checkIfisLoggedIn();
   }
@@ -39,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     if (accessToken != null) {
-      print(accessToken.toJson());
+      // print(accessToken.toJson());
       final userData = await FacebookAuth.instance.getUserData();
       _accessToken = accessToken;
       setState(() {
@@ -53,12 +48,16 @@ class _LoginScreenState extends State<LoginScreen> {
   _login() async {
     final LoginResult result = await FacebookAuth.instance.login();
     if (result.status == LoginStatus.success) {
+      // ignore: avoid_print
       print("Login successful!");
+      // ignore: avoid_print
       print("Access token: ${result.accessToken}");
 
       // ... rest of your code
     } else {
+      // ignore: avoid_print
       print("Login failed.");
+      // ignore: avoid_print
       print("Error message: ${result.message}");
     }
 
@@ -66,16 +65,19 @@ class _LoginScreenState extends State<LoginScreen> {
       _accessToken = result.accessToken;
       final userData = await FacebookAuth.instance.getUserData();
       _userData = userData;
+      // ignore: use_build_context_synchronously
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) {
-            return MainMenu();
+            return const MainMenu();
           },
         ),
       );
     } else {
+      // ignore: avoid_print
       print(result.status);
+      // ignore: avoid_print
       print(result.message);
     }
     setState(() {
@@ -83,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
-  _logout() async {
+  void _logout() async {
     await FacebookAuth.instance.logOut();
     _accessToken = null;
     _userData = null;
@@ -103,6 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
     return Scaffold(
+      // ignore: sized_box_for_whitespace
       body: Container(
         height: size.height,
         width: double.infinity,
@@ -163,7 +166,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
                   ),
-                  SizedBox(height: 16), // add some spacing between the boxes
+                  const SizedBox(
+                      height: 16), // add some spacing between the boxes
                   Container(
                     height: 40,
                     width: 200,
@@ -174,7 +178,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
                   ),
-                  SizedBox(height: 16), // add some spacing between the boxes
+                  const SizedBox(
+                      height: 16), // add some spacing between the boxes
                   Container(
                     height: 40,
                     width: 200,
@@ -191,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(bottom: 40),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: const [
@@ -230,11 +235,12 @@ class _LoginScreenState extends State<LoginScreen> {
           _isLoggedIn = true;
           _user = account;
         });
+        // ignore: use_build_context_synchronously
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) {
-              return MainMenu();
+              return const MainMenu();
             },
           ),
         );
@@ -261,14 +267,16 @@ class _LoginScreenState extends State<LoginScreen> {
           // Use the credential data to authenticate with your server...
           break;
         case AuthorizationStatus.error:
+          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
                 content: Text('Error: ${result.error?.localizedDescription}')),
           );
           break;
         case AuthorizationStatus.cancelled:
+          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('User cancelled')),
+            const SnackBar(content: Text('User cancelled')),
           );
           break;
       }

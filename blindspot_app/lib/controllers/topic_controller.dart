@@ -1,11 +1,11 @@
 import 'package:blindspot_app/models/quiz_model.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
-import 'package:blindspot_app/services/database_storageService.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
+import '../services/database_storageService.dart';
 
 class TopicController extends GetxController {
   @override
@@ -18,13 +18,6 @@ class TopicController extends GetxController {
   final allTopics = <QuizModel>[].obs;
 
   Future<void> getAllTopics() async {
-    // List<String> imageName = [
-    //   "java",
-    //   "python",
-    //   "ood",
-    //   "behavioral",
-    //   "datainterpretation"
-    // ];
     try {
       // Get the data from the entire firestore questions collection
       //Query snapshot type that will used to look through the collection

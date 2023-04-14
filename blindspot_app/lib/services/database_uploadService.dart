@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:blindspot_app/data/questions_example.dart';
 import 'package:blindspot_app/models/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 

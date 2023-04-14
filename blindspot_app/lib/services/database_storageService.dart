@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import '../firestore_references/collection_refs.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 // Set up to download images from the storage
 class DatabaseStorageService extends GetxService {

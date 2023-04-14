@@ -1,14 +1,12 @@
 import 'package:blindspot_app/screens/main_menu.dart';
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen.dart';
 import 'package:blindspot_app/screens/welcome/profile_screen.dart';
-import 'package:blindspot_app/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'notebook_screen.dart';
 
 class NoteExplainScreen extends StatefulWidget {
-  @override
+  const NoteExplainScreen({super.key});
+
   @override
   _NoteExplainScreenState createState() => _NoteExplainScreenState();
 }
@@ -22,6 +20,7 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -71,8 +70,8 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
             Container(
               alignment: Alignment.topLeft,
               color: Colors.lightBlue,
-              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+              child: const Text(
                 "P1. which of the following is not a valid access of Java",
                 style: TextStyle(
                   color: Colors.white,
@@ -81,13 +80,13 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
                 ),
               ),
             ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           if (_showText)
             Container(
               alignment: Alignment.topLeft,
               color: Colors.lightBlue,
-              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+              child: const Text(
                 "Explanation: Access modifier in Java are keywords that determine the accessibility of a classs, method or varibles",
                 style: TextStyle(
                   color: Colors.white,
@@ -98,12 +97,12 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
             ),
           IconButton(
             onPressed: _deleteText,
-            icon: Icon(
+            icon: const Icon(
               Icons.delete,
               color: Colors.lightBlue,
             ),
           ),
-          SizedBox(height: 60), // Add spacing below the buttons
+          const SizedBox(height: 60), // Add spacing below the buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -113,9 +112,9 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
                   // Handle back button press
                 },
               ),
-              SizedBox(width: 16), // Add some spacing between the buttons
+              const SizedBox(width: 16), // Add some spacing between the buttons
               IconButton(
-                icon: Icon(Icons.arrow_forward,
+                icon: const Icon(Icons.arrow_forward,
                     color: Colors.lightBlue, size: 30),
                 onPressed: () {
                   // Handle forward button press
@@ -134,26 +133,26 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainMenu()),
+                MaterialPageRoute(builder: (context) => const MainMenu()),
               );
               break;
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
               );
               // Handle navigation to Notebook screen
               break;
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProfileScreen()),
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
               );
               // Handle navigation to User screen
               break;
           }
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

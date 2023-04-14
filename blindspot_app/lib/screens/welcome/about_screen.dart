@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
 import 'package:get/get.dart';
 
 class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
+    // ignore: sized_box_for_whitespace
     return Container(
       height: size.height,
       width: double.infinity,
@@ -55,7 +57,7 @@ class AboutScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 200),
+              padding: const EdgeInsets.only(bottom: 200),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
                 child: Column(
@@ -126,7 +128,7 @@ class AboutScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 40),
+              padding: const EdgeInsets.only(bottom: 40),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: const [

@@ -20,13 +20,14 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
         children: [
           if (controller.loadStatus.value == LoadStatus.loading)
             const Expanded(child: CircularProgressIndicator()),
-          if (controller.loadStatus.value == LoadStatus.loading)
+          if (controller.loadStatus.value == LoadStatus.complete)
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
-                children: [
+                children: const [
                   Center(
-                    child: Text(controller.currentQuestion.value!.question),
+                    child: Text("GotHere"),
+                    //controller.currentQuestion.value!.question
                   )
                 ],
               )),

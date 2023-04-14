@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:blindspot_app/data/questions_example.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
-import 'package:blindspot_app/widgets/quizz_widget.dart';
-import 'package:blindspot_app/model/question_model.dart';
 import 'package:blindspot_app/screens/explanation_screen.dart';
 
 class QuizzScreen extends StatefulWidget {
   const QuizzScreen({Key? key}) : super(key: key);
   static const String routeName = "/quizscreen";
   @override
-  _QuizzScreenState createState() => _QuizzScreenState();
+  QuizzScreenState createState() => QuizzScreenState();
 }
 
-class _QuizzScreenState extends State<QuizzScreen> {
-  int question_pos = 0;
+class QuizzScreenState extends State<QuizzScreen> {
+  int questionPos = 0;
   int score = 0;
   List<bool> btnPressed = [false, false, false, false];
   PageController? _controller;
@@ -46,7 +44,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                 answered = false;
               });
             },
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,14 +80,14 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     Container(
                       width: 300.0,
                       height: 50.0,
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                           bottom: 20.0, left: 12.0, right: 12.0),
                       child: RawMaterialButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         fillColor: btnPressed[i]
-                            ? Color.fromARGB(255, 40, 93, 193)
+                            ? const Color.fromARGB(255, 40, 93, 193)
                             : AppColor.thirdColor,
                         onPressed: !answered
                             ? () {
@@ -98,8 +96,10 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                     .values
                                     .toList()[i]) {
                                   score++;
+                                  // ignore: avoid_print
                                   print("yes");
                                 } else {
+                                  // ignore: avoid_print
                                   print("no");
                                 }
                                 setState(() {
@@ -109,13 +109,13 @@ class _QuizzScreenState extends State<QuizzScreen> {
                               }
                             : null,
                         child: Text(questions[index].answers!.keys.toList()[i],
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 17, 16, 16),
                               fontSize: 18.0,
                             )),
                       ),
                     ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40.0,
                   ),
 
@@ -142,13 +142,13 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                 builder: (context) => ResultScreen(score)));
                       } else {
                         _controller!.nextPage(
-                            duration: Duration(milliseconds: 250),
+                            duration: const Duration(milliseconds: 250),
                             curve: Curves.easeInExpo);
 
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ExplanationScreen()));
+                                builder: (context) => const ExplanationScreen()));
 
                         setState(() {
                           btnPressed = [false, false, false, false];
@@ -156,12 +156,12 @@ class _QuizzScreenState extends State<QuizzScreen> {
                       }
                     },
                     shape: const StadiumBorder(),
-                    fillColor: Color.fromARGB(255, 84, 193, 99),
-                    padding: EdgeInsets.all(18.0),
+                    fillColor: const Color.fromARGB(255, 84, 193, 99),
+                    padding: const EdgeInsets.all(18.0),
                     elevation: 0.0,
                     child: Text(
                       btnText,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   )
                 ],

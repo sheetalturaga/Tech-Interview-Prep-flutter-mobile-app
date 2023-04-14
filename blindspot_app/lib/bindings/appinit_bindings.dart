@@ -1,8 +1,6 @@
-import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:get/get.dart';
 
 import '../controllers/page_controllers.dart';
-import '../services/database_storageService.dart';
 
 class InitAppBindings implements Bindings {
   @override

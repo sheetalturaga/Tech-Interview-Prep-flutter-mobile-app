@@ -8,10 +8,10 @@ class MainMenu extends StatefulWidget {
   const MainMenu({Key? key}) : super(key: key);
 
   @override
-  _MainMenuState createState() => _MainMenuState();
+  MainMenuState createState() => MainMenuState();
 }
 
-class _MainMenuState extends State<MainMenu> {
+class MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _MainMenuState extends State<MainMenu> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             headerText("Quiz Page"),
-            SizedBox(height: 200),
+            const SizedBox(height: 200),
             // const Center(
             //   child: Text(
             //     "Quiz Page",
@@ -48,7 +48,7 @@ class _MainMenuState extends State<MainMenu> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QuizzScreen(),
+                              builder: (context) => const QuizzScreen(),
                             ));
                       },
                       shape: const StadiumBorder(),
@@ -76,7 +76,7 @@ class _MainMenuState extends State<MainMenu> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QuizzScreen(),
+                              builder: (context) => const QuizzScreen(),
                             ));
                       },
                       shape: const StadiumBorder(),
@@ -104,7 +104,7 @@ class _MainMenuState extends State<MainMenu> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QuizzScreen(),
+                              builder: (context) => const QuizzScreen(),
                             ));
                       },
                       shape: const StadiumBorder(),

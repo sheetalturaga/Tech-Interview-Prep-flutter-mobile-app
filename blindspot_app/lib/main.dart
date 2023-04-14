@@ -2,17 +2,11 @@ import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/bindings/appinit_bindings.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
-import 'package:blindspot_app/screens/data_upload_screen.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/quizz_screen.dart';
-import 'package:blindspot_app/screens/welcome/note_explain.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-
-import 'controllers/topic_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       getPages: AppRoutes.routesList(),
       // home: HomeScreen(),
-      // home: NoteExplainScreen(),
+      // home: DataUploadScreen(),
     );
   }
 }

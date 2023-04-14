@@ -19,7 +19,7 @@ class AppRoutes {
           page: () => const LandingScreen(),
         ),
         GetPage(
-            page: () => HomeScreen(),
+            page: () => const HomeScreen(),
             name: HomeScreen.routeName,
             binding: BindingsBuilder(
               () {

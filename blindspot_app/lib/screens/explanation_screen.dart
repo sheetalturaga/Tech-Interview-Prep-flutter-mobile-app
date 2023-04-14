@@ -1,13 +1,12 @@
-import 'package:blindspot_app/screens/quizz_screen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 
 class ExplanationScreen extends StatefulWidget {
   const ExplanationScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ExplanationScreenState createState() => _ExplanationScreenState();
 }
 
@@ -64,6 +63,10 @@ class _ExplanationScreenState extends State<ExplanationScreen> {
                 context,
               );
             },
+            shape: const StadiumBorder(),
+            fillColor: const Color.fromARGB(255, 62, 85, 218),
+            padding: const EdgeInsets.all(18.0),
+            elevation: 0.0,
             // shape: StadiumBorder(),
             // color: AppColor.secondaryColor,
             // padding: EdgeInsets.all(18.0),
@@ -71,10 +74,6 @@ class _ExplanationScreenState extends State<ExplanationScreen> {
               "Next Question",
               style: TextStyle(color: Colors.white),
             ),
-            shape: const StadiumBorder(),
-            fillColor: Color.fromARGB(255, 62, 85, 218),
-            padding: EdgeInsets.all(18.0),
-            elevation: 0.0,
           ),
         ],
       ),

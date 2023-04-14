@@ -17,7 +17,7 @@ class QuestionsController extends GetxController {
   @override
   void onReady() {
     final questionsInTopic = Get.arguments as QuizModel;
-    print(questionsInTopic.id);
+    // print(questionsInTopic.id);
     loadDataFromTopic(questionsInTopic);
     super.onReady();
   }
@@ -58,12 +58,12 @@ class QuestionsController extends GetxController {
       // Step 2 traversing through all questions in that particular topic
       // to store the answers list
 
-      for (Questions _question in topicBasedQuestionsInModel.questions!) {
+      for (Questions question in topicBasedQuestionsInModel.questions!) {
         final QuerySnapshot<Map<String, dynamic>> answersInSnapshot =
             await questionCollectionRef
                 .doc(topicBasedQuestionsInModel.id)
                 .collection('questions')
-                .doc(_question.id)
+                .doc(question.id)
                 .collection('options')
                 .get();
         final listOfOptions = <Options>[];
@@ -76,7 +76,7 @@ class QuestionsController extends GetxController {
               identifier: data['identifier'] as String,
               option: data['option'] as String));
         }
-        _question.options =
+        question.options =
             listOfOptions; // assigning options to the respective question
 
         // We check if the questions we got from the database is not empty,
@@ -88,7 +88,7 @@ class QuestionsController extends GetxController {
               .assignAll(topicBasedQuestionsInModel.questions!);
 
           currentQuestion.value = topicBasedQuestionsInModel.questions![0];
-          print(topicBasedQuestionsInModel.questions![0].question);
+          // print(topicBasedQuestionsInModel.questions![0].question);
 
           // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;

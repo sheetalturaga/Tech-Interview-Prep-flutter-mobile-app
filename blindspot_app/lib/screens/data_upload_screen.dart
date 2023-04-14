@@ -4,10 +4,9 @@ import 'package:get/get.dart';
 import '../firestore_references/collection_refs.dart';
 import '../services/database_uploadService.dart';
 
-// ignore: must_be_immutable
 class DataUploadScreen extends StatelessWidget {
   DataUploadScreen({Key? key}) : super(key: key);
-  DatabaseUploadService controller = Get.put(DatabaseUploadService());
+  final DatabaseUploadService controller = Get.put(DatabaseUploadService());
 
   @override
   Widget build(BuildContext context) {

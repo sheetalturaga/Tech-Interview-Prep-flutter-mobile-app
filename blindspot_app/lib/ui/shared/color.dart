@@ -7,6 +7,8 @@ const background2 = Color.fromARGB(1, 181, 198, 224);
 const cardbackground1 = Color.fromARGB(1, 64, 201, 255);
 const cardbackground2 = Color.fromARGB(1, 232, 28, 255);
 
+const selectionColor = Color(0XFF0C63E7);
+
 class AppColor {
   static const pripmaryColor = Color.fromRGBO(22, 131, 233, 100);
   static const secondaryColor = Color.fromARGB(255, 16, 101, 180);

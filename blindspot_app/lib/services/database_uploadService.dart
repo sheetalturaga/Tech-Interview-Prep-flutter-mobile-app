@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'package:blindspot_app/data/questions_example.dart';
 import 'package:blindspot_app/models/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import '../firestore_references/collection_refs.dart';
 
 // Uploading data to Firestore to the backend
@@ -23,6 +21,8 @@ class DatabaseUploadService extends GetxController {
     loadStatus.value = LoadStatus.loading; // initial value is 0
 
     final db = FirebaseFirestore.instance;
+    print("created db instance");
+    print(db.toString());
 
     // Load the asset folder by passing the context
     var manifestContents = await rootBundle
@@ -49,7 +49,8 @@ class DatabaseUploadService extends GetxController {
 
     // print("Items Number: ${questions[0].description}");
     // Creating for uploading batches of data to firestore
-    var batchOps = db.batch();
+    print("reached batch ops");
+    WriteBatch batchOps = db.batch();
 
     printInfo(info: batchOps.toString());
 
@@ -60,7 +61,7 @@ class DatabaseUploadService extends GetxController {
         "topic": file.topic,
         "image_url": file.imageUrl,
         "description": file.description,
-        "question_count": file.questions == null ? 0 : questions.length,
+        "question_count": file.questions == null ? 0 : file.questions!.length,
       });
 
       for (var questions in file.questions!) {
@@ -72,15 +73,23 @@ class DatabaseUploadService extends GetxController {
           "explanation": questions.explanation,
         });
 
+        print("added questions");
+
         for (var options in questions.options!) {
           batchOps.set(
               pathToQuestion.collection("options").doc(options.identifier),
               {"identifier": options.identifier, "option": options.option});
         }
+        print("added options");
       }
     }
 
     await batchOps.commit();
     loadStatus.value = LoadStatus.complete;
   }
+
+  // Future<void> testDataPush() async {
+  //   final db = FirebaseFirestore.instance;
+  //   db.doc("questions");
+  // }
 }

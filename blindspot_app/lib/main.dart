@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      getPages: AppRoutes.routesList(),
-      // home: const QuestionDisplayScreen(),
-      // home: DataUploadScreen(),
+      // getPages: AppRoutes.routesList(),
+      home: const QuestionDisplayScreen(),
+      // home: QuizzScreen(),
     );
   }
 }

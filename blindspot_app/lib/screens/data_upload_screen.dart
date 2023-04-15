@@ -6,6 +6,7 @@ import '../services/database_uploadService.dart';
 
 class DataUploadScreen extends StatelessWidget {
   DataUploadScreen({Key? key}) : super(key: key);
+  // static const String routeName = "/dataupload";
   final DatabaseUploadService controller = Get.put(DatabaseUploadService());
 
   @override

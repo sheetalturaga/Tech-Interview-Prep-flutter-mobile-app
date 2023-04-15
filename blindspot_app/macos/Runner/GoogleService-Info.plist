@@ -3,7 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-<<<<<<< HEAD
 	<string>687784936826-6osjraa55gjuqvdsh84nqijrhcvfpvmf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.687784936826-6osjraa55gjuqvdsh84nqijrhcvfpvmf</string>
@@ -11,29 +10,14 @@
 	<string>AIzaSyCYaL6WyixGPx7xIkDM3I0SSb02_NwytZE</string>
 	<key>GCM_SENDER_ID</key>
 	<string>687784936826</string>
-=======
-	<string>862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.862447107769-jpjqjbddg9c357bmd0d5sa80qg05fe28</string>
-	<key>API_KEY</key>
-	<string>AIzaSyBFFP8oCMi8V4ofJVPpQAu4lE5E9HBP8xk</string>
-	<key>GCM_SENDER_ID</key>
-	<string>862447107769</string>
->>>>>>> main
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.blindspotApp</string>
 	<key>PROJECT_ID</key>
-<<<<<<< HEAD
 	<string>cs5520-sailorsenshi-blindspot</string>
 	<key>STORAGE_BUCKET</key>
 	<string>cs5520-sailorsenshi-blindspot.appspot.com</string>
-=======
-	<string>blindspot-authentication</string>
-	<key>STORAGE_BUCKET</key>
-	<string>blindspot-authentication.appspot.com</string>
->>>>>>> main
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -45,12 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-<<<<<<< HEAD
 	<string>1:687784936826:ios:2430624afc807fd89442c3</string>
 	<key>DATABASE_URL</key>
 	<string>https://cs5520-sailorsenshi-blindspot-default-rtdb.firebaseio.com</string>
-=======
-	<string>1:862447107769:ios:1a58085374555d43556568</string>
->>>>>>> main
 </dict>
 </plist>

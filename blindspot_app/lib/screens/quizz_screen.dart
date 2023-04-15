@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:blindspot_app/data/questions_example.dart';
+import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:blindspot_app/screens/explanation_screen.dart';
+
+// Display the question + options
+// Star marking to add to Notebook
+// Keep track of correct answers
+// OnButtonPress action: for checking if the answer is correct or not
+// Submit that takes you to the results
 
 class QuizzScreen extends StatefulWidget {
   const QuizzScreen({Key? key}) : super(key: key);
@@ -35,6 +42,7 @@ class QuizzScreenState extends State<QuizzScreen> {
           child: PageView.builder(
             controller: _controller!,
             onPageChanged: (page) {
+              // checking if all the 10 questions
               if (page == questions.length - 1) {
                 setState(() {
                   btnText = "See Results";
@@ -148,7 +156,8 @@ class QuizzScreenState extends State<QuizzScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ExplanationScreen()));
+                                builder: (context) =>
+                                    const ExplanationScreen()));
 
                         setState(() {
                           btnPressed = [false, false, false, false];

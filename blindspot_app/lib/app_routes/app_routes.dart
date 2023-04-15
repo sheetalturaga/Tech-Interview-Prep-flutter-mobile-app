@@ -1,4 +1,5 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
+import 'package:blindspot_app/screens/data_upload_screen.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:blindspot_app/screens/welcome/landing_screen.dart';
@@ -7,6 +8,7 @@ import 'package:get/get.dart';
 // import '../controllers/page_controllers.dart';
 import '../screens/welcome/welcome_screen.dart';
 import '../services/database_storageService.dart';
+import '../services/database_uploadService.dart';
 
 class AppRoutes {
   static List<GetPage> routesList() => [
@@ -14,6 +16,15 @@ class AppRoutes {
           name: "/",
           page: () => const WelcomeScreen(),
         ),
+        // GetPage(
+        //   name: "/dataupload",
+        //   page: () => DataUploadScreen(),
+        //   binding: BindingsBuilder(
+        //     () {
+        //       Get.put(DatabaseUploadService);
+        //     },
+        //   ),
+        // ),
         GetPage(
           name: "/landingscreen",
           page: () => const LandingScreen(),
@@ -23,7 +34,6 @@ class AppRoutes {
             name: HomeScreen.routeName,
             binding: BindingsBuilder(
               () {
-                Get.put(DatabaseStorageService());
                 Get.put(TopicController());
               },
             )),

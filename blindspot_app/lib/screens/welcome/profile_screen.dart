@@ -127,7 +127,7 @@ class ProfileScreen extends StatelessWidget {
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => const NotebookScreen()),
               );
               // Handle navigation to Notebook screen
               break;

@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 final firestore = FirebaseFirestore.instance;
 //Parent collection
 final questionCollectionRef = firestore.collection("questionsCollection");
+final notebookCollectionRef = firestore.collection('notebook');
 
 // Method to call by passing the file ID and a question Id (as specified in each
 // json file) and creating a new sub collection under each topic

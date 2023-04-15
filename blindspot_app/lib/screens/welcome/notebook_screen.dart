@@ -1,10 +1,27 @@
+import 'package:blindspot_app/screens/welcome/note_explain.dart';
 import 'package:blindspot_app/screens/welcome/profile_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import '../main_menu.dart';
 
-class NoteBookScreen extends StatelessWidget {
-  const NoteBookScreen({super.key});
+class NotebookScreen extends StatefulWidget {
+  const NotebookScreen({super.key});
+
+  @override
+  _NotebookScreenState createState() => _NotebookScreenState();
+}
+
+class _NotebookScreenState extends State<NotebookScreen> {
+  late Stream<QuerySnapshot> notebookSnapshot;
+
+  @override
+  void initState() {
+    super.initState();
+    CollectionReference notebookRef =
+        FirebaseFirestore.instance.collection('Notebook');
+    notebookSnapshot = notebookRef.snapshots();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,85 +67,36 @@ class NoteBookScreen extends StatelessWidget {
               )),
         ),
       ),
-      body: Align(
-        alignment: Alignment.centerLeft,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 1; i <= 3; i++) // Loop from 1 to 3 to create 3 buttons
-              Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Dismissible(
-                      key: Key('p$i'),
-                      onDismissed: (_) {
-                        // Handle button deletion
-                      },
-                      background: Container(
-                        color:
-                            Colors.red, // Customize the delete background color
-                        alignment: Alignment.centerRight,
-                        child: const Padding(
-                          padding: EdgeInsets.only(right: 16.0),
-                          child: Icon(
-                            Icons.delete,
-                            color: Colors.white,
-                          ),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: notebookSnapshot,
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          }
+          switch (snapshot.connectionState) {
+            case ConnectionState.waiting:
+              return Text('Loading...');
+            default:
+              return ListView.builder(
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (BuildContext context, int index) {
+                  DocumentSnapshot question = snapshot.data!.docs[index];
+                  return ElevatedButton(
+                    child: Text('P${index + 1}'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              NoteExplainScreen(questionId: question.id),
                         ),
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Handle button press
-                        },
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(double.infinity, 64),
-                          backgroundColor: Colors.lightBlueAccent,
-                        ),
-                        child: Row(
-                          children: [
-                            const Icon(Icons.delete,
-                                size: 16), // Add delete icon here
-                            const SizedBox(width: 8),
-                            Text(
-                              'p$i',
-                              textAlign: TextAlign.left,
-                              style: const TextStyle(fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                      height: 16), // Add some spacing between the buttons
-                ],
-              ),
-            const SizedBox(height: 60), // Add spacing below the buttons
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.arrow_back,
-                      color: Colors.lightBlue, size: 30),
-                  onPressed: () {
-                    // Handle back button press
-                  },
-                ),
-                const SizedBox(
-                    width: 16), // Add some spacing between the buttons
-                IconButton(
-                  icon: const Icon(Icons.arrow_forward,
-                      color: Colors.lightBlue, size: 30),
-                  onPressed: () {
-                    // Handle forward button press
-                  },
-                ),
-              ],
-            ),
-          ],
-        ),
+                      );
+                    },
+                  );
+                },
+              );
+          }
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -145,7 +113,7 @@ class NoteBookScreen extends StatelessWidget {
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => NotebookScreen()),
               );
               // Handle navigation to Notebook screen
               break;

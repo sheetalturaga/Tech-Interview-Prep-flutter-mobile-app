@@ -17,4 +17,5 @@ class NotebookModel {
   String? question;
   String? correctOption;
   String? explanation;
+  String? userId;
 }

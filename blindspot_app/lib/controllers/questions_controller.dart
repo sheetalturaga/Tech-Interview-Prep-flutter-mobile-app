@@ -11,7 +11,7 @@ import '../firestore_references/collection_refs.dart';
 class QuestionsController extends GetxController {
   final loadStatus = LoadStatus.loading.obs;
   late QuizModel _quizModel;
-  final _listOfAllQuestionsInTopic = <Questions>[];
+  final listOfAllQuestionsInTopic = <Questions>[];
   Rxn<Questions> currentQuestion = Rxn<Questions>();
 
   @override
@@ -84,11 +84,12 @@ class QuestionsController extends GetxController {
         // into the 'list of all questions in topic' variable
         if (topicBasedQuestionsInModel.questions != null &&
             topicBasedQuestionsInModel.questions!.isNotEmpty) {
-          _listOfAllQuestionsInTopic
+          listOfAllQuestionsInTopic
               .assignAll(topicBasedQuestionsInModel.questions!);
 
           currentQuestion.value = topicBasedQuestionsInModel.questions![0];
-          // print(topicBasedQuestionsInModel.questions![0].question);
+          print(
+              "Questions in Topic: ${topicBasedQuestionsInModel.questions!.length}");
 
           // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;

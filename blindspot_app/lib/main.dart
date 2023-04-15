@@ -1,7 +1,10 @@
 import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/bindings/appinit_bindings.dart';
 import 'package:blindspot_app/constants.dart';
+import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/firebase_options.dart';
+import 'package:blindspot_app/screens/data_upload_screen.dart';
+import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -20,7 +23,6 @@ void main() async {
     xfbml: true,
     version: "v15.0",
   );
-
   runApp(const MyApp());
 }
 
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
-      // home: HomeScreen(),
+      // home: const QuestionDisplayScreen(),
       // home: DataUploadScreen(),
     );
   }

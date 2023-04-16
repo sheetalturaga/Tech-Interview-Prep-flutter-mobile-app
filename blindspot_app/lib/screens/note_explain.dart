@@ -1,5 +1,5 @@
 import 'package:blindspot_app/screens/main_menu.dart';
-import 'package:blindspot_app/screens/welcome/profile_screen.dart';
+import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
@@ -97,7 +97,7 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
                 child: Text(
-                  'P${data['questionId']}. ${data['question']}',
+                  '${data['questionId']}. ${data['question']}',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,

@@ -1,4 +1,4 @@
-import 'package:blindspot_app/models/quiz_model.dart';
+import 'package:blindspot_app/model/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';

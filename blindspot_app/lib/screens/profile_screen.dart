@@ -1,27 +1,12 @@
-import 'package:blindspot_app/screens/welcome/note_explain.dart';
-import 'package:blindspot_app/screens/welcome/profile_screen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:flutter/material.dart';
+
 import '../../custom_widgets/custom_appbar.dart';
-import '../main_menu.dart';
+import 'main_menu.dart';
+import 'notebook_screen.dart';
 
-class NotebookScreen extends StatefulWidget {
-  const NotebookScreen({super.key});
-
-  @override
-  _NotebookScreenState createState() => _NotebookScreenState();
-}
-
-class _NotebookScreenState extends State<NotebookScreen> {
-  late Stream<QuerySnapshot> notebookSnapshot;
-
-  @override
-  void initState() {
-    super.initState();
-    CollectionReference notebookRef =
-        FirebaseFirestore.instance.collection('Notebook');
-    notebookSnapshot = notebookRef.snapshots();
-  }
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +31,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(10),
                             child: IconButton(
-                              icon: const Icon(Icons.book),
+                              icon: const Icon(Icons.person),
                               onPressed: () {},
                               color: Colors.white,
                             ),
@@ -60,43 +45,72 @@ class _NotebookScreenState extends State<NotebookScreen> {
                   const Center(
                       heightFactor: 5,
                       child: Text(
-                        "My Notebook",
+                        "User name",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       )),
                 ],
               )),
         ),
       ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: notebookSnapshot,
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}');
-          }
-          switch (snapshot.connectionState) {
-            case ConnectionState.waiting:
-              return Text('Loading...');
-            default:
-              return ListView.builder(
-                itemCount: snapshot.data!.docs.length,
-                itemBuilder: (BuildContext context, int index) {
-                  DocumentSnapshot question = snapshot.data!.docs[index];
-                  return ElevatedButton(
-                    child: Text('P${index + 1}'),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              NoteExplainScreen(questionId: question.id),
-                        ),
-                      );
-                    },
-                  );
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width *
+                  0.6, // Set button width to 80% of screen width
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle process button press
                 },
-              );
-          }
-        },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(
+                      double.infinity, 64), // Set button height to 64
+                ),
+                child: const Text('Process'),
+              ),
+            ),
+            const SizedBox(height: 16), // Add some spacing between the buttons
+            Container(
+              width: MediaQuery.of(context).size.width *
+                  0.6, // Set button width to 80% of screen width
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle setting button press
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(
+                      double.infinity, 64), // Set button height to 64
+                ),
+                child: const Text('Setting'),
+              ),
+            ),
+            const SizedBox(height: 35),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const AboutScreen();
+                    },
+                  ),
+                );
+              },
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all(Colors.blue),
+                textStyle:
+                    MaterialStateProperty.all(const TextStyle(fontSize: 16)),
+                padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+              ),
+              child: const Text("Logout"),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -113,7 +127,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => NotebookScreen()),
+                MaterialPageRoute(builder: (context) => const NotebookScreen()),
               );
               // Handle navigation to Notebook screen
               break;

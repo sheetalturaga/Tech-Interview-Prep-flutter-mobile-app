@@ -9,13 +9,3 @@ class AnswerModel {
   Map<String, bool>? answers;
   AnswerModel(this.question, this.answers);
 }
-
-class NotebookModel {
-  String? questionId;
-  String? topicId;
-  String? topic;
-  String? question;
-  String? correctOption;
-  String? explanation;
-  String? userId;
-}

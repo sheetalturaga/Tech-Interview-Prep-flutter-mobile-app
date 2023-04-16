@@ -1,6 +1,6 @@
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/landing_screen.dart';
-import 'package:blindspot_app/screens/note_explain.dart';
+import 'package:blindspot_app/screens/notebook_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';

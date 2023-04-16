@@ -39,7 +39,7 @@ class AppRoutes {
             )),
         GetPage(
             name: "/explanationscreen",
-            page: () => ExplanationScreen(),
+            page: () => const ExplanationScreen(),
             binding: BindingsBuilder(
               () {
                 Get.put(QuestionsController());

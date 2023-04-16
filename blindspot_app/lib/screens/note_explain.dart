@@ -7,9 +7,9 @@ import 'notebook_screen.dart';
 
 class NoteExplainScreen extends StatefulWidget {
   const NoteExplainScreen({
-    super.key,
+    Key? key,
     required this.questionId,
-  });
+  }) : super(key: key);
 
   final String questionId;
 
@@ -80,11 +80,11 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
         builder: (BuildContext context,
             AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
 
           if (!snapshot.hasData) {
-            return Center(child: Text('No data found.'));
+            return const Center(child: Text('No data found.'));
           }
 
           final data = snapshot.data!.data()!;

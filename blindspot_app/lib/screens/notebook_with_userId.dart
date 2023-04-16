@@ -26,7 +26,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
     User? user = auth.currentUser;
     userId = user!.uid;
     CollectionReference notebookRef =
-        FirebaseFirestore.instance.collection('Notebook');
+        FirebaseFirestore.instance.collection('notebook');
     notebookSnapshot =
         notebookRef.where('userId', isEqualTo: userId).snapshots();
   }
@@ -81,9 +81,9 @@ class _NotebookScreenState extends State<NotebookScreen> {
           if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}');
           } else if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text('Loading...');
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
-            return Text('No data found');
+            return const Center(child: Text('No data found'));
           } else {
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
@@ -98,7 +98,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => NoteExplainScreen(
-                            questionId: notebookModel.questionId!),
+                          questionId: notebookModel.questionId!,
+                        ),
                       ),
                     );
                   },

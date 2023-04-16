@@ -1,5 +1,6 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/screens/data_upload_screen.dart';
+import 'package:blindspot_app/screens/explanation_screen.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
@@ -32,6 +33,14 @@ class AppRoutes {
         GetPage(
             name: "/questiondisplayscreen",
             page: () => const QuestionDisplayScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(QuestionsController());
+              },
+            )),
+        GetPage(
+            name: "/explanationscreen",
+            page: () => ExplanationScreen(),
             binding: BindingsBuilder(
               () {
                 Get.put(QuestionsController());

@@ -10,6 +10,9 @@ import '../firestore_references/collection_refs.dart';
 import '../widgets/content_area_size.dart';
 
 // Same as the quizz screen dart file - revised UI
+// // Next Question button ->
+// Quit button -> homeScreen
+// Counter for the number of questions
 
 class QuestionDisplayScreen extends GetView<QuestionsController> {
   const QuestionDisplayScreen({super.key});
@@ -68,7 +71,6 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                                   },
                                 );
                               }),
-                          // const SizedBox(height: 10),
                           Align(
                             alignment: Alignment.bottomCenter,
                             child: SizedBox(
@@ -76,9 +78,13 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                               child: Padding(
                                 padding: const EdgeInsets.all(30.0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.offAllNamed(
+                                          ExplanationScreen.routeName);
+                                    },
                                     child: const Text(
                                       "Submit",
+                                      // verify the answer
                                       style: TextStyle(color: Colors.black),
                                     )),
                               ),
@@ -87,7 +93,7 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                         ],
                       ),
                     ),
-                  ))
+                  )),
               ],
             )),
       ),

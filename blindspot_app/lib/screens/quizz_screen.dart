@@ -156,8 +156,7 @@ class QuizzScreenState extends State<QuizzScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const ExplanationScreen()));
+                                builder: (context) => ExplanationScreen()));
 
                         setState(() {
                           btnPressed = [false, false, false, false];

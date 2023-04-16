@@ -53,6 +53,7 @@ dependencies:
   cached_network_image: ^3.2.3
   firebase_storage: ^11.1.0
   percent_indicator: ^4.2.3
+  circles_background: ^0.0.2
   
 
 dev_dependencies:

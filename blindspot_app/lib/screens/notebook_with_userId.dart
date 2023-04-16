@@ -1,12 +1,35 @@
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
+import 'package:blindspot_app/model/notebook_model.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/landing_screen.dart';
+import 'package:blindspot_app/screens/note_explain.dart';
+import 'package:blindspot_app/screens/profile_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../../custom_widgets/custom_appbar.dart';
-import '../main_menu.dart';
-import 'notebook_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class NotebookScreen extends StatefulWidget {
+  const NotebookScreen({Key? key}) : super(key: key);
+
+  @override
+  _NotebookScreenState createState() => _NotebookScreenState();
+}
+
+class _NotebookScreenState extends State<NotebookScreen> {
+  late Stream<QuerySnapshot> notebookSnapshot;
+  late String userId;
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user = auth.currentUser;
+    userId = user!.uid;
+    CollectionReference notebookRef =
+        FirebaseFirestore.instance.collection('notebook');
+    notebookSnapshot =
+        notebookRef.where('userId', isEqualTo: userId).snapshots();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(10),
                             child: IconButton(
-                              icon: const Icon(Icons.person),
+                              icon: const Icon(Icons.book),
                               onPressed: () {},
                               color: Colors.white,
                             ),
@@ -45,72 +68,46 @@ class ProfileScreen extends StatelessWidget {
                   const Center(
                       heightFactor: 5,
                       child: Text(
-                        "User name",
+                        "My Notebook",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       )),
                 ],
               )),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Handle process button press
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(
-                      double.infinity, 64), // Set button height to 64
-                ),
-                child: const Text('Process'),
-              ),
-            ),
-            const SizedBox(height: 16), // Add some spacing between the buttons
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Handle setting button press
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(
-                      double.infinity, 64), // Set button height to 64
-                ),
-                child: const Text('Setting'),
-              ),
-            ),
-            const SizedBox(height: 35),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const AboutScreen();
-                    },
-                  ),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: notebookSnapshot,
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
+            return const Center(child: Text('No data found'));
+          } else {
+            return ListView.builder(
+              itemCount: snapshot.data!.docs.length,
+              itemBuilder: (BuildContext context, int index) {
+                DocumentSnapshot question = snapshot.data!.docs[index];
+                NotebookModel notebookModel =
+                    NotebookModel.fromFirestore(question);
+                return ElevatedButton(
+                  child: Text('P${index + 1}'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NoteExplainScreen(
+                          questionId: notebookModel.questionId!,
+                        ),
+                      ),
+                    );
+                  },
                 );
               },
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.blue),
-                textStyle:
-                    MaterialStateProperty.all(const TextStyle(fontSize: 16)),
-                padding: MaterialStateProperty.all(
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
-              ),
-              child: const Text("Logout"),
-            ),
-          ],
-        ),
+            );
+          }
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -121,13 +118,13 @@ class ProfileScreen extends StatelessWidget {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MainMenu()),
+                MaterialPageRoute(builder: (context) => const LandingScreen()),
               );
               break;
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => const NotebookScreen()),
               );
               // Handle navigation to Notebook screen
               break;

@@ -1,6 +1,6 @@
 import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen.dart';
+import 'package:blindspot_app/screens/about_screen.dart';
+import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -77,11 +77,13 @@ class LandingScreen extends StatelessWidget {
                       //TODO: Implement button functionality
                     },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(const Size(150, 50)),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(150, 50)),
                       padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
-                      textStyle:
-                          MaterialStateProperty.all(const TextStyle(fontSize: 20)),
+                          const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 24)),
+                      textStyle: MaterialStateProperty.all(
+                          const TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                     child: const Text("Login"),
@@ -91,12 +93,13 @@ class LandingScreen extends StatelessWidget {
                     // TODO:Implement signup button functionality
                     onPressed: () {},
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(const Size(150, 50)),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(150, 50)),
                       padding: MaterialStateProperty.all(
                           const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 24)),
-                      textStyle:
-                          MaterialStateProperty.all(const TextStyle(fontSize: 20)),
+                      textStyle: MaterialStateProperty.all(
+                          const TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                     child: const Text("Sign Up"),
@@ -122,10 +125,11 @@ class LandingScreen extends StatelessWidget {
                     },
                     style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all(Colors.blue),
-                      textStyle:
-                          MaterialStateProperty.all(const TextStyle(fontSize: 16)),
+                      textStyle: MaterialStateProperty.all(
+                          const TextStyle(fontSize: 16)),
                       padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                          const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 24)),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
                     ),

@@ -1,23 +1,34 @@
 import 'package:blindspot_app/screens/main_menu.dart';
-import 'package:blindspot_app/screens/welcome/profile_screen.dart';
+import 'package:blindspot_app/screens/profile_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'notebook_screen.dart';
 
 class NoteExplainScreen extends StatefulWidget {
-  const NoteExplainScreen({super.key});
+  const NoteExplainScreen({
+    Key? key,
+    required this.questionId,
+  }) : super(key: key);
+
+  final String questionId;
 
   @override
   _NoteExplainScreenState createState() => _NoteExplainScreenState();
 }
 
 class _NoteExplainScreenState extends State<NoteExplainScreen> {
-  bool _showText = true;
+  late Stream<DocumentSnapshot<Map<String, dynamic>>> _noteStream;
 
-  void _deleteText() {
-    setState(() {
-      _showText = false;
-    });
+  @override
+  void initState() {
+    super.initState();
+
+    // Set up a Firestore stream for the selected question
+    _noteStream = FirebaseFirestore.instance
+        .collection('notebook')
+        .doc(widget.questionId)
+        .snapshots();
   }
 
   @override
@@ -64,65 +75,70 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
               )),
         ),
       ),
-      body: Column(
-        children: [
-          if (_showText)
-            Container(
-              alignment: Alignment.topLeft,
-              color: Colors.lightBlue,
-              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-              child: const Text(
-                "P1. which of the following is not a valid access of Java",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          const SizedBox(height: 16),
-          if (_showText)
-            Container(
-              alignment: Alignment.topLeft,
-              color: Colors.lightBlue,
-              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-              child: const Text(
-                "Explanation: Access modifier in Java are keywords that determine the accessibility of a classs, method or varibles",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          IconButton(
-            onPressed: _deleteText,
-            icon: const Icon(
-              Icons.delete,
-              color: Colors.lightBlue,
-            ),
-          ),
-          const SizedBox(height: 60), // Add spacing below the buttons
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        stream: _noteStream,
+        builder: (BuildContext context,
+            AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (!snapshot.hasData) {
+            return const Center(child: Text('No data found.'));
+          }
+
+          final data = snapshot.data!.data()!;
+
+          return Column(
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.lightBlue, size: 30),
-                onPressed: () {
-                  // Handle back button press
-                },
+              Container(
+                alignment: Alignment.topLeft,
+                color: Colors.lightBlue,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                child: Text(
+                  '${data['questionId']}. ${data['question']}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              const SizedBox(width: 16), // Add some spacing between the buttons
-              IconButton(
-                icon: const Icon(Icons.arrow_forward,
-                    color: Colors.lightBlue, size: 30),
-                onPressed: () {
-                  // Handle forward button press
-                },
+              const SizedBox(height: 16),
+              Container(
+                alignment: Alignment.topLeft,
+                color: Colors.lightBlue,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                child: Text(
+                  'Correct Option: ${data['correctOption']}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
+              const SizedBox(height: 16),
+              Container(
+                alignment: Alignment.topLeft,
+                color: Colors.lightBlue,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                child: Text(
+                  'Explanation: ${data['explanation']}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 60),
             ],
-          ),
-        ],
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -139,7 +155,7 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NoteBookScreen()),
+                MaterialPageRoute(builder: (context) => const NotebookScreen()),
               );
               // Handle navigation to Notebook screen
               break;

@@ -1,10 +1,9 @@
-import 'package:blindspot_app/models/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:blindspot_app/models/quiz_model.dart';
 
 import '../firestore_references/collection_refs.dart';
+import '../model/quiz_model.dart';
 
 // Controller class to extact the data from the database to populating the
 // Questions page

@@ -1,9 +1,9 @@
-import 'package:blindspot_app/model/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
+import '../model/quiz_model.dart';
 
 // Controller class to extact the data from the database to populating the
 // Questions page
@@ -12,7 +12,6 @@ class QuestionsController extends GetxController {
   final loadStatus = LoadStatus.loading.obs;
   late QuizModel _quizModel;
   final listOfAllQuestionsInTopic = <Questions>[];
-  Rxn<Questions> currentQuestion = Rxn<Questions>();
 
   @override
   void onReady() {
@@ -44,15 +43,6 @@ class QuestionsController extends GetxController {
             options: data['options'],
             explanation: data['explanation']));
       }
-
-      // print("Questions In Snapshot: $questionsFromTopicList");
-
-      // final questionsFromTopicList = questionsInSnapshot.docs
-      //     .map((json) => Questions.fromSnapshot(json))
-      //     .toList();
-
-      // print("Questions From Topic: ${questionsFromTopicList}");
-
       topicBasedQuestionsInModel.questions = questionsFromTopicList;
 
       // Step 2 traversing through all questions in that particular topic
@@ -67,9 +57,6 @@ class QuestionsController extends GetxController {
                 .collection('options')
                 .get();
         final listOfOptions = <Options>[];
-        // final answersList = answersInSnapshot.docs
-        //     .map((options) => Options.fromSnapshot(options))
-        //     .toList();
         for (var j in answersInSnapshot.docs) {
           final data = j.data();
           listOfOptions.add(Options(
@@ -86,11 +73,8 @@ class QuestionsController extends GetxController {
             topicBasedQuestionsInModel.questions!.isNotEmpty) {
           listOfAllQuestionsInTopic
               .assignAll(topicBasedQuestionsInModel.questions!);
-
-          currentQuestion.value = topicBasedQuestionsInModel.questions![0];
-          print(
-              "Questions in Topic: ${topicBasedQuestionsInModel.questions!.length}");
-
+          currQ.value = topicBasedQuestionsInModel.questions![0];
+          print("currQ: ${currQ.value!.id}");
           // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;
         } else {
@@ -102,5 +86,22 @@ class QuestionsController extends GetxController {
         print(e.toString());
       }
     }
+  }
+
+  // Rxn reactive class is a list type
+  Rxn<Questions> currQ = Rxn<Questions>();
+  final questionIndex = 0.obs;
+
+  // The option selected by the user
+  void choseOption(String? answerProvided) {
+    currQ.value!.chosenOption = answerProvided;
+    // list to update that points to QuestionController/GetBuilder
+    update(['options_list', 'optionReviewList']);
+  }
+
+  void nextQuestion() {
+    if (questionIndex.value >= listOfAllQuestionsInTopic.length - 1) return;
+    questionIndex.value++;
+    currQ.value = listOfAllQuestionsInTopic[questionIndex.value];
   }
 }

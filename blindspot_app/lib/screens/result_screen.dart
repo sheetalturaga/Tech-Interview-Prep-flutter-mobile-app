@@ -6,6 +6,8 @@ class ResultScreen extends StatefulWidget {
   final int score;
   const ResultScreen(this.score, {Key? key}) : super(key: key);
 
+  static const String routeName = "/resultscreen";
+
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }

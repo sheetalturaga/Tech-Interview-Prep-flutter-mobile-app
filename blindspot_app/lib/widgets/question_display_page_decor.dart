@@ -1,3 +1,4 @@
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 // import 'package:shimmer/shimmer.dart';
 
@@ -12,7 +13,7 @@ class QuestionDisplayPageDecor extends StatelessWidget {
         Positioned.fill(
           child: Container(
             decoration: const BoxDecoration(
-              color: Color(0XFF0C63E7),
+              color: mainAppColor,
               //   gradient: LinearGradient(
               // colors: [Color(0xFF07C8F9), Color(0XFF0C63E7), Color(0xFF07C8F9)],
             ),

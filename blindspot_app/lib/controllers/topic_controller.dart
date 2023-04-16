@@ -35,11 +35,11 @@ class TopicController extends GetxController {
       allTopics.assignAll(topicsDataList);
       // print(topicsDataList);
       for (var topic in topicsDataList) {
-        // Gives us the complete image path from the storage
-        final imgRef =
-            await Get.find<DatabaseStorageService>().getImage(topic.topic);
+        // // Gives us the complete image path from the storage
+        // final imgRef =
+        //     await Get.find<DatabaseStorageService>().getImage(topic.topic);
 
-        topic.imageUrl = imgRef;
+        // topic.imageUrl = imgRef;
 
         allTopics.assignAll(topicsDataList);
         // print(allTopics.toString());

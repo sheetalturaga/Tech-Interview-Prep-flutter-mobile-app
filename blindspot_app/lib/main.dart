@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      // getPages: AppRoutes.routesList(),
-      home: const QuestionDisplayScreen(),
+      getPages: AppRoutes.routesList(),
+      // home: const QuestionDisplayScreen(),
       // home: QuizzScreen(),
     );
   }

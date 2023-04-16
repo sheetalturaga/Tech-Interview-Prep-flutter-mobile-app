@@ -88,12 +88,18 @@ class TopicCard extends GetView<TopicController> {
             child: Stack(
               children: [
                 Container(
-                  height: 150,
+                  height: 100,
                   decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       gradient: LinearGradient(colors: [
-                    Color(0xFF0061ff),
-                    Color(0xFF60efff),
-                  ])),
+                        // Color(0xFF0061ff),
+                        // // Color(0xFF60efff),
+                        // Color(0xff30c5d2),
+                        // Color(0xFF8711c1),
+                        Color(0xFF767689),
+                        Color(0xFF767689),
+                        // Color(0xFF7BAFD4),
+                      ])),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +108,7 @@ class TopicCard extends GetView<TopicController> {
                           model.topic,
                           style: const TextStyle(
                               fontSize: 18,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(
@@ -112,7 +118,7 @@ class TopicCard extends GetView<TopicController> {
                           model.description,
                           style: const TextStyle(
                               fontSize: 13,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         )
                       ],

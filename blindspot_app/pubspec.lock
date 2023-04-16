@@ -57,14 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  circles_background:
-    dependency: "direct main"
-    description:
-      name: circles_background
-      sha256: "1fcd00e2a2080dc81afda89a9b3b6df638256a37b5d34bfa8bd669e09db5ed5e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
   clock:
     dependency: transitive
     description:
@@ -510,7 +502,7 @@ packages:
     source: hosted
     version: "2.4.0"
   google_sign_in_web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: google_sign_in_web
       sha256: "7e0ec507f4752383a6daa67d0cc775253cfc3b1d87907e7004e2c1b99c0a723f"

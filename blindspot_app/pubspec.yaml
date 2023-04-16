@@ -53,7 +53,7 @@ dependencies:
   cached_network_image: ^3.2.3
   firebase_storage: ^11.1.0
   percent_indicator: ^4.2.3
-  circles_background: ^0.0.2
+  google_sign_in_web: ^0.12.0
   
 
 dev_dependencies:
@@ -81,6 +81,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - assets/images/
+      - assets/images/BLINDSPOT.jpeg
       - assets/database/
       - assets/database/behavioral_db.json
       - assets/database/dataInterpretation_db.json

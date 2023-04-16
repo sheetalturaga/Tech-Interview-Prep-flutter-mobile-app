@@ -10,6 +10,7 @@ final realTimeFirebase = FirebaseDatabase.instance;
 
 //Parent collection
 final questionCollectionRef = firestore.collection("questionsCollection");
+final notebookCollectionRef = firestore.collection('notebook');
 
 // this is how I refer db to user collection
 final usersRef = firestore.collection("users");

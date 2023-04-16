@@ -6,9 +6,7 @@ import 'package:blindspot_app/firebase_options.dart';
 import 'package:blindspot_app/screens/data_upload_screen.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
-import 'package:blindspot_app/screens/welcome/landing_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen.dart';
-import 'package:blindspot_app/screens/welcome/welcome_screen.dart';
+import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,8 +42,8 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      getPages: AppRoutes.routesList(),
-      // home: const LandingScreen(),
+      // getPages: AppRoutes.routesList(),
+      home: const NotebookScreen(),
       // home: QuizzScreen(),
     );
   }

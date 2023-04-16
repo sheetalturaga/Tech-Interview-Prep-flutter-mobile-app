@@ -1,5 +1,5 @@
 import 'package:blindspot_app/controllers/topic_controller.dart';
-import 'package:blindspot_app/models/quiz_model.dart';
+import 'package:blindspot_app/model/quiz_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

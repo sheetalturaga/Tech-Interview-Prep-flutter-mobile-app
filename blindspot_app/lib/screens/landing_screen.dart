@@ -1,6 +1,6 @@
 import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/welcome/about_screen.dart';
-import 'package:blindspot_app/screens/welcome/login_screen.dart';
+import 'package:blindspot_app/screens/about_screen.dart';
+import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -90,6 +90,29 @@ class LandingScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
                   ElevatedButton(
+                    // TODO:Implement signup button functionality
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(150, 50)),
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 24)),
+                      textStyle: MaterialStateProperty.all(
+                          const TextStyle(fontSize: 20)),
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    child: const Text("Sign Up"),
+                  ),
+                  const SizedBox(height: 25),
+                  ArrowButton(
+                    onTap: () => {
+                      Get.offAndToNamed(HomeScreen.routeName),
+                    },
+                    childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
+                  ),
+                  const SizedBox(height: 100),
+                  TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -102,14 +125,14 @@ class LandingScreen extends StatelessWidget {
                       //TODO: Implement button functionality
                     },
                     style: ButtonStyle(
-                      minimumSize:
-                          MaterialStateProperty.all(const Size(150, 50)),
+                      foregroundColor: MaterialStateProperty.all(Colors.blue),
+                      textStyle: MaterialStateProperty.all(
+                          const TextStyle(fontSize: 16)),
                       padding: MaterialStateProperty.all(
                           const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 24)),
-                      textStyle: MaterialStateProperty.all(
-                          const TextStyle(fontSize: 20)),
-                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
                     ),
                     child: const Text("About"),
                   ),

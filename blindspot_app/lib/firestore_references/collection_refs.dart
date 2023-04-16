@@ -11,8 +11,8 @@ final realTimeFirebase = FirebaseDatabase.instance;
 //Parent collection
 final questionCollectionRef = firestore.collection("questionsCollection");
 
-// real time reference to questions collection
-final qcRef = realTimeFirebase.ref("questionsCollection");
+// this is how I refer db to user collection
+final usersRef = firestore.collection("users");
 
 // Method to call by passing the file ID and a question Id (as specified in each
 // json file) and creating a new sub collection under each topic

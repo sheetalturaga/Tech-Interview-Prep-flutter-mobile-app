@@ -43,7 +43,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
           child: Container(
               height: 250,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
+              color: const Color(0xFF1683E9),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

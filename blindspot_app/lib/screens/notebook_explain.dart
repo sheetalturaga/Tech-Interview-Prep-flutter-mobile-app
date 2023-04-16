@@ -1,3 +1,4 @@
+
 import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

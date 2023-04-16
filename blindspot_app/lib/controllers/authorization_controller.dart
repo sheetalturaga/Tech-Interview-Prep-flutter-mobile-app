@@ -69,12 +69,12 @@ class AuthorizationController extends GetxController {
 
   Future<void> SignInWithGoogle() async {
     final GoogleSignIn _googleSignIn = GoogleSignIn(
-      clientId:
-          '191832806771-nclver091dsstoqaj7iggmh05bkph0qt.apps.googleusercontent.com',
-      scopes: [
-        'email',
-      ],
-    );
+        // clientId:
+        //     '191832806771-nclver091dsstoqaj7iggmh05bkph0qt.apps.googleusercontent.com',
+        // scopes: [
+        //   'email',
+        // ],
+        );
     try {
       GoogleSignInAccount? account = await _googleSignIn.signIn();
       if (account != null) {
@@ -122,5 +122,4 @@ class AuthorizationController extends GetxController {
     });
     print("saveUserToDatabase completed");
   }
-  
 }

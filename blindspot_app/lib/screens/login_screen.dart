@@ -84,13 +84,6 @@ class LoginScreen extends GetView<AuthorizationController> {
                         onPressed: () async {
                           User? user = await controller.signInWithGoogle(
                               context: context);
-                          if (user != null) {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => QuizzScreen(),
-                              ),
-                            );
-                          }
                         },
                       ),
                     );
@@ -102,8 +95,9 @@ class LoginScreen extends GetView<AuthorizationController> {
                     width: 200,
                     child: SignInButton(
                       Buttons.Facebook,
-                      onPressed: () {
-                        // _login();
+                      onPressed: () async {
+                        User? user = await controller.signInWithFacebook(
+                            context: context);
                       },
                     ),
                   ),

@@ -21,12 +21,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   InitAppBindings().dependencies();
-  await FacebookAuth.instance.webAndDesktopInitialize(
-    appId: "6506823019329362",
-    cookie: true,
-    xfbml: true,
-    version: "v15.0",
-  );
   Get.put(DatabaseStorageService());
   runApp(const MyApp());
 }

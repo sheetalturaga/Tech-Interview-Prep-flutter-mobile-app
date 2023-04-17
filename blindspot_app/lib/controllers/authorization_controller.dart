@@ -1,14 +1,9 @@
-// import 'dart:html';
-// import 'dart:js';
-
 import 'package:blindspot_app/firestore_references/collection_refs.dart';
-// import 'package:blindspot_app/screens/home_screen.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:google_sign_in_web/google_sign_in_web.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
@@ -26,48 +21,6 @@ class AuthorizationController extends GetxController {
   void initialAuth() {
     authorization = FirebaseAuth.instance;
   }
-
-  // Future<void> SignInWithGoogle() async {
-  //   try {
-  //     final account = await GoogleSignIn(
-  //       clientId:
-  //           '191832806771-nclver091dsstoqaj7iggmh05bkph0qt.apps.googleusercontent.com',
-  //       scopes: [
-  //         'email',
-  //       ],
-  //     ).signIn();
-  //     if (account != null) {
-  //       // TODO: Handle successful Google Sign-In
-
-  //       Get.offAllNamed(HomeScreen.routeName);
-  //       // ignore: use_build_context_synchronously
-  //       // Navigator.push(
-  //       //   context as BuildContext,
-  //       //   MaterialPageRoute(
-  //       //     builder: (context) {
-  //       //       return const HomeScreen();
-  //       //     },
-  //       //   ),
-  //       // );
-  //       final auth = FirebaseAuth.instance;
-  //       final googleAuth = await account.authentication;
-  //       final credential = GoogleAuthProvider.credential(
-  //         accessToken: googleAuth.accessToken,
-  //         idToken: googleAuth.idToken,
-  //       );
-  //       final userCredential = await auth.signInWithCredential(credential);
-  //       final user = userCredential.user;
-  //       if (user != null) {
-  //         await saveUserToDatabase(account, user.uid);
-  //         Get.offAllNamed(HomeScreen.routeName);
-  //       }
-  //     } else {
-  //       // TODO: Handle failed Google Sign-In
-  //     }
-  //   } catch (error) {
-  //     print(error);
-  //   }
-  // }
 
   static SnackBar customSnackBar({required String content}) {
     return SnackBar(
@@ -92,7 +45,7 @@ class AuthorizationController extends GetxController {
 
         user = userCredential.user!;
         await saveUserToDatabase(user);
-        // Get.offAllNamed(HomeScreen.routeName);
+        Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
       }
@@ -116,7 +69,7 @@ class AuthorizationController extends GetxController {
 
           user = userCredential.user;
           await saveUserToDatabase(user!);
-          // Get.offAllNamed(HomeScreen.routeName);
+          Get.offAllNamed(HomeScreen.routeName);
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -164,7 +117,7 @@ class AuthorizationController extends GetxController {
 
         user = userCredential.user;
         await saveUserToDatabase(user!);
-        // Get.offAllNamed(HomeScreen.routeName);
+        Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
       }
@@ -182,7 +135,7 @@ class AuthorizationController extends GetxController {
 
         user = userCredential.user!;
         await saveUserToDatabase(user);
-        // Get.offAllNamed(HomeScreen.routeName);
+        Get.offAllNamed(HomeScreen.routeName);
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -209,14 +162,6 @@ class AuthorizationController extends GetxController {
     return user;
   }
 
-  // save user to database
-  // Future<void> saveUserToDatabase(GoogleSignInAccount account) async {
-  //   usersRef.doc(account.email).set({
-  //     "email": account.email,
-  //     "name": account.displayName,
-  //     "profilepic": account.~l
-  //   });
-  // }
   Future<void> saveUserToDatabase(User user) async {
     print("saveUserToDatabase called with email: ${user.email}");
     await usersRef.doc(user.email).set({

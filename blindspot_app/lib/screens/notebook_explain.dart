@@ -1,4 +1,3 @@
-
 import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -36,7 +35,7 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 300,
+        toolbarHeight: 200,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
@@ -44,24 +43,19 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
           child: Container(
               height: 250,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
+              color: const Color(0xFF1683E9),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       Align(
                           alignment: Alignment.centerRight,
                           child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: IconButton(
-                              icon: const Icon(Icons.book),
-                              onPressed: () {},
-                              color: Colors.white,
-                            ),
+                            padding: EdgeInsets.all(10),
                           )),
-                      const Spacer(),
-                      const Align(
+                      Spacer(),
+                      Align(
                         alignment: Alignment.center,
                       ),
                     ],
@@ -93,46 +87,53 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
           return Column(
             children: [
               Container(
-                alignment: Alignment.topLeft,
-                color: Colors.lightBlue,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-                child: Text(
-                  '${data['questionId']}. ${data['question']}',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                alignment: Alignment.centerLeft,
+                color: const Color(0xFF1683E9),
+                margin: const EdgeInsets.fromLTRB(50, 5, 50, 5),
+                padding: const EdgeInsets.symmetric(
+                    vertical: 10), // increased vertical padding
+                child: Center(
+                  child: Text(
+                    '${data['question']}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 16),
               Container(
-                alignment: Alignment.topLeft,
-                color: Colors.lightBlue,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-                child: Text(
-                  'Correct Option: ${data['correctOption']}',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                // alignment: Alignment.topLeft,
+                color: const Color(0xFF1683E9),
+                margin: const EdgeInsets.fromLTRB(150, 5, 150, 5),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Center(
+                  child: Text(
+                    'Correct Option: ${data['correctOption']}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 16),
               Container(
-                alignment: Alignment.topLeft,
-                color: Colors.lightBlue,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-                child: Text(
-                  'Explanation: ${data['explanation']}',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                // alignment: Alignment.topLeft,
+                color: const Color(0xFF1683E9),
+                margin: const EdgeInsets.fromLTRB(50, 5, 50, 5),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Center(
+                  child: Text(
+                    'Explanation: ${data['explanation']}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

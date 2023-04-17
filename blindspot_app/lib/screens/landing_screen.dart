@@ -117,7 +117,6 @@ class LandingScreen extends StatelessWidget {
                     childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
                   ),
                   const SizedBox(height: 100),
-
                   const SizedBox(height: 25),
                   ArrowButton(
                     onTap: () => {
@@ -125,30 +124,6 @@ class LandingScreen extends StatelessWidget {
                     },
                     childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
                   ),
-                  // const SizedBox(height: 100),
-                  // TextButton(
-                  //   onPressed: () {
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) {
-                  //           return const AboutScreen();
-                  //         },
-                  //       ),
-                  //     );
-                  //   },
-                  //   style: ButtonStyle(
-                  //     foregroundColor: MaterialStateProperty.all(Colors.blue),
-                  //     textStyle: MaterialStateProperty.all(
-                  //         const TextStyle(fontSize: 16)),
-                  //     padding: MaterialStateProperty.all(
-                  //         const EdgeInsets.symmetric(
-                  //             vertical: 16, horizontal: 24)),
-                  //     backgroundColor:
-                  //         MaterialStateProperty.all(Colors.transparent),
-                  //   ),
-                  //   child: const Text("About"),
-                  // ),
                   const SizedBox(height: 140),
                   const Text(
                     "Copyright BlindSpot All Rights Reversed",

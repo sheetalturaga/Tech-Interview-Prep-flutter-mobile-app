@@ -9,6 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
+import 'package:blindspot_app/screens/quizz_screen.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:firebase_auth/firebase_auth.dart'
     hide EmailAuthProvider, PhoneAuthProvider;
@@ -80,9 +81,9 @@ class LoginScreen extends GetView<AuthorizationController> {
                       width: 200,
                       child: SignInButton(
                         Buttons.Google,
-                        onPressed: () {
-                          controller.SignInWithGoogle();
-                          // _googleSignIn();
+                        onPressed: () async {
+                          User? user = await controller.signInWithGoogle(
+                              context: context);
                         },
                       ),
                     );
@@ -94,8 +95,9 @@ class LoginScreen extends GetView<AuthorizationController> {
                     width: 200,
                     child: SignInButton(
                       Buttons.Facebook,
-                      onPressed: () {
-                        // _login();
+                      onPressed: () async {
+                        User? user = await controller.signInWithFacebook(
+                            context: context);
                       },
                     ),
                   ),

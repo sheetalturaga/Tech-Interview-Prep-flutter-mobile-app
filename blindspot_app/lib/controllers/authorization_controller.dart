@@ -165,6 +165,7 @@ class AuthorizationController extends GetxController {
     try {
       await users.doc(user.uid).set({
         'userId': user.uid,
+        'name': user.displayName,
         'email': user.email,
         'photoUrl': user.photoURL,
       });

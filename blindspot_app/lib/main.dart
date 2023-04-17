@@ -5,6 +5,7 @@ import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/firebase_options.dart';
 import 'package:blindspot_app/screens/data_upload_screen.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
-      // home: const NotebookScreen(),
+      // home: LoginScreen()
+      // home: const HomeScreen(),
       // home: QuizzScreen(),
     );
   }

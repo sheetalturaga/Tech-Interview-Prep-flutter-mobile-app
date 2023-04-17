@@ -3,70 +3,6 @@ import 'package:blindspot_app/model/quiz_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// class TopicCard extends StatelessWidget {
-//   const TopicCard({super.key, required this.model});
-
-//   final QuizModel model;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     const double padding = 10.0;
-//     return Padding(
-//       padding: const EdgeInsets.all(padding),
-//       child: Stack(
-//         children: [
-//           Row(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               ClipRRect(
-//                 borderRadius: BorderRadius.circular(10),
-//                 child: ColoredBox(
-//                   color: Theme.of(context).primaryColor.withOpacity(0.2),
-//                   child: SizedBox(
-//                     height: Get.width * 0.15,
-//                     width: Get.width * 0.15,
-//                     child: CachedNetworkImage(
-//                       imageUrl: model.imageUrl!,
-//                       fit: BoxFit.fill,
-//                       placeholder: ((context, url) => Container(
-//                             alignment: Alignment.center,
-//                             child: const CircularProgressIndicator(),
-//                           )),
-//                       errorWidget: (context, url, error) =>
-//                           Image.asset("assets/images/BLINDSPOT.jpeg"),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const SizedBox(
-//                 width: 12,
-//               ),
-//               Expanded(
-//                 child: Column(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Text(
-//                       model.topic,
-//                       style: const TextStyle(
-//                           color: Color(0xFFf85187),
-//                           fontSize: 15,
-//                           fontWeight: FontWeight.bold),
-//                     ),
-//                     Padding(
-//                       padding: const EdgeInsets.only(top: 10),
-//                       child: Text(model.description),
-//                     ),
-//                   ],
-//                 ),
-//               )
-//             ],
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class TopicCard extends GetView<TopicController> {
   const TopicCard({super.key, required this.model});
 
@@ -88,12 +24,18 @@ class TopicCard extends GetView<TopicController> {
             child: Stack(
               children: [
                 Container(
-                  height: 150,
+                  height: 100,
                   decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       gradient: LinearGradient(colors: [
-                    Color(0xFF0061ff),
-                    Color(0xFF60efff),
-                  ])),
+                        // Color(0xFF0061ff),
+                        // // Color(0xFF60efff),
+                        // Color(0xff30c5d2),
+                        // Color(0xFF8711c1),
+                        Color(0xFF767689),
+                        Color(0xFF767689),
+                        // Color(0xFF7BAFD4),
+                      ])),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +44,7 @@ class TopicCard extends GetView<TopicController> {
                           model.topic,
                           style: const TextStyle(
                               fontSize: 18,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(
@@ -112,7 +54,7 @@ class TopicCard extends GetView<TopicController> {
                           model.description,
                           style: const TextStyle(
                               fontSize: 13,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500),
                         )
                       ],

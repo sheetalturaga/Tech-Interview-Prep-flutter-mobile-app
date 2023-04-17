@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // files to be fed into the firestore database
 class QuizModel {
   String id;
-  String topic; // java 
+  String topic; // java
   String? imageUrl;
   String description;
   List<Questions>? questions;
@@ -57,6 +57,7 @@ class Questions {
   List<Options>? options;
   String? correctOption;
   String? explanation;
+  String? chosenOption;
 
   Questions(
       {required this.id,

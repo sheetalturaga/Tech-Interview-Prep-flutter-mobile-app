@@ -1,4 +1,5 @@
 import 'package:blindspot_app/screens/topic_card.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/topic_controller.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               height: 100,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
+              color: mainAppColor,
             ),
           )),
       body: Obx(() => ListView.separated(

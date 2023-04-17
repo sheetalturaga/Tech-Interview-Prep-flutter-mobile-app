@@ -91,7 +91,12 @@ class LandingScreen extends StatelessWidget {
                   const SizedBox(height: 25),
                   ElevatedButton(
                     // TODO:Implement signup button functionality
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AboutScreen()),
+                      );
+                    },
                     style: ButtonStyle(
                       minimumSize:
                           MaterialStateProperty.all(const Size(150, 50)),
@@ -102,7 +107,7 @@ class LandingScreen extends StatelessWidget {
                           const TextStyle(fontSize: 20)),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
-                    child: const Text("Sign Up"),
+                    child: const Text("About"),
                   ),
                   const SizedBox(height: 25),
                   ArrowButton(
@@ -112,30 +117,39 @@ class LandingScreen extends StatelessWidget {
                     childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
                   ),
                   const SizedBox(height: 100),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const AboutScreen();
-                          },
-                        ),
-                      );
+
+                  const SizedBox(height: 25),
+                  ArrowButton(
+                    onTap: () => {
+                      Get.offAndToNamed(HomeScreen.routeName),
                     },
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.blue),
-                      textStyle: MaterialStateProperty.all(
-                          const TextStyle(fontSize: 16)),
-                      padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 24)),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                    ),
-                    child: const Text("About"),
+                    childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
                   ),
-                  const SizedBox(height: 20),
+                  // const SizedBox(height: 100),
+                  // TextButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) {
+                  //           return const AboutScreen();
+                  //         },
+                  //       ),
+                  //     );
+                  //   },
+                  //   style: ButtonStyle(
+                  //     foregroundColor: MaterialStateProperty.all(Colors.blue),
+                  //     textStyle: MaterialStateProperty.all(
+                  //         const TextStyle(fontSize: 16)),
+                  //     padding: MaterialStateProperty.all(
+                  //         const EdgeInsets.symmetric(
+                  //             vertical: 16, horizontal: 24)),
+                  //     backgroundColor:
+                  //         MaterialStateProperty.all(Colors.transparent),
+                  //   ),
+                  //   child: const Text("About"),
+                  // ),
+                  const SizedBox(height: 140),
                   const Text(
                     "Copyright BlindSpot All Rights Reversed",
                     style: TextStyle(

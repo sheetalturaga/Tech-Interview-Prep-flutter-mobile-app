@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+const mainAppColor = Color(0xFF1683E9);
+
 const background1 = Color.fromARGB(1, 235, 244, 245);
 const background2 = Color.fromARGB(1, 181, 198, 224);
 
@@ -8,6 +10,7 @@ const cardbackground1 = Color.fromARGB(1, 64, 201, 255);
 const cardbackground2 = Color.fromARGB(1, 232, 28, 255);
 
 const selectionColor = Color(0XFF0C63E7);
+const answerSelectionColor = Color(0xFF1683E9);
 
 class AppColor {
   static const pripmaryColor = Color.fromRGBO(22, 131, 233, 100);
@@ -27,3 +30,5 @@ var cardBackgroundGradient = const LinearGradient(colors: [
   cardbackground1,
   cardbackground2,
 ]);
+
+Color customAnswerCardColor(BuildContext context) => const Color(0xFFC9DDFC);

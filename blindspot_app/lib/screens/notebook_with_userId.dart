@@ -1,5 +1,4 @@
 import 'package:blindspot_app/model/notebook_model.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/screens/note_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';

@@ -1,14 +1,8 @@
-import 'dart:html';
-import 'dart:js';
-
 import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:google_sign_in_web/google_sign_in_web.dart';
 
 class AuthorizationController extends GetxController {
   @override

@@ -12,6 +12,11 @@ class QuestionsController extends GetxController {
   final loadStatus = LoadStatus.loading.obs;
   late QuizModel _quizModel;
   final listOfAllQuestionsInTopic = <Questions>[];
+  final currentSessionQuestionList = <Questions>[];
+  bool get isFirstQuestion => questionIndex.value > 0;
+  bool get isLastQuestion => questionIndex.value >= 10 - 1;
+
+  get correctQuestionsCount => null;
 
   @override
   void onReady() {
@@ -73,8 +78,8 @@ class QuestionsController extends GetxController {
             topicBasedQuestionsInModel.questions!.isNotEmpty) {
           listOfAllQuestionsInTopic
               .assignAll(topicBasedQuestionsInModel.questions!);
+
           currQ.value = topicBasedQuestionsInModel.questions![0];
-          print("currQ: ${currQ.value!.id}");
           // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;
         } else {
@@ -96,7 +101,34 @@ class QuestionsController extends GetxController {
   void choseOption(String? answerProvided) {
     currQ.value!.chosenOption = answerProvided;
     // list to update that points to QuestionController/GetBuilder
-    update(['options_list', 'optionReviewList']);
+    update(['chosenOptionsList']);
+  }
+
+  bool isCorrect(String? answer) { // id provided as answer
+    // correctAnswer == chosenAnswer && opts.identifier == chosenAnswer
+    // correctAnswer == opts.identifier
+    if ((answer == currQ.value!.correctOption && answer == currQ.value!.chosenOption) 
+    || (answer == currQ.value!.correctOption)) {
+      return true;
+    };
+    return false;
+  }
+
+  bool isAnswerProvided() {
+    if (currQ.value!.chosenOption != null) {
+      return true;
+    }
+    return false;
+  }
+
+  String get quizCompleted {
+    // returns the length of all the chosen options selected
+    final numOfQuestionsAnswered = listOfAllQuestionsInTopic
+        .where((element) => element.chosenOption != null)
+        .toList()
+        .length;
+
+    return "$numOfQuestionsAnswered out of ${listOfAllQuestionsInTopic.length} answered";
   }
 
   void nextQuestion() {
@@ -105,3 +137,4 @@ class QuestionsController extends GetxController {
     currQ.value = listOfAllQuestionsInTopic[questionIndex.value];
   }
 }
+

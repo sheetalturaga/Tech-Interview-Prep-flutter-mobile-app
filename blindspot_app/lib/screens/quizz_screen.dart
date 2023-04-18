@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:blindspot_app/data/questions_example.dart';
-import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:blindspot_app/screens/explanation_screen.dart';
@@ -147,7 +146,7 @@ class QuizzScreenState extends State<QuizzScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ResultScreen(score)));
+                                builder: (context) => ResultScreen()));
                       } else {
                         _controller!.nextPage(
                             duration: const Duration(milliseconds: 250),
@@ -156,7 +155,7 @@ class QuizzScreenState extends State<QuizzScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ExplanationScreen()));
+                                builder: (context) => const ExplanationScreen()));
 
                         setState(() {
                           btnPressed = [false, false, false, false];

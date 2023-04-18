@@ -39,7 +39,7 @@ dependencies:
   cloud_firestore: ^4.5.1
   google_sign_in: ^6.0.2
   flutter_signin_button: ^2.0.0
-  flutter_svg: ^1.1.1
+  flutter_svg: ^1.1.6
   firebase_core: ^2.9.0
   firebase_auth: ^4.4.0
   provider: ^6.0.5
@@ -48,7 +48,8 @@ dependencies:
   twitter_login: ^4.3.1
   sign_in_with_apple: ^4.3.0
   flutter_facebook_sdk: ^1.0.0
-  the_apple_sign_in: ^1.1.1 
+  the_apple_sign_in: ^1.1.1
+  
   get: ^4.6.5
   cached_network_image: ^3.2.3
   firebase_storage: ^11.1.0
@@ -81,6 +82,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - assets/images/
+      - assets/images/trophyoutline.svg
       - assets/images/BLINDSPOT.jpeg
       - assets/database/
       - assets/database/behavioral_db.json

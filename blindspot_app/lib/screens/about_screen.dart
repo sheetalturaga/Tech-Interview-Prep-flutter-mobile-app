@@ -23,11 +23,11 @@ class AboutScreen extends StatelessWidget {
             color: Colors.blue,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Center(
+              children: const [
+                Center(
                   heightFactor: 2,
                   child: Text(
-                    "BlindSpot",
+                    "BLIND SPOT",
                     style: TextStyle(
                       fontSize: 45,
                       color: Colors.white,
@@ -35,19 +35,20 @@ class AboutScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text(
+                Text(
                   "Version 2.0.0",
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text(
-                  "All your coding quiz at one place",
+                SizedBox(height: 20),
+                Text(
+                  "Learning the Gap",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
+                    fontFamily: 'Open Sans',
                   ),
                 ),
               ],
@@ -59,87 +60,94 @@ class AboutScreen extends StatelessWidget {
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.arrow_right,
-                  color: Colors.blue,
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    "Pick the topic of your choice and take the quiz",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Arial',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.left,
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.arrow_right,
+                    color: Colors.blue,
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.arrow_right,
-                  color: Colors.blue,
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    "Star mark the question that you want to dive deeper into, to save it to your notebook",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Arial',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      "Pick the topic of your choice and take the quiz",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.arrow_right,
-                  color: Colors.blue,
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    "Visit your profile to see how much progress you’ve made and also personalize your profile using the setting button",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Arial',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 200),
-            const Text(
-              "© BlindSpot. All Rights Reversed",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w100,
-                color: Colors.black,
+                ],
               ),
-              textAlign: TextAlign.left,
             ),
+            const SizedBox(height: 1),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.arrow_right,
+                    color: Colors.blue,
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      "Star mark the question that you want to dive deeper into, to save it to your notebook",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 1),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.arrow_right,
+                    color: Colors.blue,
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      "Visit your profile to see how much progress you’ve made and also personalize your profile using the setting button",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // const SizedBox(height: 100),
+            // const Text(
+            //   "© BlindSpot. All Rights Reversed",
+            //   style: TextStyle(
+            //     fontSize: 12,
+            //     fontWeight: FontWeight.w100,
+            //     color: Colors.black,
+            //   ),
+            //   textAlign: TextAlign.left,
+            // ),
           ],
+        
         ),
       ),
     );

@@ -30,19 +30,21 @@ class LandingScreen extends StatelessWidget {
                 const Center(
                   heightFactor: 2,
                   child: Text(
-                    "BlindSpot",
+                    "BLIND SPOT",
                     style: TextStyle(
                       fontSize: 45,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto',
                     ),
                   ),
                 ),
                 const Text(
-                  "All your coding quiz at one place",
+                  "Learning the Gap",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
+                    fontFamily: 'Open Sans',
                   ),
                 ),
               ],
@@ -93,16 +95,16 @@ class LandingScreen extends StatelessWidget {
               childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
             ),
             const SizedBox(height: 170),
-            const Text(
-              "Copyright BlindSpot All Rights Reversed",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w100,
-                fontSize: 12,
-                decoration: TextDecoration.none,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            // const Text(
+            //   "Copyright BlindSpot All Rights Reversed",
+            //   style: TextStyle(
+            //     color: Colors.black,
+            //     fontWeight: FontWeight.w100,
+            //     fontSize: 12,
+            //     decoration: TextDecoration.none,
+            //   ),
+            //   textAlign: TextAlign.center,
+            // ),
           ],
         ),
       ),

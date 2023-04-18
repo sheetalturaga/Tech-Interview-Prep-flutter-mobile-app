@@ -121,18 +121,18 @@ class LoginScreen extends GetView<AuthorizationController> {
                 padding: const EdgeInsets.only(bottom: 40),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Text(
-                      "Copyright BlindSpot All Rights Reversed",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w100,
-                        fontSize: 12,
-                        decoration: TextDecoration.none,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                  // children: const [
+                  //   Text(
+                  //     "Copyright BlindSpot All Rights Reversed",
+                  //     style: TextStyle(
+                  //       color: Colors.black,
+                  //       fontWeight: FontWeight.w100,
+                  //       fontSize: 12,
+                  //       decoration: TextDecoration.none,
+                  //     ),
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // ],
                 ),
               ),
             ),

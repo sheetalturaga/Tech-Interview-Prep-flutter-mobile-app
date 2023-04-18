@@ -57,7 +57,7 @@ class LandingScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              width: 150,
+              width: 200,
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
@@ -75,7 +75,7 @@ class LandingScreen extends StatelessWidget {
             ),
             const SizedBox(height: 25),
             SizedBox(
-              width: 150,
+              width: 200,
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
@@ -94,17 +94,6 @@ class LandingScreen extends StatelessWidget {
               },
               childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
             ),
-            const SizedBox(height: 170),
-            // const Text(
-            //   "Copyright BlindSpot All Rights Reversed",
-            //   style: TextStyle(
-            //     color: Colors.black,
-            //     fontWeight: FontWeight.w100,
-            //     fontSize: 12,
-            //     decoration: TextDecoration.none,
-            //   ),
-            //   textAlign: TextAlign.center,
-            // ),
           ],
         ),
       ),
@@ -128,7 +117,7 @@ class ArrowButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      type: MaterialType.transparency,
+      // type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
       shape: const CircleBorder(),
       child: InkWell(onTap: onTap, child: childWidget),

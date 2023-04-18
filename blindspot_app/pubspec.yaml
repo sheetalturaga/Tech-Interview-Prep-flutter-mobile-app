@@ -47,14 +47,15 @@ dependencies:
   flutter_facebook_auth: ^5.0.8
   twitter_login: ^4.3.1
   sign_in_with_apple: ^4.3.0
-  flutter_facebook_sdk: ^1.0.0
-  the_apple_sign_in: ^1.1.1
-  
+  the_apple_sign_in: ^1.1.1 
   get: ^4.6.5
   cached_network_image: ^3.2.3
   firebase_storage: ^11.1.0
   percent_indicator: ^4.2.3
   google_sign_in_web: ^0.12.0
+  test: ^1.22.0
+  mockito: ^5.4.0
+  fake_cloud_firestore: ^2.4.1+1
   
 
 dev_dependencies:

@@ -1,6 +1,11 @@
 import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
+import 'package:blindspot_app/screens/data_upload_screen.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/login_screen.dart';
+import 'package:blindspot_app/screens/question_display_screen.dart';
+import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,12 +20,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   InitAppBindings().dependencies();
-  await FacebookAuth.instance.webAndDesktopInitialize(
-    appId: "6506823019329362",
-    cookie: true,
-    xfbml: true,
-    version: "v15.0",
-  );
   Get.put(DatabaseStorageService());
   runApp(const MyApp());
 }
@@ -38,6 +37,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
+      // home: LoginScreen()
+      // home: const HomeScreen(),
       // home: QuizzScreen(),
     );
   }

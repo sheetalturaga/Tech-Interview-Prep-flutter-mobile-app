@@ -108,8 +108,7 @@ class ResultScreen extends GetView<QuestionsController> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                controller.correctlyAnsweredQuestions
-                                    .toString(),
+                                controller.quizCompleted.toString(),
                                 style: const TextStyle(color: mainAppColor),
                                 textAlign: TextAlign.center,
                               ),

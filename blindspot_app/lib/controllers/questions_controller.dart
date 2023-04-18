@@ -104,13 +104,15 @@ class QuestionsController extends GetxController {
     update(['chosenOptionsList']);
   }
 
-  bool isCorrect(String? answer) { // id provided as answer
+  bool isCorrect(String? answer) {
+    // id provided as answer
     // correctAnswer == chosenAnswer && opts.identifier == chosenAnswer
     // correctAnswer == opts.identifier
-    if ((answer == currQ.value!.correctOption && answer == currQ.value!.chosenOption) 
-    || (answer == currQ.value!.correctOption)) {
+    if ((answer == currQ.value!.correctOption &&
+            answer == currQ.value!.chosenOption) ||
+        (answer == currQ.value!.correctOption)) {
       return true;
-    };
+    }
     return false;
   }
 
@@ -124,17 +126,21 @@ class QuestionsController extends GetxController {
   String get quizCompleted {
     // returns the length of all the chosen options selected
     final numOfQuestionsAnswered = listOfAllQuestionsInTopic
-        .where((element) => element.chosenOption != null)
+        .where((element) => element.chosenOption == element.correctOption)
         .toList()
         .length;
 
-    return "$numOfQuestionsAnswered out of ${listOfAllQuestionsInTopic.length} answered";
+    return "$numOfQuestionsAnswered out of ${listOfAllQuestionsInTopic.length} answered correctly";
   }
 
   void nextQuestion() {
     if (questionIndex.value >= listOfAllQuestionsInTopic.length - 1) return;
-    questionIndex.value++;
+    if (listOfAllQuestionsInTopic[questionIndex.value].chosenOption == null) {
+      // pop up please provide an answer
+    } else {
+      questionIndex.value++;
+    }
+
     currQ.value = listOfAllQuestionsInTopic[questionIndex.value];
   }
 }
-

@@ -1,5 +1,5 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/explanation_screen.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/widgets/question_display_page_decor.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,10 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
           decoration: const ShapeDecoration(
               shape: StadiumBorder(
                   side: BorderSide(color: Colors.white, width: 2))),
-          child: const Text("Counter"),
+          child: const Icon(
+            Icons.star_border_outlined,
+            color: Colors.white,
+          ),
         ),
         displayActionIcon: true,
         leadTitleWidget: Obx(
@@ -39,9 +42,9 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                 fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
           ),
         ),
-        onTapAction: () {
-          Get.offAllNamed(HomeScreen.routeName);
-        },
+        // onTapAction: () {
+        //   // Get.offAllNamed(HomeScreen.routeName);
+        // },
       ),
       body: QuestionDisplayPageDecor(
         child: Obx(() => Column(
@@ -135,16 +138,25 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                                 LoadStatus.complete,
                             child: NextButton(
                               onTap: () {
-                                controller.isAnswerProvided()
-                                    ? controller.nextQuestion()
-                                    : null;
-                                controller.isLastQuestion
-                                    ? Get.toNamed(ResultScreen.routeName)
-                                    : controller.nextQuestion();
+                                if (controller.isLastQuestion) {
+                                  Get.toNamed(ResultScreen.routeName);
+                                } else {
+                                  controller.nextQuestion();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ExplanationScreen()));
+                                }
+
+                                // controller.isLastQuestion
+                                //     ? Get.toNamed(ResultScreen.routeName)
+                                //     :
+                                // controller.nextQuestion();
                               },
                               title: controller.isLastQuestion
                                   ? "Complete"
-                                  : "Next",
+                                  : "Submit Answer",
                             )),
                       )),
                     ]),
@@ -181,19 +193,19 @@ class OptionsDisplayCard extends StatelessWidget {
         decoration: BoxDecoration(
             color: isSelected
                 ? isCorrect
-                    ? Colors.green.withOpacity(0.2)
-                    : Colors.red.withOpacity(0.2)
+                    ? Colors.red.withOpacity(0.2)
+                    : Colors.green.withOpacity(0.2)
                 : const Color(0xFFACD3F7),
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
               color: isSelected
                   ? isCorrect
-                      ? Colors.green
-                      : Colors.red
+                      ? Colors.red
+                      : Colors.green
                   : const Color(0xFFACD3F7),
             )),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             option,
             style: TextStyle(color: isSelected ? Colors.black : null),

@@ -1,10 +1,7 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
 import 'package:flutter/material.dart';
-import 'package:the_apple_sign_in/the_apple_sign_in.dart';
-import 'package:blindspot_app/screens/quizz_screen.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class LoginScreen extends GetView<AuthorizationController> {

@@ -1,17 +1,10 @@
 import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
-import 'package:blindspot_app/screens/data_upload_screen.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/login_screen.dart';
-import 'package:blindspot_app/screens/question_display_screen.dart';
-import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-
 import 'bindings/appinit_bindings.dart';
 
 void main() async {

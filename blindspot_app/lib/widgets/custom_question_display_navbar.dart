@@ -3,6 +3,8 @@ import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../firestore_references/collection_refs.dart';
+
 class CustomQuestionDisplayNavbar extends StatelessWidget
     implements PreferredSizeWidget {
   final String title;
@@ -49,16 +51,17 @@ class CustomQuestionDisplayNavbar extends StatelessWidget
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (displayActionIcon)
-                  Transform.translate(
-                    offset: const Offset(-14, 0),
-                    child: const ArrowButton(
-                      childWidget: Icon(
-                        Icons.star_border_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
+                Transform.translate(
+                  offset: const Offset(-14, 0),
+                  child: ArrowButton(
+                    childWidget: Icon(
+                        isClick ? Icons.star : Icons.star_border_outlined,
+                        color: Colors.white),
+                    onTap: () {
+                      isClick = true;
+                    },
                   ),
+                ),
                 if (displayActionIcon)
                   Transform.translate(
                     offset: const Offset(10, 0),

@@ -23,21 +23,13 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomQuestionDisplayNavbar(
-        secondaryWidget: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: const ShapeDecoration(
-              shape: StadiumBorder(
-                  side: BorderSide(color: Colors.white, width: 2))),
-          child: GestureDetector(
-            onTap: () {
-              isTappedOn = true;
-            },
-            child: Icon(
-              Icons.star_border_outlined,
-              color: isTappedOn ? Colors.amber : Colors.white,
-            ),
-          ),
-        ),
+        // secondaryWidget: Container(
+        //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        //   decoration: const ShapeDecoration(
+        //       shape: StadiumBorder(
+        //           side: BorderSide(color: Colors.white, width: 2))),
+        //   child: Icon(Icon)
+        // ),
         // decoration: const ShapeDecoration(
         //     shape: StadiumBorder(
         //         side: BorderSide(color: Colors.white, width: 2)))

@@ -27,3 +27,5 @@ enum LoadStatus {
 }
 
 Reference get storage => FirebaseStorage.instance.ref();
+
+bool isClick = false;

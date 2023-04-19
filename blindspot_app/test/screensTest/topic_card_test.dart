@@ -23,8 +23,8 @@ void main() {
                   topic: 'Test Topic',
                   description: 'Test Description',
                   questionCount: 0),
-              topic: '',
-              topicController: null,
+              // topic: '',
+              // topicController: null,
             ),
           ),
         ),
@@ -35,37 +35,6 @@ void main() {
 
       expect(topicFinder, findsOneWidget);
       expect(descriptionFinder, findsOneWidget);
-    });
-  });
-
-//unit test not working
-  group('TopicCard', () {
-    late TopicController topicController;
-    late QuizModel quizModel;
-
-    setUp(() {
-      topicController = MockTopicController();
-      quizModel = MockQuizModel();
-
-      when(topicController.getQuizModel())
-          .thenAnswer((_) => Future.value(quizModel));
-      when(quizModel.topic).thenReturn('Java');
-      when(quizModel.description).thenReturn('A quiz about Java');
-    });
-
-    testWidgets('displays topic and description', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: TopicCard(
-            topicController: topicController,
-            model: quizModel,
-            topic: 'Java',
-          ),
-        ),
-      );
-
-      expect(find.text('Java'), findsOneWidget);
-      expect(find.text('A quiz about Java'), findsOneWidget);
     });
   });
 }

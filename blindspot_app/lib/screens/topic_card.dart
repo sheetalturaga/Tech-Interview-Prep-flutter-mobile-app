@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TopicCard extends GetView<TopicController> {
-  const TopicCard(
-      {super.key,
-      required this.model,
-      required String topic,
-      required topicController});
+  const TopicCard({super.key, required this.model});
 
   final QuizModel model;
 

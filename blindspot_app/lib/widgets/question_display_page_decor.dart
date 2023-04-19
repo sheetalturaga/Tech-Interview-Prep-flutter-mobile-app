@@ -1,6 +1,5 @@
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
-// import 'package:shimmer/shimmer.dart';
 
 class QuestionDisplayPageDecor extends StatelessWidget {
   final Widget child;
@@ -22,7 +21,7 @@ class QuestionDisplayPageDecor extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(child: child)
+        Positioned.fill(child: SafeArea(child: child))
       ],
     );
   }

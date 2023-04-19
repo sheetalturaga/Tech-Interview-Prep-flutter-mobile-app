@@ -1,5 +1,3 @@
-import 'package:blindspot_app/model/notebook_model.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/screens/notebook_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
@@ -7,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_appbar.dart';
+import 'package:blindspot_app/model/notebook_model.dart';
 
 class NotebookScreen extends StatefulWidget {
   const NotebookScreen({Key? key}) : super(key: key);
@@ -84,8 +83,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
                 DocumentSnapshot question = snapshot.data!.docs[index];
-                NotebookModel notebookModel =
-                    NotebookModel.fromFirestore(question);
+                NoteBookModel notebookModel =
+                    NoteBookModel.fromFirestore(question);
                 return Container(
                   margin: const EdgeInsets.fromLTRB(50, 5, 50, 5),
                   child: ElevatedButton(

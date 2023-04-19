@@ -1,8 +1,8 @@
 import 'package:blindspot_app/screens/about_screen.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../custom_widgets/custom_appbar.dart';
-import 'main_menu.dart';
 import 'notebook_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                   minimumSize: const Size(
                       double.infinity, 64), // Set button height to 64
                 ),
-                child: const Text('Setting'),
+                child: const Text('Settings'),
               ),
             ),
             const SizedBox(height: 35),
@@ -121,7 +121,7 @@ class ProfileScreen extends StatelessWidget {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MainMenu()),
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
               );
               break;
             case 1:

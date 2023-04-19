@@ -1,19 +1,9 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/screens/notebook_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:the_apple_sign_in/the_apple_sign_in.dart';
-import 'package:blindspot_app/screens/quizz_screen.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:firebase_auth/firebase_auth.dart'
-    hide EmailAuthProvider, PhoneAuthProvider;
 
 import '../custom_widgets/custom_appbar.dart';
 

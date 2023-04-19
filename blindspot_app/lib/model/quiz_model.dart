@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 // The Quiz model that can convert all the json files into their respective
@@ -58,13 +57,15 @@ class Questions {
   String? correctOption;
   String? explanation;
   String? chosenOption;
+  bool? isLocked;
 
   Questions(
       {required this.id,
       required this.question,
       required this.options,
       this.correctOption,
-      required this.explanation});
+      required this.explanation,
+      this.isLocked = false});
 
   Questions.fromJson(Map<String, dynamic> json)
       : id = json['id'],
@@ -97,6 +98,7 @@ class Questions {
 class Options {
   String? identifier;
   String? option;
+  bool? isCorrect;
 
   Options({this.identifier, this.option});
 

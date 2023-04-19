@@ -59,7 +59,7 @@ class LoginScreen extends GetView<AuthorizationController> {
               left: 0,
               right: 0,
               child: Text(
-                "Choose Your Login Method",
+                "All your coding quiz at one place",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

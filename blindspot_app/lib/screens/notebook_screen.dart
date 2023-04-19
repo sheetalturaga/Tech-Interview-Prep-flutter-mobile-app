@@ -109,8 +109,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: const Color(0xFF1683E9),
+        unselectedItemColor: const Color(0xFF1683E9),
         onTap: (int index) {
           switch (index) {
             case 0:

@@ -57,13 +57,15 @@ class Questions {
   String? correctOption;
   String? explanation;
   String? chosenOption;
+  bool? isLocked;
 
   Questions(
       {required this.id,
       required this.question,
       required this.options,
       this.correctOption,
-      required this.explanation});
+      required this.explanation,
+      this.isLocked = false});
 
   Questions.fromJson(Map<String, dynamic> json)
       : id = json['id'],

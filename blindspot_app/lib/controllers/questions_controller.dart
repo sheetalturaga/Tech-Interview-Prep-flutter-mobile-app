@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
+import '../model/notebook_model.dart';
 import '../model/quiz_model.dart';
 
 // Controller class to extact the data from the database to populating the
@@ -15,6 +17,7 @@ class QuestionsController extends GetxController {
   final currentSessionQuestionList = <Questions>[];
   bool get isFirstQuestion => questionIndex.value > 0;
   bool get isLastQuestion => questionIndex.value >= 10 - 1;
+  int finalScores = 0;
 
   get correctQuestionsCount => null;
 
@@ -44,6 +47,7 @@ class QuestionsController extends GetxController {
         final data = i.data();
         questionsFromTopicList.add(Questions(
             id: i.id,
+            correctOption: data['correct_option'],
             question: data['question'],
             options: data['options'],
             explanation: data['explanation']));
@@ -79,7 +83,9 @@ class QuestionsController extends GetxController {
           listOfAllQuestionsInTopic
               .assignAll(topicBasedQuestionsInModel.questions!);
 
+          currTopic.value = topicBasedQuestionsInModel.topic;
           currQ.value = topicBasedQuestionsInModel.questions![0];
+
           // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;
         } else {
@@ -95,25 +101,39 @@ class QuestionsController extends GetxController {
 
   // Rxn reactive class is a list type
   Rxn<Questions> currQ = Rxn<Questions>();
+  Rxn<String> currTopic = Rxn<String>();
   final questionIndex = 0.obs;
 
   // The option selected by the user
   void choseOption(String? answerProvided) {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user = auth.currentUser;
     currQ.value!.chosenOption = answerProvided;
+    currQ.value!.isLocked = true;
+
+    if (currQ.value!.chosenOption == currQ.value!.correctOption) {
+      finalScores = finalScores + 1;
+    } else {
+      addWrongAnswerToDB();
+    }
     // list to update that points to QuestionController/GetBuilder
     update(['chosenOptionsList']);
   }
 
-  bool isCorrect(String? answer) {
-    // id provided as answer
-    // correctAnswer == chosenAnswer && opts.identifier == chosenAnswer
-    // correctAnswer == opts.identifier
-    if ((answer == currQ.value!.correctOption &&
-            answer == currQ.value!.chosenOption) ||
-        (answer == currQ.value!.correctOption)) {
-      return true;
+  // TODO: Need to Add the right userID variable to push to DB
+  // add check if the questionId is already in the db
+  void addWrongAnswerToDB() {
+    if (currQ.value!.chosenOption != currQ.value!.correctOption) {
+      NoteBookModel nbk = NoteBookModel(
+          questionId: currQ.value!.id,
+          topic: currTopic.value!,
+          question: currQ.value!.question,
+          correctOption: currQ.value!.correctOption,
+          explanation: currQ.value!.explanation,
+          userId: "1111");
+
+      NoteBookModel.ToFirestore(nbk);
     }
-    return false;
   }
 
   bool isAnswerProvided() {
@@ -130,7 +150,7 @@ class QuestionsController extends GetxController {
         .toList()
         .length;
 
-    return "$numOfQuestionsAnswered out of ${listOfAllQuestionsInTopic.length} answered correctly";
+    return "$numOfQuestionsAnswered out of ${listOfAllQuestionsInTopic.length}";
   }
 
   void nextQuestion() {

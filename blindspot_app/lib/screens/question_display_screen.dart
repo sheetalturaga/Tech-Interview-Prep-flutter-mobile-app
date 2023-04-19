@@ -1,23 +1,22 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/screens/explanation_screen.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:blindspot_app/widgets/question_display_page_decor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
+import '../model/quiz_model.dart';
 import '../widgets/content_area_size.dart';
 import '../widgets/custom_question_display_navbar.dart';
-
-// Same as the quizz screen dart file - revised UI - Done
-// // Next Question button -> Done
-// Quit button -> homeScreen -> Done
-// Counter for the number of questions - Done
+import 'home_screen.dart';
 
 class QuestionDisplayScreen extends GetView<QuestionsController> {
-  const QuestionDisplayScreen({super.key});
-
   static const String routeName = "/questiondisplayscreen";
+  bool isTappedOn = false;
+
+  QuestionDisplayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +28,19 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
           decoration: const ShapeDecoration(
               shape: StadiumBorder(
                   side: BorderSide(color: Colors.white, width: 2))),
-          child: const Icon(
-            Icons.star_border_outlined,
-            color: Colors.white,
+          child: GestureDetector(
+            onTap: () {
+              isTappedOn = true;
+            },
+            child: Icon(
+              Icons.star_border_outlined,
+              color: isTappedOn ? Colors.amber : Colors.white,
+            ),
           ),
         ),
+        // decoration: const ShapeDecoration(
+        //     shape: StadiumBorder(
+        //         side: BorderSide(color: Colors.white, width: 2)))
         displayActionIcon: true,
         leadTitleWidget: Obx(
           () => Text(
@@ -42,9 +49,9 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                 fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
           ),
         ),
-        // onTapAction: () {
-        //   // Get.offAllNamed(HomeScreen.routeName);
-        // },
+        onTapAction: () {
+          Get.offAllNamed(HomeScreen.routeName);
+        },
       ),
       body: QuestionDisplayPageDecor(
         child: Obx(() => Column(
@@ -77,41 +84,22 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                                       (BuildContext context, int index) {
                                     final opts =
                                         controller.currQ.value!.options![index];
+                                    final currentQuestion =
+                                        controller.currQ.value!;
 
-                                    // final optionString =
-                                    //     '${opts.identifier}. ${opts.option}';
-
-                                    // final chosenAnswer =
-                                    //     controller.currQ.value!.chosenOption;
-                                    // final correctAnswer =
-                                    //     controller.currQ.value!.correctOption;
-
-                                    // if (chosenAnswer == correctAnswer &&
-                                    //     opts.identifier == chosenAnswer) {
-                                    //   return CorrectOptionDisplay(
-                                    //       optionString: optionString);
-                                    // } else if (chosenAnswer == null) {
-                                    //   return WrongOptionDisplay(
-                                    //       optionString: optionString);
-                                    // } else if (correctAnswer != chosenAnswer &&
-                                    //     opts.identifier == chosenAnswer) {
-                                    //   return WrongOptionDisplay(
-                                    //       optionString: optionString);
-                                    // } else if (correctAnswer ==
-                                    //     opts.identifier) {
-                                    //   return CorrectOptionDisplay(
-                                    //       optionString: optionString);
-                                    // }
                                     return OptionsDisplayCard(
+                                      question: currentQuestion,
                                       option:
                                           '${opts.identifier}. ${opts.option}',
                                       onTap: () {
-                                        controller.choseOption(opts.identifier);
+                                        if (!controller
+                                            .currQ.value!.isLocked!) {
+                                          controller
+                                              .choseOption(opts.identifier);
+                                        }
                                       },
                                       isSelected: opts.identifier ==
                                           controller.currQ.value!.chosenOption,
-                                      isCorrect:
-                                          controller.isCorrect(opts.identifier),
                                     );
                                   },
                                   separatorBuilder:
@@ -138,25 +126,13 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                                 LoadStatus.complete,
                             child: NextButton(
                               onTap: () {
-                                if (controller.isLastQuestion) {
-                                  Get.toNamed(ResultScreen.routeName);
-                                } else {
-                                  controller.nextQuestion();
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ExplanationScreen()));
-                                }
-
-                                // controller.isLastQuestion
-                                //     ? Get.toNamed(ResultScreen.routeName)
-                                //     :
-                                // controller.nextQuestion();
+                                controller.isLastQuestion
+                                    ? Get.toNamed(ResultScreen.routeName)
+                                    : controller.nextQuestion();
                               },
                               title: controller.isLastQuestion
                                   ? "Complete"
-                                  : "Submit Answer",
+                                  : "Next Question",
                             )),
                       )),
                     ]),
@@ -170,7 +146,8 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
 }
 
 class OptionsDisplayCard extends StatelessWidget {
-  final String option;
+  final String option; // identifier : A, Option: String text
+  final Questions question;
   final bool isSelected;
   final bool isCorrect;
   final VoidCallback onTap;
@@ -181,6 +158,7 @@ class OptionsDisplayCard extends StatelessWidget {
     this.isSelected = false,
     this.isCorrect = false,
     required this.onTap,
+    required this.question,
   });
 
   @override
@@ -192,16 +170,16 @@ class OptionsDisplayCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         decoration: BoxDecoration(
             color: isSelected
-                ? isCorrect
-                    ? Colors.red.withOpacity(0.2)
-                    : Colors.green.withOpacity(0.2)
+                ? question.chosenOption == question.correctOption
+                    ? Colors.green.withOpacity(0.5)
+                    : Colors.red.withOpacity(0.5)
                 : const Color(0xFFACD3F7),
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
               color: isSelected
-                  ? isCorrect
-                      ? Colors.red
-                      : Colors.green
+                  ? question.chosenOption == question.correctOption
+                      ? Colors.green.withOpacity(0.5)
+                      : Colors.red.withOpacity(0.5)
                   : const Color(0xFFACD3F7),
             )),
         child: Padding(
@@ -215,56 +193,6 @@ class OptionsDisplayCard extends StatelessWidget {
     );
   }
 }
-
-// class CorrectOptionDisplay extends StatelessWidget {
-//   const CorrectOptionDisplay({
-//     Key? key,
-//     required this.optionString,
-//   }) : super(key: key);
-
-//   final String optionString;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Ink(
-//       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(10.0),
-//         color: Colors.green.withOpacity(0.2),
-//       ),
-//       child: Text(
-//         optionString,
-//         style: TextStyle(
-//             color: Colors.green.withOpacity(0.2), fontWeight: FontWeight.bold),
-//       ),
-//     );
-//   }
-// }
-
-// class WrongOptionDisplay extends StatelessWidget {
-//   const WrongOptionDisplay({
-//     Key? key,
-//     required this.optionString,
-//   }) : super(key: key);
-
-//   final String optionString;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Ink(
-//       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(10.0),
-//         color: Colors.red.withOpacity(0.2),
-//       ),
-//       child: Text(
-//         optionString,
-//         style: TextStyle(
-//             color: Colors.red.withOpacity(0.2), fontWeight: FontWeight.bold),
-//       ),
-//     );
-//   }
-// }
 
 class NextButton extends StatelessWidget {
   final String title;
@@ -287,13 +215,13 @@ class NextButton extends StatelessWidget {
       child: SizedBox(
           height: 55,
           child: InkWell(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(0.1),
             onTap: enabled == false ? null : onTap,
             child: Ink(
               width: double.maxFinite,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
-                  color: color ?? Theme.of(context).cardColor),
+                  color: color ?? mainAppColor),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: child ??
@@ -302,7 +230,7 @@ class NextButton extends StatelessWidget {
                         title,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).cardColor,
                         ),
                       ),
                     ),

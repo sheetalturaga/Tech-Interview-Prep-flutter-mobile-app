@@ -88,8 +88,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
                 DocumentSnapshot question = snapshot.data!.docs[index];
-                NotebookModel notebookModel =
-                    NotebookModel.fromFirestore(question);
+                NoteBookModel notebookModel =
+                    NoteBookModel.fromFirestore(question);
                 return ElevatedButton(
                   child: Text('P${index + 1}'),
                   onPressed: () {

@@ -55,4 +55,6 @@ class TopicController extends GetxController {
     // TODO: CHeck for login
     Get.toNamed(QuestionDisplayScreen.routeName, arguments: quiz);
   }
+
+  getQuizModel() {}
 }

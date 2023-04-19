@@ -22,7 +22,7 @@ void main() async {
   );
   InitAppBindings().dependencies();
   Get.put(DatabaseStorageService());
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

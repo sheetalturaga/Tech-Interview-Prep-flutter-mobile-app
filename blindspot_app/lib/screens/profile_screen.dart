@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                   minimumSize: const Size(
                       double.infinity, 64), // Set button height to 64
                 ),
-                child: const Text('Setting'),
+                child: const Text('Settings'),
               ),
             ),
             const SizedBox(height: 35),

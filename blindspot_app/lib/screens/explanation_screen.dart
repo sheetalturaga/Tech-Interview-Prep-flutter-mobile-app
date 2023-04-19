@@ -3,20 +3,16 @@ import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/widgets/question_display_page_decor.dart';
 import 'package:flutter/material.dart';
-import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
 import '../widgets/content_area_size.dart';
 import '../widgets/custom_question_display_navbar.dart';
 
-// For every question, answer card changes color for right & wrong
-// Upon the submission of answer, Submit button turns to next question
-// Score Tracking: Right answer & Wrong answers
-// Next Question button ->
-// Star mark functionality to add to Notebook + also wrong answers
-// Quit button -> homeScreen
-// Counter for the number of questions
+// This class was created to display the explanation to each question answered
+// However, we came to the conclusion that lesser the number of switches we do to
+// different, the better it is for user experience. So, this was omitted out of
+// the planned execution
 
 class ExplanationScreen extends GetView<QuestionsController> {
   const ExplanationScreen({super.key});

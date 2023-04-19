@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "687784936826-78ta7a2h2igd3jqiuqan0q9lthjiu4d1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blindspot_app",
+            "certificate_hash": "08e52e615dd946eb5c5d90848abe703839a7c136"
+          }
+        },
+        {
           "client_id": "687784936826-l7l4hnhp67gk1eugq1grg6n667dn4j30.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -1,5 +1,6 @@
 import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,17 +35,15 @@ class AuthorizationController extends GetxController {
 
   Future<User?> signInWithGoogle({required BuildContext context}) async {
     User? user;
-
     if (kIsWeb) {
       // Create a new provider
       GoogleAuthProvider googleProvider = GoogleAuthProvider();
-
       try {
         final UserCredential userCredential =
             await authorization.signInWithPopup(googleProvider);
 
         user = userCredential.user!;
-        await saveUserToDatabase(user);
+        await _writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
@@ -62,13 +61,12 @@ class AuthorizationController extends GetxController {
           accessToken: googleSignInAuthentication.accessToken,
           idToken: googleSignInAuthentication.idToken,
         );
-
         try {
           final UserCredential userCredential =
               await authorization.signInWithCredential(credential);
 
           user = userCredential.user;
-          await saveUserToDatabase(user!);
+          await _writeUserData(user!);
           Get.offAllNamed(HomeScreen.routeName);
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
@@ -95,7 +93,6 @@ class AuthorizationController extends GetxController {
         }
       }
     }
-
     return user;
   }
 
@@ -116,7 +113,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithPopup(facebookProvider);
 
         user = userCredential.user;
-        await saveUserToDatabase(user!);
+        await _writeUserData(user!);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
@@ -134,7 +131,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithCredential(facebookAuthCredential);
 
         user = userCredential.user!;
-        await saveUserToDatabase(user);
+        await _writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
@@ -158,21 +155,22 @@ class AuthorizationController extends GetxController {
         );
       }
     }
-
     return user;
   }
 
-  Future<void> saveUserToDatabase(User user) async {
-    print("saveUserToDatabase called with email: ${user.email}");
-    await usersRef.doc(user.email).set({
-      "email": user.email,
-      "name": user.displayName,
-      "profilepic": user.photoURL
-    }).then((value) {
-      print("User data saved successfully!");
-    }).catchError((error) {
-      print("Failed to save user data: $error");
-    });
-    print("saveUserToDatabase completed");
+  final CollectionReference users =
+      FirebaseFirestore.instance.collection('users');
+
+  Future<void> _writeUserData(User user) async {
+    try {
+      await users.doc(user.uid).set({
+        'userId': user.uid,
+        'name': user.displayName,
+        'email': user.email,
+        'photoUrl': user.photoURL,
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 }

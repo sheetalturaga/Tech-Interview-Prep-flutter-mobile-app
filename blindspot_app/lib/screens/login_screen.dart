@@ -1,6 +1,7 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/main_menu.dart';
+import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -18,9 +19,6 @@ import '../custom_widgets/custom_appbar.dart';
 
 class LoginScreen extends GetView<AuthorizationController> {
   const LoginScreen({super.key});
-
-  // @override
-  // _LoginScreenState createState() => _LoginScreenState();
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +81,9 @@ class LoginScreen extends GetView<AuthorizationController> {
                         onPressed: () async {
                           User? user = await controller.signInWithGoogle(
                               context: context);
+                          if (user != null) {
+                            Get.offAll(() => const NotebookScreen());
+                          }
                         },
                       ),
                     );
@@ -102,16 +103,6 @@ class LoginScreen extends GetView<AuthorizationController> {
                   ),
                   const SizedBox(
                       height: 16), // add some spacing between the boxes
-                  Container(
-                    height: 40,
-                    width: 200,
-                    child: SignInButton(
-                      Buttons.Apple,
-                      onPressed: () {
-                        // _signInWithApple();
-                      },
-                    ),
-                  ),
                 ],
               ),
             ),

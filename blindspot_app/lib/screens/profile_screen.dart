@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
@@ -11,6 +12,8 @@ class ProfileScreen extends GetView<AuthorizationController> {
 
   @override
   Widget build(BuildContext context) {
+    User user = FirebaseAuth.instance.currentUser!;
+    String displayName = user.displayName ?? 'Unknown';
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 300,
@@ -43,11 +46,12 @@ class ProfileScreen extends GetView<AuthorizationController> {
                       ),
                     ],
                   ),
-                  const Center(
+                  Center(
                       heightFactor: 5,
                       child: Text(
-                        "User name",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
+                        displayName,
+                        style:
+                            const TextStyle(fontSize: 25, color: Colors.white),
                       )),
                 ],
               )),
@@ -69,7 +73,7 @@ class ProfileScreen extends GetView<AuthorizationController> {
                   minimumSize: const Size(
                       double.infinity, 64), // Set button height to 64
                 ),
-                child: const Text('Process'),
+                child: const Text('Progress'),
               ),
             ),
             const SizedBox(height: 16), // Add some spacing between the buttons

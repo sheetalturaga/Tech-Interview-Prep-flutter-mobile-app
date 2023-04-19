@@ -38,8 +38,8 @@ class LoginScreen extends GetView<AuthorizationController> {
             color: Colors.blue,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Center(
+              children: const [
+                Center(
                   heightFactor: 2,
                   child: Text(
                     "BlindSpot",
@@ -51,7 +51,7 @@ class LoginScreen extends GetView<AuthorizationController> {
                     ),
                   ),
                 ),
-                const Text(
+                Text(
                   "Learning the Gap",
                   style: TextStyle(
                     fontSize: 20,
@@ -113,27 +113,6 @@ class LoginScreen extends GetView<AuthorizationController> {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  // children: const [
-                  //   Text(
-                  //     "Copyright BlindSpot All Rights Reversed",
-                  //     style: TextStyle(
-                  //       color: Colors.black,
-                  //       fontWeight: FontWeight.w100,
-                  //       fontSize: 12,
-                  //       decoration: TextDecoration.none,
-                  //     ),
-                  //     textAlign: TextAlign.center,
-                  //   ),
-                  // ],
-                ),
               ),
             ),
           ],

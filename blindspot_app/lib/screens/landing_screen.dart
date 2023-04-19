@@ -26,8 +26,8 @@ class LandingScreen extends StatelessWidget {
             color: Colors.blue,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Center(
+              children: const [
+                Center(
                   heightFactor: 2,
                   child: Text(
                     "BLIND SPOT",
@@ -39,7 +39,7 @@ class LandingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text(
+                Text(
                   "Learning the Gap",
                   style: TextStyle(
                     fontSize: 20,
@@ -65,7 +65,7 @@ class LandingScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return LoginScreen();
+                        return const LoginScreen();
                       },
                     ),
                   );

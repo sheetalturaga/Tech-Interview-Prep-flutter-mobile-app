@@ -38,6 +38,9 @@ class HomeScreen extends StatelessWidget {
             );
           },
           itemCount: topicController.allTopics.length)),
+
+
+          
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.blue,
@@ -45,24 +48,13 @@ class HomeScreen extends StatelessWidget {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

@@ -8,6 +8,7 @@ import '../custom_widgets/custom_appbar.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
+  static const String routeName = '/landingscreen';
 
   @override
   Widget build(BuildContext context) {
@@ -61,14 +62,15 @@ class LandingScreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const LoginScreen();
-                      },
-                    ),
-                  );
+                  Get.toNamed(LoginScreen.routeName);
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return const LoginScreen();
+                  //     },
+                  //   ),
+                  // );
                 },
                 child: const Text('Login'),
               ),
@@ -79,10 +81,7 @@ class LandingScreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AboutScreen()),
-                  );
+                  Get.toNamed(AboutScreen.routeName);
                 },
                 child: const Text('About'),
               ),

@@ -1,11 +1,14 @@
 import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+
+import '../screens/login_screen.dart';
 
 class AuthorizationController extends GetxController {
   @override
@@ -97,6 +100,33 @@ class AuthorizationController extends GetxController {
     }
 
     return user;
+  }
+
+  Future<void> signOutGoogle({required BuildContext context}) async {
+    if (kIsWeb) {
+      // Sign out from Firebase Authentication
+      await authorization.signOut();
+
+      // Redirect to login screen
+      Get.offAllNamed(LandingScreen.routeName);
+    } else {
+      final GoogleSignIn googleSignIn = GoogleSignIn();
+
+      try {
+        // Sign out from Google Sign-In
+        await googleSignIn.signOut();
+        // Sign out from Firebase Authentication
+        await authorization.signOut();
+        // Redirect to login screen
+        Get.offAllNamed(LandingScreen.routeName);
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          customSnackBar(
+            content: 'Error occurred while signing out. Try again.',
+          ),
+        );
+      }
+    }
   }
 
   Future<User?> signInWithFacebook({required BuildContext context}) async {

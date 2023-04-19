@@ -2,7 +2,10 @@ import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
+import 'home_screen.dart';
 import 'landing_screen.dart';
 import 'notebook_screen.dart';
 
@@ -85,26 +88,15 @@ class _ResultScreenState extends State<ResultScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blue,
         onTap: (int index) {
-          switch (index) {
+           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

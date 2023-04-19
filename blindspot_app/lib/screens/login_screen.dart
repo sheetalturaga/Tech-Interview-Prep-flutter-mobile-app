@@ -18,6 +18,7 @@ import '../custom_widgets/custom_appbar.dart';
 
 class LoginScreen extends GetView<AuthorizationController> {
   const LoginScreen({super.key});
+  static const String routeName = '/loginscreen';
 
   // @override
   // _LoginScreenState createState() => _LoginScreenState();
@@ -87,6 +88,7 @@ class LoginScreen extends GetView<AuthorizationController> {
                       ),
                     );
                   }),
+
                   const SizedBox(
                       height: 16), // add some spacing between the boxes
                   Container(

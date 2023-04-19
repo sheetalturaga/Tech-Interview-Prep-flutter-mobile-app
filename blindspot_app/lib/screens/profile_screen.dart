@@ -1,12 +1,19 @@
 import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../custom_widgets/custom_appbar.dart';
+import '../controllers/authorization_controller.dart';
+import 'home_screen.dart';
 import 'main_menu.dart';
 import 'notebook_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends GetView<AuthorizationController> {
   const ProfileScreen({super.key});
+  static const String routeName = '/profilescreen';
 
   @override
   Widget build(BuildContext context) {
@@ -89,15 +96,8 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 35),
             TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const AboutScreen();
-                    },
-                  ),
-                );
+              onPressed: () async {
+                await controller.signOutGoogle(context: context);
               },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.blue),
@@ -119,24 +119,13 @@ class ProfileScreen extends StatelessWidget {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MainMenu()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

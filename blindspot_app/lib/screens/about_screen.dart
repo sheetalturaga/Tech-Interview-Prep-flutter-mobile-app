@@ -5,6 +5,7 @@ import '../custom_widgets/custom_appbar.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
+  static const String routeName = '/aboutscreen';
 
   @override
   Widget build(BuildContext context) {

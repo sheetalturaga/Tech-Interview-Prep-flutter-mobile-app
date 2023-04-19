@@ -2,7 +2,10 @@ import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../custom_widgets/custom_appbar.dart';
+import 'home_screen.dart';
 import 'notebook_screen.dart';
 
 class NoteExplainScreen extends StatefulWidget {
@@ -145,26 +148,15 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blue,
         onTap: (int index) {
-          switch (index) {
+           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MainMenu()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

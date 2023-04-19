@@ -1,13 +1,11 @@
 import 'package:blindspot_app/model/notebook_model.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/screens/note_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../custom_widgets/custom_appbar.dart';
 
 class NotebookScreen extends StatefulWidget {
@@ -48,7 +46,6 @@ class _NotebookScreenState extends State<NotebookScreen> {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [

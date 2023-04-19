@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../custom_widgets/custom_appbar.dart';
 
@@ -23,7 +22,6 @@ class AboutScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Center(
                   heightFactor: 2,
@@ -137,18 +135,7 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // const SizedBox(height: 100),
-            // const Text(
-            //   "© BlindSpot. All Rights Reversed",
-            //   style: TextStyle(
-            //     fontSize: 12,
-            //     fontWeight: FontWeight.w100,
-            //     color: Colors.black,
-            //   ),
-            //   textAlign: TextAlign.left,
-            // ),
           ],
-        
         ),
       ),
     );

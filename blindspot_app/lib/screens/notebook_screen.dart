@@ -41,7 +41,6 @@ class _NotebookScreenState extends State<NotebookScreen> {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
@@ -79,7 +78,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
           }
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
-              return Text('Loading...');
+              return const Text('Loading...');
             default:
               return ListView.builder(
                 itemCount: snapshot.data!.docs.length,

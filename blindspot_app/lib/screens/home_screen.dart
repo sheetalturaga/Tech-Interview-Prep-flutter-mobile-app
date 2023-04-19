@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/topic_controller.dart';
 import '../custom_widgets/custom_appbar.dart';
-import 'landing_screen.dart';
 import 'notebook_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,9 +37,6 @@ class HomeScreen extends StatelessWidget {
             );
           },
           itemCount: topicController.allTopics.length)),
-
-
-          
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.blue,

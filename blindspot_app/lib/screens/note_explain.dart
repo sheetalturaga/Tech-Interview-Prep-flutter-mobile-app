@@ -1,9 +1,7 @@
-import 'package:blindspot_app/screens/main_menu.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'home_screen.dart';
 import 'notebook_screen.dart';
@@ -13,7 +11,6 @@ class NoteExplainScreen extends StatefulWidget {
     Key? key,
     required this.questionId,
   }) : super(key: key);
-
   final String questionId;
 
   @override
@@ -22,12 +19,9 @@ class NoteExplainScreen extends StatefulWidget {
 
 class _NoteExplainScreenState extends State<NoteExplainScreen> {
   late Stream<DocumentSnapshot<Map<String, dynamic>>> _noteStream;
-
   @override
   void initState() {
     super.initState();
-
-    // Set up a Firestore stream for the selected question
     _noteStream = FirebaseFirestore.instance
         .collection('notebook')
         .doc(widget.questionId)
@@ -48,7 +42,6 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [

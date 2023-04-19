@@ -1,14 +1,8 @@
-import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
-
 import '../../custom_widgets/custom_appbar.dart';
 import '../controllers/authorization_controller.dart';
 import 'home_screen.dart';
-import 'main_menu.dart';
 import 'notebook_screen.dart';
 
 class ProfileScreen extends GetView<AuthorizationController> {

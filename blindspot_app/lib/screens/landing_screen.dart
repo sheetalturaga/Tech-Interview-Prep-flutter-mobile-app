@@ -3,7 +3,6 @@ import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../custom_widgets/custom_appbar.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -63,14 +62,6 @@ class LandingScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Get.toNamed(LoginScreen.routeName);
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) {
-                  //       return const LoginScreen();
-                  //     },
-                  //   ),
-                  // );
                 },
                 child: const Text('Login'),
               ),
@@ -116,7 +107,6 @@ class ArrowButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      // type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
       shape: const CircleBorder(),
       child: InkWell(onTap: onTap, child: childWidget),

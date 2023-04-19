@@ -1,11 +1,9 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
 import 'package:blindspot_app/screens/explanation_screen.dart';
-import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:blindspot_app/widgets/question_display_page_decor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../firestore_references/collection_refs.dart';
 import '../widgets/content_area_size.dart';
 

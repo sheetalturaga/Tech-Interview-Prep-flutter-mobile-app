@@ -8,8 +8,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
-import '../screens/login_screen.dart';
-
 class AuthorizationController extends GetxController {
   @override
   void onReady() {
@@ -30,7 +28,7 @@ class AuthorizationController extends GetxController {
       backgroundColor: Colors.black,
       content: Text(
         content,
-        style: TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
+        style: const TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
       ),
     );
   }
@@ -41,7 +39,6 @@ class AuthorizationController extends GetxController {
     if (kIsWeb) {
       // Create a new provider
       GoogleAuthProvider googleProvider = GoogleAuthProvider();
-
       try {
         final UserCredential userCredential =
             await authorization.signInWithPopup(googleProvider);
@@ -54,9 +51,7 @@ class AuthorizationController extends GetxController {
       }
     } else {
       final GoogleSignIn googleSignIn = GoogleSignIn();
-
       final GoogleSignInAccount? account = await googleSignIn.signIn();
-
       if (account != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
             await account.authentication;
@@ -65,11 +60,9 @@ class AuthorizationController extends GetxController {
           accessToken: googleSignInAuthentication.accessToken,
           idToken: googleSignInAuthentication.idToken,
         );
-
         try {
           final UserCredential userCredential =
               await authorization.signInWithCredential(credential);
-
           user = userCredential.user;
           await saveUserToDatabase(user!);
           Get.offAllNamed(HomeScreen.routeName);
@@ -98,7 +91,6 @@ class AuthorizationController extends GetxController {
         }
       }
     }
-
     return user;
   }
 
@@ -106,12 +98,10 @@ class AuthorizationController extends GetxController {
     if (kIsWeb) {
       // Sign out from Firebase Authentication
       await authorization.signOut();
-
       // Redirect to login screen
       Get.offAllNamed(LandingScreen.routeName);
     } else {
       final GoogleSignIn googleSignIn = GoogleSignIn();
-
       try {
         // Sign out from Google Sign-In
         await googleSignIn.signOut();
@@ -140,7 +130,6 @@ class AuthorizationController extends GetxController {
       facebookProvider.setCustomParameters({
         'display': 'popup',
       });
-
       try {
         final UserCredential userCredential =
             await authorization.signInWithPopup(facebookProvider);
@@ -188,7 +177,6 @@ class AuthorizationController extends GetxController {
         );
       }
     }
-
     return user;
   }
 

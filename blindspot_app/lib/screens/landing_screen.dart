@@ -15,76 +15,108 @@ class LandingScreen extends StatelessWidget {
     // ignore: sized_box_for_whitespace
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 300,
+        toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-            height: 250,
+            height: 300,
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Center(
-                  heightFactor: 2,
-                  child: Text(
-                    "BLIND SPOT",
-                    style: TextStyle(
-                      fontSize: 45,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto',
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 5.0),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Center(
+                    heightFactor: 1,
+                    child: Text(
+                      "BLIND SPOT",
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'AppIcons',
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  "Learning the Gap",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontFamily: 'Open Sans',
+                  Text(
+                    "Learning The Gap",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'AppIcons',
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Get.toNamed(LoginScreen.routeName);
-                },
-                child: const Text('Login'),
+      body: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(32),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              scale: 2.0,
+              image: const AssetImage("assets/images/blindspot-notext.png"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(0.2), BlendMode.dstATop)),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const LoginScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(fontSize: 20, fontFamily: "AppIcons"),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 25),
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Get.toNamed(AboutScreen.routeName);
-                },
-                child: const Text('About'),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutScreen()),
+                    );
+                  },
+                  child: const Text(
+                    'About',
+                    style: TextStyle(fontSize: 20, fontFamily: "AppIcons"),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 25),
-            ArrowButton(
-              onTap: () => {
-                Get.offAndToNamed(HomeScreen.routeName),
-              },
-              childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
-            ),
-          ],
+              const SizedBox(height: 25),
+              ArrowButton(
+                onTap: () => {
+                  Get.offAndToNamed(HomeScreen.routeName),
+                },
+                childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -107,9 +139,14 @@ class ArrowButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
-      shape: const CircleBorder(),
-      child: InkWell(onTap: onTap, child: childWidget),
+      child: InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: childWidget,
+          )),
     );
   }
 }

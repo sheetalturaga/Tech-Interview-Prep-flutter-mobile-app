@@ -27,8 +27,8 @@ class CustomQuestionDisplayNavbar extends StatelessWidget
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 35,
-          vertical: 35.0 / 1.2,
+          horizontal: 25,
+          vertical: 25.0 / 1.2,
         ),
         child: Stack(
           children: [
@@ -67,7 +67,7 @@ class CustomQuestionDisplayNavbar extends StatelessWidget
                     offset: const Offset(10, 0),
                     child: ArrowButton(
                         childWidget: const Icon(
-                          IconData(0xe243, fontFamily: 'MaterialIcons'),
+                          Icons.home,
                           color: Colors.white,
                         ),
                         onTap: onTapAction ??

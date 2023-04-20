@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-
 import '../firestore_references/collection_refs.dart';
 import '../model/notebook_model.dart';
 import '../model/quiz_model.dart';
@@ -14,6 +13,7 @@ class QuestionsController extends GetxController {
   final loadStatus = LoadStatus.loading.obs;
   late QuizModel _quizModel;
   final listOfAllQuestionsInTopic = <Questions>[];
+  final uniqueRandomQuestions = <Questions>[];
   final currentSessionQuestionList = <Questions>[];
   bool get isFirstQuestion => questionIndex.value > 0;
   bool get isLastQuestion => questionIndex.value >= 10 - 1;
@@ -46,11 +46,12 @@ class QuestionsController extends GetxController {
       for (var i in questionsInSnapshot.docs) {
         final data = i.data();
         questionsFromTopicList.add(Questions(
-            id: i.id,
-            correctOption: data['correct_option'],
-            question: data['question'],
-            options: data['options'],
-            explanation: data['explanation']));
+          id: i.id,
+          correctOption: data['correct_option'],
+          question: data['question'],
+          options: data['options'],
+          explanation: data['explanation'],
+        ));
       }
       topicBasedQuestionsInModel.questions = questionsFromTopicList;
 

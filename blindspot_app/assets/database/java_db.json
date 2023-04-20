@@ -243,6 +243,246 @@
       ],
       "correct_option": "C",
       "explanation": "In Java, a try-catch block is used to handle exceptions that may occur during program execution. The try block contains the code that may throw an exception, while the catch block contains the code that handles the exception. If an exception is thrown in the try block, the catch block is executed to handle the exception, preventing the program from crashing or producing incorrect results."
+    },
+    {
+      "id": "topic001q011",
+      "question": "What is the difference between == and .equals() in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "== is used to compare values of primitive data types, while .equals() is used to compare"
+        },
+        {
+          "identifier": "B",
+          "option": "== is used to compare references, while .equals() is used to compare values."
+        },
+        {
+          "identifier": "C",
+          "option": "== and .equals() are identical and can be used interchangeably."
+        },
+        {
+          "identifier": "D",
+          "option": "== and .equals() are both used to compare objects"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "In Java, == is used to compare values of primitive data types, while .equals() is used to compare objects. This is because objects are represented by references in Java, and == compares the references rather than the values. Therefore, it is important to use .equals() when comparing objects to ensure that the values are being compared rather than the references."
+    },
+    {
+      "id": "topic001q012",
+      "question": "Which of the following is true about Java arrays?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "An array can hold elements of different data types"
+        },
+        {
+          "identifier": "B",
+          "option": "An array can have negative length"
+        },
+        {
+          "identifier": "C",
+          "option": "An array can be resized dynamically at runtime"
+        },
+        {
+          "identifier": "D",
+          "option": "An array index starts at 1"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "In Java, array indices start at 0, not 1. The other options are false - an array can only hold elements of the same data type, the length of an array cannot be negative, and the size of an array is fixed once it is created"
+    },
+    {
+      "id": "topic001q013",
+      "question": "What is the purpose of the static keyword in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "To indicate that a variable or method belongs to a class, rather than an instance of the class."
+        },
+        {
+          "identifier": "B",
+          "option": "To indicate that a variable or method is constant and cannot be changed."
+        },
+        {
+          "identifier": "C",
+          "option": "To indicate that a variable or method can only be accessed within the same package."
+        },
+        {
+          "identifier": "D",
+          "option": "To indicate that a variable or method can only be accessed by subclasses."
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The static keyword is used to indicate that a variable or method belongs to a class, rather than an instance of the class. This means that the variable or method can be accessed without creating an object of the class."
+    },
+    {
+      "id": "topic001q014",
+      "question": "Which of the following is NOT a primitive data type in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "int"
+        },
+        {
+          "identifier": "B",
+          "option": "double"
+        },
+        {
+          "identifier": "C",
+          "option": "char"
+        },
+        {
+          "identifier": "D",
+          "option": "String"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "String is not a primitive data type in Java, but rather a class. The primitive data types in Java are byte, short, int, long, float, double, char, and boolean."
+    },
+    {
+      "id": "topic001q015",
+      "question": "int x = 5; int y = 2; System.out.println(x / y);",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "2.5"
+        },
+        {
+          "identifier": "B",
+          "option": "2"
+        },
+        {
+          "identifier": "C",
+          "option": "2.0"
+        },
+        {
+          "identifier": "D",
+          "option": "Compilation Error"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Since both x and y are integers, integer division will be performed and the result will be an integer. Therefore, the output will be 2."
+    },
+    {
+      "id": "topic001q016",
+      "question": "What is the difference between a superclass and a subclass in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A superclass is a class that is derived from a subclass."
+        },
+        {
+          "identifier": "B",
+          "option": "A superclass is a class that is at the top of the class hierarchy, while a subclass is a class that inherits from a superclass."
+        },
+        {
+          "identifier": "C",
+          "option": "A superclass is a class that inherits from a subclass, while a subclass is a class that is at the top of the class hierarchy."
+        },
+        {
+          "identifier": "D",
+          "option": "A superclass and a subclass are the same thing."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In Java, classes can be organized into a hierarchy, where a subclass inherits attributes and behaviors from a superclass. The superclass is at the top of the hierarchy, and provides a general definition of the class, while subclasses provide more specific implementations that can override or extend the behavior of the superclass."
+    },
+    {
+      "id": "topic001q017",
+      "question": "What is the purpose of the finally block in a try-catch-finally statement in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "To handle exceptions that are thrown by the try block."
+        },
+        {
+          "identifier": "B",
+          "option": "To execute code that should always be run, regardless of whether an exception is thrown."
+        },
+        {
+          "identifier": "C",
+          "option": "To re-throw an exception that was caught by the catch block."
+        },
+        {
+          "identifier": "D",
+          "option": "To provide an alternative block of code to execute if the try block fails."
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The finally block in a try-catch-finally statement is used to specify code that should be executed regardless of whether an exception is thrown or not. This is useful for tasks such as closing resources (such as file handles or database connections) that should be released no matter what happens in the try block."
+    },
+    {
+      "id": "topic001q018",
+      "question": "What is the difference between a HashSet and a TreeSet in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "A HashSet allows duplicate elements, while a TreeSet does not."
+        },
+        {
+          "identifier": "B",
+          "option": "A HashSet is sorted, while a TreeSet is not."
+        },
+        {
+          "identifier": "C",
+          "option": "A HashSet uses a hash table to store elements, while a TreeSet uses a tree structure."
+        },
+        {
+          "identifier": "D",
+          "option": "A HashSet is thread-safe, while a TreeSet is not."
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "HashSet and TreeSet are both implementations of the Set interface in Java. HashSet uses a hash table to store its elements, while TreeSet uses a tree structure (specifically, a red-black tree). This difference in implementation affects the performance characteristics of the two data structures, as well as their behavior with respect to iteration order and duplicate elements."
+    },
+    {
+      "id": "topic001q019",
+      "question": "What is the output of the following code? int x = 5; int y = 10; System.out.println(x+y+\"is the sum of x and y\");",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "15 is the sum of x and y"
+        },
+        {
+          "identifier": "B",
+          "option": "x + y is the sum of x and y"
+        },
+        {
+          "identifier": "C",
+          "option": "510 is the sum of x and y"
+        },
+        {
+          "identifier": "D",
+          "option": "Compilation Error"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The output of the code will be \"15 is the sum of x and y\" because the addition operation is performed first, and then the result is concatenated with the string \" is the sum of x and y\"."
+    },
+    {
+      "id": "topic001q020",
+      "question": "What is the keyword used to define a constant in Java?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "final"
+        },
+        {
+          "identifier": "B",
+          "option": "const"
+        },
+        {
+          "identifier": "C",
+          "option": "static"
+        },
+        {
+          "identifier": "D",
+          "option": "let"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "In Java, a constant is defined using the final keyword. Once defined, the value of the constant cannot be changed."
     }
   ]
 }

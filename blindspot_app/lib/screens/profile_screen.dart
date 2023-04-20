@@ -23,21 +23,41 @@ class ProfileScreen extends GetView<AuthorizationController> {
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
-              child: Column(
+            height: 250,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.blue,
+            child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Row(
+                  //   children: [
+                  //     Align(
+                  //         alignment: Alignment.centerRight,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(10),
+                  //           child: IconButton(
+                  //             icon: const Icon(Icons.person),
+                  //             onPressed: () {},
+                  //             color: Colors.white,
+                  //           ),
+                  //         )),
+                  //     const Spacer(),
+                  //     const Align(
+                  //       alignment: Alignment.center,
+                  //     ),
+                  //   ],
+                  // ),
                   Center(
-                      heightFactor: 5,
-                      child: Text(
-                        displayName,
-                        style:
-                            const TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+                    child: Center(
+                        heightFactor: 5,
+                        child: Text(
+                          displayName,
+                          style: const TextStyle(
+                              fontSize: 25, color: Colors.white),
+                        )),
+                  )
+                ]),
+          ),
         ),
       ),
       body: Center(

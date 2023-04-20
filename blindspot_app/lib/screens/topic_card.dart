@@ -15,7 +15,7 @@ class TopicCard extends GetView<TopicController> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ClipRRect(
-          // borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8),
           child: InkWell(
             onTap: () {
               // check if user is logged
@@ -27,35 +27,42 @@ class TopicCard extends GetView<TopicController> {
                   height: 100,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      gradient: LinearGradient(colors: [
-                        // Color(0xFF0061ff),
-                        // // Color(0xFF60efff),
-                        // Color(0xff30c5d2),
-                        // Color(0xFF8711c1),
-                        Color(0xFF767689),
-                        Color(0xFF767689),
-                        // Color(0xFF7BAFD4),
-                      ])),
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [
+                            // Color(0xFF0061ff),
+                            // Color(0xFFA061F2),
+                            Color(0XFF69AFF1),
+                            Color(0XFFDDC6FA)
+                          ])),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          model.topic,
-                          style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500),
+                        Flexible(
+                          child: Text(
+                            model.topic,
+                            style: const TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFF062543),
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          model.description,
-                          style: const TextStyle(
+                        // const SizedBox(
+                        //   height: 4,
+                        // ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            model.description,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
                               fontSize: 13,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500),
+                              color: Color(0xFF062543),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         )
                       ],
                     ),

@@ -21,16 +21,15 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomQuestionDisplayNavbar(
-        // secondaryWidget: Container(
-        //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        //   decoration: const ShapeDecoration(
-        //       shape: StadiumBorder(
-        //           side: BorderSide(color: Colors.white, width: 2))),
-        //   child: Icon(Icon)
-        // ),
-        // decoration: const ShapeDecoration(
-        //     shape: StadiumBorder(
-        //         side: BorderSide(color: Colors.white, width: 2)))
+        secondaryWidget: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: Obx(
+            () => const Icon(
+              IconData(0xe243),
+              color: Colors.red,
+            ),
+          ),
+        ),
         displayActionIcon: true,
         leadTitleWidget: Obx(
           () => Text(
@@ -69,7 +68,7 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                                       controller.currQ.value!.options!.length,
                                   shrinkWrap: true,
                                   padding: const EdgeInsets.only(top: 25),
-                                  physics: const NeverScrollableScrollPhysics(),
+                                  // physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     final opts =
@@ -104,29 +103,26 @@ class QuestionDisplayScreen extends GetView<QuestionsController> {
                       ),
                     ),
                   )),
-                ColoredBox(
-                  color: Theme.of(context).cardColor,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Row(children: [
-                      Expanded(
-                          child: Obx(
-                        () => Visibility(
-                            visible: controller.loadStatus.value ==
-                                LoadStatus.complete,
-                            child: NextButton(
-                              onTap: () {
-                                controller.isLastQuestion
-                                    ? Get.toNamed(ResultScreen.routeName)
-                                    : controller.nextQuestion();
-                              },
-                              title: controller.isLastQuestion
-                                  ? "Complete"
-                                  : "Next Question",
-                            )),
-                      )),
-                    ]),
-                  ),
+                SizedBox(
+                  // color: Theme.of(context).cardColor,
+                  child: Row(children: [
+                    Expanded(
+                        child: Obx(
+                      () => Visibility(
+                          visible: controller.loadStatus.value ==
+                              LoadStatus.complete,
+                          child: NextButton(
+                            onTap: () {
+                              controller.isLastQuestion
+                                  ? Get.toNamed(ResultScreen.routeName)
+                                  : controller.nextQuestion();
+                            },
+                            title: controller.isLastQuestion
+                                ? "Complete"
+                                : "Next Question",
+                          )),
+                    )),
+                  ]),
                 )
               ],
             )),
@@ -172,12 +168,9 @@ class OptionsDisplayCard extends StatelessWidget {
                       : Colors.red.withOpacity(0.5)
                   : const Color(0xFFACD3F7),
             )),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            option,
-            style: TextStyle(color: isSelected ? Colors.black : null),
-          ),
+        child: Text(
+          option,
+          style: TextStyle(color: isSelected ? Colors.black : null),
         ),
       ),
     );

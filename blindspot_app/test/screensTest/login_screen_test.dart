@@ -1,4 +1,3 @@
-import 'package:blindspot_app/controllers/authorization_controller.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
@@ -7,7 +6,7 @@ import 'package:get/get.dart';
 
 void main() {
   group('LoginScreen', () {
-    final controller = Get.put(AuthorizationController());
+    // final controller = Get.put(AuthorizationController());
 
     testWidgets('Renders LoginScreen', (WidgetTester tester) async {
       await tester.pumpWidget(

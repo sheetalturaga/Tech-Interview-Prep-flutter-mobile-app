@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:blindspot_app/model/quiz_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../firestore_references/collection_refs.dart';
+import '../model/quiz_model.dart';
 
 // Uploading data to Firestore to the backend
 class DatabaseUploadService extends GetxController {
@@ -21,8 +21,6 @@ class DatabaseUploadService extends GetxController {
     loadStatus.value = LoadStatus.loading; // initial value is 0
 
     final db = FirebaseFirestore.instance;
-    print("created db instance");
-    print(db.toString());
 
     // Load the asset folder by passing the context
     var manifestContents = await rootBundle
@@ -47,12 +45,8 @@ class DatabaseUploadService extends GetxController {
       listOfFiles.add(QuizModel.fromJson(jsonDecode(fileContent)));
     }
 
-    // print("Items Number: ${questions[0].description}");
     // Creating for uploading batches of data to firestore
-    print("reached batch ops");
     WriteBatch batchOps = db.batch();
-
-    printInfo(info: batchOps.toString());
 
     // Loop through the list of all files and create the documents and
     // assign respective fields
@@ -73,23 +67,15 @@ class DatabaseUploadService extends GetxController {
           "explanation": questions.explanation,
         });
 
-        print("added questions");
-
         for (var options in questions.options!) {
           batchOps.set(
               pathToQuestion.collection("options").doc(options.identifier),
               {"identifier": options.identifier, "option": options.option});
         }
-        print("added options");
       }
     }
 
     await batchOps.commit();
     loadStatus.value = LoadStatus.complete;
   }
-
-  // Future<void> testDataPush() async {
-  //   final db = FirebaseFirestore.instance;
-  //   db.doc("questions");
-  // }
 }

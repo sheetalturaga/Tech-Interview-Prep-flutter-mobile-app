@@ -16,18 +16,31 @@ class HomeScreen extends StatelessWidget {
     final TopicController topicController = Get.find();
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 100,
+          toolbarHeight: 150,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
+          centerTitle: true,
           flexibleSpace: ClipPath(
             clipper: ReviseSize(),
             child: Container(
-              height: 100,
+              height: 200,
               width: MediaQuery.of(context).size.width,
               color: mainAppColor,
+              child: const Padding(
+                padding: EdgeInsets.only(top: 70.0, bottom: 5.0),
+                child: Text(
+                  "What would you like to learn today?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
             ),
           )),
       body: Obx(() => ListView.separated(
+          physics: const AlwaysScrollableScrollPhysics(),
           itemBuilder: (context, int index) {
             return TopicCard(model: topicController.allTopics[index]);
           },

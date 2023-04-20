@@ -120,19 +120,22 @@ class QuestionsController extends GetxController {
     update(['chosenOptionsList']);
   }
 
-  // TODO: Need to Add the right userID variable to push to DB
-  // add check if the questionId is already in the db
   void addWrongAnswerToDB() {
     if (currQ.value!.chosenOption != currQ.value!.correctOption) {
-      NoteBookModel nbk = NoteBookModel(
+      String? userId = FirebaseAuth.instance.currentUser?.uid;
+      if (userId != null) {
+        NoteBookModel nbk = NoteBookModel(
           questionId: currQ.value!.id,
           topic: currTopic.value!,
           question: currQ.value!.question,
           correctOption: currQ.value!.correctOption,
           explanation: currQ.value!.explanation,
-          userId: "1111");
-
-      NoteBookModel.ToFirestore(nbk);
+          userId: userId,
+        );
+        FirebaseFirestore.instance
+            .collection('notebook')
+            .add(nbk.toFirestore());
+      }
     }
   }
 

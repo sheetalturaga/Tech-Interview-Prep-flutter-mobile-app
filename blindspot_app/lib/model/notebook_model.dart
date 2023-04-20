@@ -30,16 +30,14 @@ class NoteBookModel {
     );
   }
 
-  NoteBookModel.ToFirestore(NoteBookModel doc) {
-    final notebook = FirebaseFirestore.instance.collection("notebook");
-
-    notebook.add({
-      "questionId": doc.questionId,
-      "topic": doc.topic,
-      "question": doc.question,
-      "correctOption": doc.correctOption,
-      "explanation": doc.explanation,
-      "userId": doc.userId,
-    });
+  Map<String, dynamic> toFirestore() {
+    return {
+      "questionId": questionId,
+      "topic": topic,
+      "question": question,
+      "correctOption": correctOption,
+      "explanation": explanation,
+      "userId": userId,
+    };
   }
 }

@@ -30,9 +30,6 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
-      // home: LoginScreen()
-      // home: const HomeScreen(),
-      // home: QuizzScreen(),
     );
   }
 }

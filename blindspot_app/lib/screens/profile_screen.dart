@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import '../controllers/authorization_controller.dart';
+import 'User_setting.dart';
 import 'home_screen.dart';
 import 'notebook_screen.dart';
 
@@ -65,7 +66,7 @@ class ProfileScreen extends GetView<AuthorizationController> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle setting button press
+                  Get.toNamed(SettingScreen.routeName);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(

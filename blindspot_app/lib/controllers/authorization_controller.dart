@@ -43,7 +43,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithPopup(googleProvider);
 
         user = userCredential.user!;
-        await _writeUserData(user);
+        await writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
@@ -63,7 +63,7 @@ class AuthorizationController extends GetxController {
           final UserCredential userCredential =
               await authorization.signInWithCredential(credential);
           user = userCredential.user;
-          await _writeUserData(user!);
+          await writeUserData(user!);
           Get.offAllNamed(HomeScreen.routeName);
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
@@ -134,7 +134,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithPopup(facebookProvider);
 
         user = userCredential.user;
-        await _writeUserData(user!);
+        await writeUserData(user!);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
@@ -152,7 +152,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithCredential(facebookAuthCredential);
 
         user = userCredential.user!;
-        await _writeUserData(user);
+        await writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
@@ -182,7 +182,7 @@ class AuthorizationController extends GetxController {
   final CollectionReference users =
       FirebaseFirestore.instance.collection('users');
 
-  Future<void> _writeUserData(User user) async {
+  Future<void> writeUserData(User user) async {
     try {
       await users.doc(user.uid).set({
         'userId': user.uid,

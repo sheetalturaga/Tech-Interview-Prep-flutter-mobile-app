@@ -1,15 +1,20 @@
-import 'package:blindspot_app/screens/about_screen.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
+import '../controllers/authorization_controller.dart';
+import 'User_setting.dart';
+import 'home_screen.dart';
 import 'notebook_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends GetView<AuthorizationController> {
   const ProfileScreen({super.key});
+  static const String routeName = '/profilescreen';
 
   @override
   Widget build(BuildContext context) {
+    User user = FirebaseAuth.instance.currentUser!;
+    String displayName = user.displayName ?? 'Unknown';
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 300,
@@ -18,12 +23,12 @@ class ProfileScreen extends StatelessWidget {
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
-              child: Column(
+            height: 250,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.blue,
+            child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   // Row(
                   //   children: [
                   //     Align(
@@ -43,13 +48,16 @@ class ProfileScreen extends StatelessWidget {
                   //   ],
                   // ),
                   Center(
-                      heightFactor: 5,
-                      child: Text(
-                        "User Name",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+                    child: Center(
+                        heightFactor: 5,
+                        child: Text(
+                          displayName,
+                          style: const TextStyle(
+                              fontSize: 25, color: Colors.white),
+                        )),
+                  )
+                ]),
+          ),
         ),
       ),
       body: Center(
@@ -78,7 +86,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle setting button press
+                  Get.toNamed(SettingScreen.routeName);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(
@@ -89,15 +97,8 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 35),
             TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const AboutScreen();
-                    },
-                  ),
-                );
+              onPressed: () async {
+                await controller.signOutGoogle(context: context);
               },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.blue),
@@ -119,24 +120,13 @@ class ProfileScreen extends StatelessWidget {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

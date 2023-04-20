@@ -3,11 +3,11 @@ import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../custom_widgets/custom_appbar.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
+  static const String routeName = '/landingscreen';
 
   @override
   Widget build(BuildContext context) {

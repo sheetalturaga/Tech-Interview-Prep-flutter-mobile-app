@@ -1,5 +1,5 @@
-import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
+import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class AuthorizationController extends GetxController {
       backgroundColor: Colors.black,
       content: Text(
         content,
-        style: TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
+        style: const TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
       ),
     );
   }
@@ -43,16 +43,14 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithPopup(googleProvider);
 
         user = userCredential.user!;
-        await _writeUserData(user);
+        await writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
       }
     } else {
       final GoogleSignIn googleSignIn = GoogleSignIn();
-
       final GoogleSignInAccount? account = await googleSignIn.signIn();
-
       if (account != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
             await account.authentication;
@@ -64,9 +62,8 @@ class AuthorizationController extends GetxController {
         try {
           final UserCredential userCredential =
               await authorization.signInWithCredential(credential);
-
           user = userCredential.user;
-          await _writeUserData(user!);
+          await writeUserData(user!);
           Get.offAllNamed(HomeScreen.routeName);
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
@@ -96,6 +93,31 @@ class AuthorizationController extends GetxController {
     return user;
   }
 
+  Future<void> signOutGoogle({required BuildContext context}) async {
+    if (kIsWeb) {
+      // Sign out from Firebase Authentication
+      await authorization.signOut();
+      // Redirect to login screen
+      Get.offAllNamed(LandingScreen.routeName);
+    } else {
+      final GoogleSignIn googleSignIn = GoogleSignIn();
+      try {
+        // Sign out from Google Sign-In
+        await googleSignIn.signOut();
+        // Sign out from Firebase Authentication
+        await authorization.signOut();
+        // Redirect to login screen
+        Get.offAllNamed(LandingScreen.routeName);
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          customSnackBar(
+            content: 'Error occurred while signing out. Try again.',
+          ),
+        );
+      }
+    }
+  }
+
   Future<User?> signInWithFacebook({required BuildContext context}) async {
     User? user;
 
@@ -107,13 +129,12 @@ class AuthorizationController extends GetxController {
       facebookProvider.setCustomParameters({
         'display': 'popup',
       });
-
       try {
         final UserCredential userCredential =
             await authorization.signInWithPopup(facebookProvider);
 
         user = userCredential.user;
-        await _writeUserData(user!);
+        await writeUserData(user!);
         Get.offAllNamed(HomeScreen.routeName);
       } catch (e) {
         print(e);
@@ -131,7 +152,7 @@ class AuthorizationController extends GetxController {
             await authorization.signInWithCredential(facebookAuthCredential);
 
         user = userCredential.user!;
-        await _writeUserData(user);
+        await writeUserData(user);
         Get.offAllNamed(HomeScreen.routeName);
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
@@ -161,7 +182,7 @@ class AuthorizationController extends GetxController {
   final CollectionReference users =
       FirebaseFirestore.instance.collection('users');
 
-  Future<void> _writeUserData(User user) async {
+  Future<void> writeUserData(User user) async {
     try {
       await users.doc(user.uid).set({
         'userId': user.uid,

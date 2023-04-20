@@ -1,14 +1,17 @@
-import 'package:blindspot_app/screens/landing_screen.dart';
+
 import 'package:blindspot_app/screens/notebook_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'package:blindspot_app/model/notebook_model.dart';
+import 'home_screen.dart';
 
 class NotebookScreen extends StatefulWidget {
-  const NotebookScreen({Key? key}) : super(key: key);
+  const NotebookScreen({super.key});
+  static const String routeName = '/notebookscreen';
 
   @override
   _NotebookScreenState createState() => _NotebookScreenState();
@@ -44,7 +47,6 @@ class _NotebookScreenState extends State<NotebookScreen> {
               width: MediaQuery.of(context).size.width,
               color: const Color(0xFF1683E9),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: const [
@@ -113,24 +115,13 @@ class _NotebookScreenState extends State<NotebookScreen> {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

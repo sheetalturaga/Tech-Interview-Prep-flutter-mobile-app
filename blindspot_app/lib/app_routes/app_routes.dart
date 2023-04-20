@@ -6,6 +6,11 @@ import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:get/get.dart';
+import '../screens/User_setting.dart';
+import '../screens/about_screen.dart';
+import '../screens/login_screen.dart';
+import '../screens/notebook_screen.dart';
+import '../screens/profile_screen.dart';
 import '../screens/welcome_screen.dart';
 
 class AppRoutes {
@@ -44,6 +49,38 @@ class AppRoutes {
             binding: BindingsBuilder(
               () {
                 Get.put(QuestionsController());
+              },
+            )),
+        GetPage(
+            name: "/profilescreen",
+            page: () => const ProfileScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(AuthorizationController());
+              },
+            )),
+        GetPage(
+            name: "/loginscreen",
+            page: () => const LoginScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(AuthorizationController());
+              },
+            )),
+        GetPage(
+          name: "/notebookscreen",
+          page: () => const NotebookScreen(),
+        ),
+        GetPage(
+          name: "/aboutscreen",
+          page: () => const AboutScreen(),
+        ),
+        GetPage(
+            name: "/settingscreen",
+            page: () => const SettingScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(AuthorizationController());
               },
             )),
       ];

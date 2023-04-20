@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../custom_widgets/custom_appbar.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
+  static const String routeName = '/aboutscreen';
 
-  @override
+ @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
     // ignore: sized_box_for_whitespace

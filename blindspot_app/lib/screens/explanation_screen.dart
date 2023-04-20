@@ -1,15 +1,18 @@
 import 'package:blindspot_app/controllers/questions_controller.dart';
+import 'package:blindspot_app/screens/question_display_screen.dart';
+import 'package:blindspot_app/screens/result_screen.dart';
+import 'package:blindspot_app/widgets/question_display_page_decor.dart';
 import 'package:flutter/material.dart';
-import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:get/get.dart';
 
-// For every question, answer card changes color for right & wrong
-// Upon the submission of answer, Submit button turns to next question
-// Score Tracking: Right answer & Wrong answers
-// Next Question button ->
-// Star mark functionality to add to Notebook + also wrong answers
-// Quit button -> homeScreen
-// Counter for the number of questions
+import '../firestore_references/collection_refs.dart';
+import '../widgets/content_area_size.dart';
+import '../widgets/custom_question_display_navbar.dart';
+
+// This class was created to display the explanation to each question answered
+// However, we came to the conclusion that lesser the number of switches we do to
+// different, the better it is for user experience. So, this was omitted out of
+// the planned execution
 
 class ExplanationScreen extends GetView<QuestionsController> {
   const ExplanationScreen({super.key});
@@ -18,18 +21,68 @@ class ExplanationScreen extends GetView<QuestionsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: ClipPath(
-        clipper: ExplanationScreenBackground(),
-        child: Container(
-          color: mainAppColor,
-          height: double.infinity,
-          // child: Column(
-          //   children: const [
-          //     Text("That's Correct!"),
-          //   ],
-          // ),
+      extendBodyBehindAppBar: true,
+      appBar: CustomQuestionDisplayNavbar(
+        secondaryWidget: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: const ShapeDecoration(
+              shape: StadiumBorder(
+                  side: BorderSide(color: Colors.white, width: 2))),
+          child: const Icon(
+            Icons.star_border_outlined,
+            color: Colors.white,
+          ),
         ),
+        displayActionIcon: true,
+        leadTitleWidget: Obx(
+          () => Text(
+            "Question ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')} Explanation",
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
+          ),
+        ),
+      ),
+      body: QuestionDisplayPageDecor(
+        child: Obx(() => Column(
+              children: [
+                if (controller.loadStatus.value == LoadStatus.loading)
+                  const Expanded(child: LinearProgressIndicator()),
+                if (controller.loadStatus.value == LoadStatus.complete)
+                  Expanded(
+                      child: ContentAreaSize(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: Column(
+                        children: const [],
+                      ),
+                    ),
+                  )),
+                ColoredBox(
+                  color: Theme.of(context).cardColor,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Row(children: [
+                      Expanded(
+                          child: Obx(
+                        () => Visibility(
+                            visible: controller.loadStatus.value ==
+                                LoadStatus.complete,
+                            child: NextButton(
+                              onTap: () {
+                                controller.isLastQuestion
+                                    ? Get.toNamed(ResultScreen.routeName)
+                                    : Navigator.pop(context);
+                              },
+                              title: controller.isLastQuestion
+                                  ? "Complete"
+                                  : "Next Question",
+                            )),
+                      )),
+                    ]),
+                  ),
+                )
+              ],
+            )),
       ),
     );
   }

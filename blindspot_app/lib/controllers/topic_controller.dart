@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
-import '../services/database_storageService.dart';
 
 class TopicController extends GetxController {
   @override
@@ -55,4 +54,6 @@ class TopicController extends GetxController {
     // TODO: CHeck for login
     Get.toNamed(QuestionDisplayScreen.routeName, arguments: quiz);
   }
+
+  getQuizModel() {}
 }

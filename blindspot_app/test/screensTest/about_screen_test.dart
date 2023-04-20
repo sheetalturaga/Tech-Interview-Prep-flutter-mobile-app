@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import '/Users/xiaoxiaoliu/Documents/5520mbile/final-project-sailor-senshi/blindspot_app/lib/screens/about_screen.dart';
 
 void main() {
   testWidgets('AboutScreen displays the correct content',

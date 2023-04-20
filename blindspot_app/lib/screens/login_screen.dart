@@ -88,16 +88,6 @@ class LoginScreen extends GetView<AuthorizationController> {
                   ),
                   const SizedBox(
                       height: 16), // add some spacing between the boxes
-                  Container(
-                    height: 40,
-                    width: 200,
-                    child: SignInButton(
-                      Buttons.Apple,
-                      onPressed: () {
-                        // _signInWithApple();
-                      },
-                    ),
-                  ),
                 ],
               ),
             ),

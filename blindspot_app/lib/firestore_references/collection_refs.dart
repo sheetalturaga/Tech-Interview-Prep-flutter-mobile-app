@@ -6,12 +6,9 @@ import 'package:firebase_database/firebase_database.dart';
 // throughout the app
 final firestore = FirebaseFirestore.instance;
 
-final realTimeFirebase = FirebaseDatabase.instance;
-
 //Parent collection
 final questionCollectionRef = firestore.collection("questionsCollection");
-final notebookCollectionRef = firestore.collection('notebook');
-
+final notebookCollectionRef = firestore.collection('notebookCollection');
 // this is how I refer db to user collection
 final usersRef = firestore.collection("users");
 
@@ -30,3 +27,5 @@ enum LoadStatus {
 }
 
 Reference get storage => FirebaseStorage.instance.ref();
+
+bool isClick = false;

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class SampleCircularPage extends StatefulWidget {
+  const SampleCircularPage({super.key});
+
   @override
   _SampleCircularPageState createState() => _SampleCircularPageState();
 }
@@ -11,16 +13,16 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BlindSpot App"),
+        title: const Text("BlindSpot App"),
       ),
       body: Center(
         child: ListView(
-          padding: EdgeInsets.all(20), //You can use EdgeInsets like above
+          padding: const EdgeInsets.all(20), //You can use EdgeInsets like above
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
-            Text(
+            const Text(
               "Progress",
               style: TextStyle(
                 color: Colors.blue,
@@ -28,10 +30,10 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 45.0,
             ),
-            Text(
+            const Text(
               "Completed Percentage",
               style: TextStyle(
                 color: Colors.blue,
@@ -39,10 +41,10 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
               ),
               textAlign: TextAlign.right,
             ),
-            Divider(
+            const Divider(
               color: Colors.blue,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -53,11 +55,11 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.2,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "30.0%",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "PYTHON",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
@@ -71,11 +73,11 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.6,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "70.0%",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "JAVA",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
@@ -89,22 +91,22 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.5,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "50.0%",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "C++",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,
-                progressColor: Color.fromARGB(255, 9, 224, 16),
+                progressColor: const Color.fromARGB(255, 9, 224, 16),
               ),
             ]),
-            SizedBox(
+            const SizedBox(
               height: 45.0,
             ),
-            Text(
+            const Text(
               "Completed Questions",
               style: TextStyle(
                 color: Colors.blue,
@@ -112,10 +114,10 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
               ),
               textAlign: TextAlign.right,
             ),
-            Divider(
+            const Divider(
               color: Colors.blue,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -126,11 +128,11 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.2,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "10/50",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "PYTHON",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
@@ -144,16 +146,16 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.6,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "30/50",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "JAVA",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,
-                progressColor: Color.fromARGB(255, 228, 145, 241),
+                progressColor: const Color.fromARGB(255, 228, 145, 241),
               ),
               CircularPercentIndicator(
                 radius: 60.0,
@@ -162,16 +164,16 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                 animationDuration: 5000,
                 percent: 0.5,
                 animateFromLastPercent: true,
-                center: Text(
+                center: const Text(
                   "25/50",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
-                footer: Text(
+                footer: const Text(
                   "C++",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,
-                progressColor: Color.fromARGB(255, 9, 224, 16),
+                progressColor: const Color.fromARGB(255, 9, 224, 16),
               ),
             ]),
           ],

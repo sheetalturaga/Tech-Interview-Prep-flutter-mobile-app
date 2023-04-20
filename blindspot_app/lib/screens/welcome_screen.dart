@@ -12,8 +12,8 @@ class WelcomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(gradient: mainBackgroundGradient),
         child: Image.asset(
           'assets/images/BLINDSPOT.jpeg',
-          width: 500,
-          height: 500,
+          width: 650,
+          height: 650,
         ),
       ),
     );

@@ -1,9 +1,5 @@
-import 'package:blindspot_app/screens/about_screen.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
 
 import 'package:blindspot_app/screens/landing_screen.dart';
 
@@ -11,7 +7,7 @@ void main() {
   testWidgets('Landing screen displays the correct widgets',
       (WidgetTester tester) async {
     // Build the LandingScreen widget and trigger a frame
-    await tester.pumpWidget(MaterialApp(home: LandingScreen()));
+    await tester.pumpWidget(const MaterialApp(home: LandingScreen()));
 
     // Check that the app bar is displayed
     expect(find.byType(AppBar), findsOneWidget);
@@ -44,7 +40,7 @@ void main() {
   testWidgets('Pressing the about button navigates to the about screen',
       (WidgetTester tester) async {
     // Build the LandingScreen widget and trigger a frame
-    await tester.pumpWidget(MaterialApp(home: LandingScreen()));
+    await tester.pumpWidget(const MaterialApp(home: LandingScreen()));
 
     // Tap the about button
     await tester.tap(find.widgetWithText(ElevatedButton, 'About'));

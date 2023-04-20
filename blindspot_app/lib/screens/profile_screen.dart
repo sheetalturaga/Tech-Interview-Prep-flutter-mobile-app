@@ -28,24 +28,6 @@ class ProfileScreen extends GetView<AuthorizationController> {
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: IconButton(
-                              icon: const Icon(Icons.person),
-                              onPressed: () {},
-                              color: Colors.white,
-                            ),
-                          )),
-                      const Spacer(),
-                      const Align(
-                        alignment: Alignment.center,
-                      ),
-                    ],
-                  ),
                   Center(
                       heightFactor: 5,
                       child: Text(

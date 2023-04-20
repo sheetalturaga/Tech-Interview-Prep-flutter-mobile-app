@@ -23,29 +23,29 @@ class ProfileScreen extends StatelessWidget {
               color: Colors.blue,
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: IconButton(
-                              icon: const Icon(Icons.person),
-                              onPressed: () {},
-                              color: Colors.white,
-                            ),
-                          )),
-                      const Spacer(),
-                      const Align(
-                        alignment: Alignment.center,
-                      ),
-                    ],
-                  ),
-                  const Center(
+                children: const [
+                  // Row(
+                  //   children: [
+                  //     Align(
+                  //         alignment: Alignment.centerRight,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(10),
+                  //           child: IconButton(
+                  //             icon: const Icon(Icons.person),
+                  //             onPressed: () {},
+                  //             color: Colors.white,
+                  //           ),
+                  //         )),
+                  //     const Spacer(),
+                  //     const Align(
+                  //       alignment: Alignment.center,
+                  //     ),
+                  //   ],
+                  // ),
+                  Center(
                       heightFactor: 5,
                       child: Text(
-                        "User name",
+                        "User Name",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       )),
                 ],
@@ -68,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                   minimumSize: const Size(
                       double.infinity, 64), // Set button height to 64
                 ),
-                child: const Text('Process'),
+                child: const Text('Progress'),
               ),
             ),
             const SizedBox(height: 16), // Add some spacing between the buttons

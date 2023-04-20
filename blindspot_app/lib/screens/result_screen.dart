@@ -19,7 +19,7 @@ class ResultScreen extends GetView<QuestionsController> {
         body: QuestionDisplayPageDecor(
           child: Column(children: [
             const CustomQuestionDisplayNavbar(
-                leadTitleWidget: SizedBox(height: 80), title: "You Did It!"),
+                secondaryWidget: SizedBox(height: 80), title: "You Did It!"),
             Expanded(
               child: ContentAreaSize(
                   child: Column(

@@ -14,7 +14,7 @@ void main() async {
   );
   InitAppBindings().dependencies();
   Get.put(DatabaseStorageService());
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,10 +26,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'blindspot_app',
       theme: ThemeData(
+        fontFamily: 'AppIcons',
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
+      // home: DataUploadScreen(),
+      // home: const HomeScreen(),
+      // home: QuizzScreen(),
     );
   }
 }

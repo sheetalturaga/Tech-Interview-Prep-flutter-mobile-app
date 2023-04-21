@@ -58,7 +58,7 @@ class AboutScreen extends StatelessWidget {
               image: const AssetImage("assets/images/blindspot-notext.png"),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.2), BlendMode.dstATop)),
+                  Colors.white.withOpacity(0.1), BlendMode.dstATop)),
         ),
         width: double.infinity,
         child: Column(

@@ -72,12 +72,11 @@ class ResultScreen extends GetView<QuestionsController> {
                           color: mainAppColor.withOpacity(0.1),
                           height: 100,
                           width: MediaQuery.of(context).size.width,
-                          child: const Padding(
-                            padding: EdgeInsets.only(top: 30),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 30),
                             child: Text(
-                              // controller.currTopic.value!,
-                              "Java",
-                              style: TextStyle(
+                              controller.currTopic.value!,
+                              style: const TextStyle(
                                   color: Color(0xFF062543), fontSize: 25),
                               textAlign: TextAlign.center,
                             ),
@@ -118,12 +117,11 @@ class ResultScreen extends GetView<QuestionsController> {
                           color: mainAppColor.withOpacity(0.1),
                           height: 100,
                           width: MediaQuery.of(context).size.width,
-                          child: const Padding(
-                            padding: EdgeInsets.only(top: 30.0),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 30.0),
                             child: Text(
-                              // controller.quizCompleted.toString(),
-                              "10 out of 10",
-                              style: TextStyle(
+                              controller.quizCompleted.toString(),
+                              style: const TextStyle(
                                   color: Color(0xFF062543), fontSize: 25),
                               textAlign: TextAlign.center,
                             ),

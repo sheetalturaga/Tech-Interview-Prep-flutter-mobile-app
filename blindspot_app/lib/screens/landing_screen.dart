@@ -1,11 +1,11 @@
-import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
-import 'package:blindspot_app/screens/result_screen.dart';
+import 'package:blindspot_app/screens/progress_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../custom_widgets/custom_appbar.dart';
+import 'home_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -113,7 +113,7 @@ class LandingScreen extends StatelessWidget {
               const SizedBox(height: 25),
               ArrowButton(
                 onTap: () => {
-                  Get.offAndToNamed(ResultScreen.routeName),
+                  Get.offAndToNamed(HomeScreen.routeName),
                 },
                 childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
               ),

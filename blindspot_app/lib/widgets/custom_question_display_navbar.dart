@@ -51,17 +51,18 @@ class CustomQuestionDisplayNavbar extends StatelessWidget
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Transform.translate(
-                  offset: const Offset(-14, 0),
-                  child: ArrowButton(
-                    childWidget: Icon(
-                        isClick ? Icons.star : Icons.star_border_outlined,
-                        color: Colors.white),
-                    onTap: () {
-                      isClick = true;
-                    },
+                if (displayActionIcon)
+                  Transform.translate(
+                    offset: const Offset(-14, 0),
+                    child: ArrowButton(
+                      childWidget: Icon(
+                          isClick ? Icons.star : Icons.star_border_outlined,
+                          color: Colors.white),
+                      onTap: () {
+                        isClick = true;
+                      },
+                    ),
                   ),
-                ),
                 if (displayActionIcon)
                   Transform.translate(
                     offset: const Offset(10, 0),

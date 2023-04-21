@@ -21,7 +21,6 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,

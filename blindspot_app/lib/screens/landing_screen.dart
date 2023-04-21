@@ -111,12 +111,12 @@ class LandingScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              ArrowButton(
-                onTap: () => {
-                  Get.offAndToNamed(HomeScreen.routeName),
-                },
-                childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
-              ),
+              // ArrowButton(
+              //   onTap: () => {
+              //     Get.offAndToNamed(HomeScreen.routeName),
+              //   },
+              //   childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
+              // ),
             ],
           ),
         ),

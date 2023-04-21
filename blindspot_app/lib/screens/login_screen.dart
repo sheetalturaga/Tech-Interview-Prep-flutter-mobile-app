@@ -1,4 +1,5 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -86,7 +87,7 @@ class LoginScreen extends GetView<AuthorizationController> {
                           User? user = await controller.signInWithGoogle(
                               context: context);
                           if (user != null) {
-                            Get.offAll(() => const NotebookScreen());
+                            Get.offAll(() => const HomeScreen());
                           }
                         },
                       ),

@@ -12,19 +12,17 @@ void main() {
 
     // Verify that the app bar contains the correct content
     expect(find.text('BLIND SPOT'), findsOneWidget);
-    expect(find.text('Version 2.0.0'), findsOneWidget);
-    expect(find.text('Learning the Gap'), findsOneWidget);
+    expect(find.text('Version 2.0.0'), findsNothing);
+    expect(find.text('Learning The Gap'), findsOneWidget);
 
     // Verify that the body contains the correct content
     expect(find.text('Pick the topic of your choice and take the quiz'),
-        findsOneWidget);
+        findsNothing);
     expect(
         find.text(
             'Star mark the question that you want to dive deeper into, to save it to your notebook'),
-        findsOneWidget);
-    expect(
-        find.text(
-            'Visit your profile to see how much progress you’ve made and also personalize your profile using the setting button'),
+        findsNothing);
+    expect(find.text('Keep track of progress through your profile'),
         findsOneWidget);
   });
 }

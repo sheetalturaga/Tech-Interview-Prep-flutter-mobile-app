@@ -80,61 +80,44 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
 
           final data = snapshot.data!.data()!;
 
-          return Column(
-            children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                color: const Color(0xFF1683E9),
-                margin: const EdgeInsets.fromLTRB(50, 5, 50, 5),
-                padding: const EdgeInsets.symmetric(
-                    vertical: 10), // increased vertical padding
-                child: Center(
-                  child: Text(
-                    '${data['question']}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+          return Container(
+            alignment: Alignment.center,
+            color: const Color(0xFF1683E9),
+            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 50),
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${data['question']}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                // alignment: Alignment.topLeft,
-                color: const Color(0xFF1683E9),
-                margin: const EdgeInsets.fromLTRB(150, 5, 150, 5),
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Center(
+                const SizedBox(height: 16),
+                Center(
                   child: Text(
                     'Correct Option: ${data['correctOption']}',
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                // alignment: Alignment.topLeft,
-                color: const Color(0xFF1683E9),
-                margin: const EdgeInsets.fromLTRB(50, 5, 50, 5),
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Center(
-                  child: Text(
-                    'Explanation: ${data['explanation']}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                const SizedBox(height: 16),
+                Text(
+                  'Explanation: ${data['explanation']}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              const SizedBox(height: 60),
-            ],
+              ],
+            ),
           );
         },
       ),
@@ -143,7 +126,7 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blue,
         onTap: (int index) {
-           switch (index) {
+          switch (index) {
             case 0:
               Get.toNamed(HomeScreen.routeName);
               break;

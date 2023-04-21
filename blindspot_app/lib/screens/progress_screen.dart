@@ -21,6 +21,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -84,7 +85,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -104,7 +105,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFFB268BA),
                 ),
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -124,7 +125,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: tabPurpleColor,
                 ),
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -149,7 +150,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -169,7 +170,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFFBA7068),
                 ),
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -189,7 +190,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFF69BAB2),
                 ),
                 CircularPercentIndicator(
-                  radius: 60.0,
+                  radius: 50.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,

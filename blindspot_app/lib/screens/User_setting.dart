@@ -40,72 +40,56 @@ class SettingScreen extends GetView<AuthorizationController> {
               )),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Image.asset(
-                'assets/images/settingImg.png',
-                height: 64, // Set image height to 64
-              ),
-            ),
-            const SizedBox(height: 16), // Add some spacing between the buttons
-
-            const SizedBox(height: 35),
-            const Text(
-              'Want to change your username?',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 35),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.6,
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Enter your new username',
-                  border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Image.asset(
+                  'assets/images/settingImg.png',
+                  height: 64,
                 ),
-                onChanged: (value) async {
-                  user.updateDisplayName(value);
-                  controller.writeUserData(user);
+              ),
+              const SizedBox(height: 16),
+              const SizedBox(height: 35),
+              const Text(
+                'Want to change your username?',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 35),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your new username',
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (value) async {
+                    user.updateDisplayName(value);
+                    controller.writeUserData(user);
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle submit button press
                 },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(70, 30),
+                ),
+                child: const Text('Submit'),
               ),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Handle submit button press
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(100, 40),
-              ),
-              child: Text('Submit'),
-            ),
-            //  Container(
-            //   width: MediaQuery.of(context).size.width * 0.4,
-            //   child: ElevatedButton(
-            //     onPressed: () async {
-            //       await controller._writeUserData(user);
-            //       ScaffoldMessenger.of(context).showSnackBar(
-            //         const SnackBar(
-            //           content: Text('Username updated successfully!'),
-            //         ),
-            //       );
-            //     },
-            //     style: ElevatedButton.styleFrom(
-            //       minimumSize: const Size(double.infinity, 48),
-            //       padding: const EdgeInsets.symmetric(horizontal: 16),
-            //     ),
-            //     child: const Text('Submit'),
-            //   ),
-            // ),
-          ],
+            ],
+          ),
         ),
       ),
+
+   
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.blue,

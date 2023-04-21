@@ -15,6 +15,7 @@ class LoginScreen extends GetView<AuthorizationController> {
     Size size = MediaQuery.of(context).size; //total size of our screen
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,

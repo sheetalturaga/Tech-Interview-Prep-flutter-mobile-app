@@ -12,7 +12,7 @@ class LoginScreen extends GetView<AuthorizationController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size; //total size of our screen
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

@@ -89,12 +89,14 @@ flutter:
       - assets/images/
       - assets/images/trophyoutline.svg
       - assets/images/BLINDSPOT.jpeg
+      - assets/images/settingImg.png
       - assets/database/
       - assets/database/behavioral_db.json
       - assets/database/dataInterpretation_db.json
       - assets/database/java_db.json
       - assets/database/ood_db.json
       - assets/database/python_db.json
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

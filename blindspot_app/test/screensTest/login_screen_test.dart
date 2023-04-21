@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-// import 'package:sign_button/sign_button.dart';
-// import 'package:your_app_name/authorization_controller.dart';
-// import 'package:your_app_name/login_screen.dart';
 
 void main() {
   group('LoginScreen', () {

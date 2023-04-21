@@ -2,6 +2,7 @@ import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'notebook_screen.dart';
 
@@ -10,7 +11,6 @@ class NoteExplainScreen extends StatefulWidget {
     Key? key,
     required this.questionId,
   }) : super(key: key);
-
   final String questionId;
 
   @override
@@ -19,12 +19,9 @@ class NoteExplainScreen extends StatefulWidget {
 
 class _NoteExplainScreenState extends State<NoteExplainScreen> {
   late Stream<DocumentSnapshot<Map<String, dynamic>>> _noteStream;
-
   @override
   void initState() {
     super.initState();
-
-    // Set up a Firestore stream for the selected question
     _noteStream = FirebaseFirestore.instance
         .collection('notebook')
         .doc(widget.questionId)
@@ -45,7 +42,6 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
               width: MediaQuery.of(context).size.width,
               color: const Color(0xFF1683E9),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: const [
@@ -147,26 +143,15 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blue,
         onTap: (int index) {
-          switch (index) {
+           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
-              );
+              Get.toNamed(HomeScreen.routeName);
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NotebookScreen()),
-              );
-              // Handle navigation to Notebook screen
+              Get.toNamed(NotebookScreen.routeName);
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-              // Handle navigation to User screen
+              Get.toNamed(ProfileScreen.routeName);
               break;
           }
         },

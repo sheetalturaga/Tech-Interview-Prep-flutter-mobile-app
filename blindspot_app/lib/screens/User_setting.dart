@@ -17,6 +17,7 @@ class SettingScreen extends GetView<AuthorizationController> {
     String displayName = user.displayName ?? 'Unknown';
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 300,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -27,7 +28,6 @@ class SettingScreen extends GetView<AuthorizationController> {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Center(
                       heightFactor: 5,
@@ -88,8 +88,6 @@ class SettingScreen extends GetView<AuthorizationController> {
           ),
         ),
       ),
-
-   
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.blue,

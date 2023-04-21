@@ -1,6 +1,3 @@
-import 'package:blindspot_app/screens/about_screen.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

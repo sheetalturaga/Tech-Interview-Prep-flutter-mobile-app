@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const mainAppColor = Color(0xFF1683E9);
+const tabPurpleColor = Color(0xFF9891C6);
+const stdHeaderTextColor = Color(0xFF062543);
 
 const background1 = Color.fromARGB(1, 235, 244, 245);
 const background2 = Color.fromARGB(1, 181, 198, 224);

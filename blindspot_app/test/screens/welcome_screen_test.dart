@@ -32,8 +32,8 @@ void main() {
 
       final imageFinder = find.byType(Image);
 
-      expect((imageFinder.evaluate().first.widget as Image).width, 500);
-      expect((imageFinder.evaluate().first.widget as Image).height, 500);
+      expect((imageFinder.evaluate().first.widget as Image).width, 650);
+      expect((imageFinder.evaluate().first.widget as Image).height, 650);
     });
   });
 }

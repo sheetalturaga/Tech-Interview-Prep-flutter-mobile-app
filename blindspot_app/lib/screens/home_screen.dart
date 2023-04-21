@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
     final TopicController topicController = Get.find();
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 150,
           backgroundColor: Colors.transparent,
           elevation: 0.0,

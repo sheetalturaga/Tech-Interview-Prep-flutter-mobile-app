@@ -1,4 +1,3 @@
-
 import 'package:blindspot_app/screens/notebook_explain.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,38 +36,41 @@ class _NotebookScreenState extends State<NotebookScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 300,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: const Color(0xFF1683E9),
-              child: Column(
-                children: [
-                  Row(
-                    children: const [
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                          )),
-                      Spacer(),
-                      Align(
-                        alignment: Alignment.center,
-                      ),
-                    ],
+            height: 250,
+            width: MediaQuery.of(context).size.width,
+            color: const Color(0xFF1683E9),
+            child: Column(
+              children: [
+                Row(
+                  children: const [
+                    Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                        )),
+                    Spacer(),
+                    Align(
+                      alignment: Alignment.center,
+                    ),
+                  ],
+                ),
+                const Center(
+                  heightFactor: 5,
+                  child: Text(
+                    "My Notebook",
+                    style: TextStyle(fontSize: 25, color: Colors.white),
                   ),
-                  const Center(
-                      heightFactor: 5,
-                      child: Text(
-                        "My Notebook",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
       body: StreamBuilder<QuerySnapshot>(

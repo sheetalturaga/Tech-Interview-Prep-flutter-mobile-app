@@ -1,16 +1,17 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
 import 'package:blindspot_app/controllers/questions_controller.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/question_display_screen.dart';
-import 'package:blindspot_app/screens/landing_screen.dart';
-import 'package:blindspot_app/controllers/topic_controller.dart';
-import 'package:blindspot_app/screens/result_screen.dart';
 import 'package:get/get.dart';
+import '../screens/home_screen.dart';
+import '../screens/notebook_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/progress_screen.dart';
+import '../screens/question_display_screen.dart';
+import '../screens/landing_screen.dart';
+import '../controllers/topic_controller.dart';
+import '../screens/result_screen.dart';
 import '../screens/User_setting.dart';
 import '../screens/about_screen.dart';
 import '../screens/login_screen.dart';
-import '../screens/notebook_screen.dart';
-import '../screens/profile_screen.dart';
 import '../screens/welcome_screen.dart';
 
 class AppRoutes {
@@ -70,6 +71,14 @@ class AppRoutes {
         GetPage(
           name: "/notebookscreen",
           page: () => const NotebookScreen(),
+        ),
+        GetPage(
+          name: "/profilescreen",
+          page: () => const ProfileScreen(),
+        ),
+        GetPage(
+          name: "/progressscreen",
+          page: () => const ProgressScreen(),
         ),
         GetPage(
           name: "/aboutscreen",

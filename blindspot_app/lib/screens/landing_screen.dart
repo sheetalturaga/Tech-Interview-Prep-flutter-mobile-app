@@ -1,9 +1,10 @@
-import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
+import 'package:blindspot_app/screens/progress_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../custom_widgets/custom_appbar.dart';
+import 'home_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -15,6 +16,7 @@ class LandingScreen extends StatelessWidget {
     // ignore: sized_box_for_whitespace
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -109,12 +111,12 @@ class LandingScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              ArrowButton(
-                onTap: () => {
-                  Get.offAndToNamed(HomeScreen.routeName),
-                },
-                childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
-              ),
+              // ArrowButton(
+              //   onTap: () => {
+              //     Get.offAndToNamed(HomeScreen.routeName),
+              //   },
+              //   childWidget: const Icon(Icons.arrow_forward_ios, size: 20),
+              // ),
             ],
           ),
         ),

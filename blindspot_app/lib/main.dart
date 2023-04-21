@@ -2,7 +2,6 @@ import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,9 +31,6 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       getPages: AppRoutes.routesList(),
-      // home: DataUploadScreen(),
-      // home: const HomeScreen(),
-      // home: QuizzScreen(),
     );
   }
 }

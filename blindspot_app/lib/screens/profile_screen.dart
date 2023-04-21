@@ -1,3 +1,4 @@
+import 'package:blindspot_app/screens/progress_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,37 +27,16 @@ class ProfileScreen extends GetView<AuthorizationController> {
             height: 250,
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
-            child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Row(
-                  //   children: [
-                  //     Align(
-                  //         alignment: Alignment.centerRight,
-                  //         child: Padding(
-                  //           padding: const EdgeInsets.all(10),
-                  //           child: IconButton(
-                  //             icon: const Icon(Icons.person),
-                  //             onPressed: () {},
-                  //             color: Colors.white,
-                  //           ),
-                  //         )),
-                  //     const Spacer(),
-                  //     const Align(
-                  //       alignment: Alignment.center,
-                  //     ),
-                  //   ],
-                  // ),
-                  Center(
-                    child: Center(
-                        heightFactor: 5,
-                        child: Text(
-                          displayName,
-                          style: const TextStyle(
-                              fontSize: 25, color: Colors.white),
-                        )),
-                  )
-                ]),
+            child: Column(children: [
+              Center(
+                child: Center(
+                    heightFactor: 5,
+                    child: Text(
+                      displayName,
+                      style: const TextStyle(fontSize: 25, color: Colors.white),
+                    )),
+              )
+            ]),
           ),
         ),
       ),
@@ -70,7 +50,11 @@ class ProfileScreen extends GetView<AuthorizationController> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle process button press
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProgessScreen()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(

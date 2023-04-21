@@ -1,15 +1,7 @@
-import 'package:blindspot_app/controllers/questions_controller.dart';
-import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
 import 'package:blindspot_app/model/quiz_model.dart';
-import 'package:blindspot_app/screens/home_screen.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:blindspot_app/screens/question_display_screen.dart';
 import 'package:mockito/mockito.dart';
 
 class MockQuizModel extends Mock implements QuizModel {}

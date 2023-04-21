@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-class SampleCircularPage extends StatefulWidget {
-  const SampleCircularPage({super.key});
+class ProgessScreen extends StatefulWidget {
+  const ProgessScreen({super.key});
 
   @override
-  _SampleCircularPageState createState() => _SampleCircularPageState();
+  _ProgessScreenState createState() => _ProgessScreenState();
 }
 
-class _SampleCircularPageState extends State<SampleCircularPage> {
+class _ProgessScreenState extends State<ProgessScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +96,7 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
                 footer: const Text(
-                  "C++",
+                  "OOD",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,
@@ -169,7 +169,7 @@ class _SampleCircularPageState extends State<SampleCircularPage> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                 ),
                 footer: const Text(
-                  "C++",
+                  "OOD",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,

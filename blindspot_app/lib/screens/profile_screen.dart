@@ -1,3 +1,4 @@
+import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/screens/progress_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class ProfileScreen extends GetView<AuthorizationController> {
     String displayName = user.displayName ?? 'Unknown';
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 300,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -83,6 +85,7 @@ class ProfileScreen extends GetView<AuthorizationController> {
             TextButton(
               onPressed: () async {
                 await controller.signOutGoogle(context: context);
+                Get.offAll(() => const LandingScreen());
               },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.blue),

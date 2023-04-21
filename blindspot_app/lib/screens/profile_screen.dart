@@ -53,7 +53,7 @@ class ProfileScreen extends GetView<AuthorizationController> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ProgessScreen()),
+                        builder: (context) => const ProgressScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

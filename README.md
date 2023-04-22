@@ -91,6 +91,9 @@ https://cdn-uploads.piazza.com/paste/kes5if5dl0j55h/4390b76e58986960c92d7bfa6177
 ## Team UML calss diagram
 <img width="1063" alt="Screenshot 2023-03-16 at 2 14 06 PM" src="https://user-images.githubusercontent.com/98671143/225754244-68fae70a-f3f1-425b-b383-09d35d084b7a.png">
 
+![BlindSpot_ClassDiagram - UML Class](https://user-images.githubusercontent.com/46464544/233766139-64110428-5f3a-4709-9e24-2177fc9fc30c.png)
+
+
 
 ## Gantt Diagram
 ![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)

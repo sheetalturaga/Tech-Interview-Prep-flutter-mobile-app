@@ -30,6 +30,7 @@ class UserModel {
       DocumentReference docRef = await usersCollection.add({'email': email});
       return docRef.id;
     } catch (e) {
+      // ignore: avoid_print
       print('Error creating user: $e');
       return '';
     }

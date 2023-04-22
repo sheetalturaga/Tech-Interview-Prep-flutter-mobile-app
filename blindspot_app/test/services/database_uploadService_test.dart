@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('addDatafromJson', () {
+    // ignore: unused_local_variable
     final data = {
       "topic": "topic",
       "image_url": "url",

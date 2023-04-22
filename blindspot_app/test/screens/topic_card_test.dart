@@ -12,29 +12,27 @@ class MockQuizModel extends Mock implements QuizModel {}
 
 void main() {
   //widget test
-  group('TopicCard', () {
-    testWidgets('should render TopicCard widget', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        GetMaterialApp(
-          home: Scaffold(
-            body: TopicCard(
-              model: QuizModel(
-                  id: '123',
-                  topic: 'Test Topic',
-                  description: 'Test Description',
-                  questionCount: 0),
-              // topic: '',
-              // topicController: null,
-            ),
+  testWidgets('should render TopicCard widget', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      GetMaterialApp(
+        home: Scaffold(
+          body: TopicCard(
+            model: QuizModel(
+                id: '123',
+                topic: 'Test Topic',
+                description: 'Test Description',
+                questionCount: 0),
+            // topic: '',
+            // topicController: null,
           ),
         ),
-      );
+      ),
+    );
 
-      final topicFinder = find.text('Test Topic');
-      final descriptionFinder = find.text('Test Description');
+    final topicFinder = find.text('Test Topic');
+    final descriptionFinder = find.text('Test Description');
 
-      expect(topicFinder, findsOneWidget);
-      expect(descriptionFinder, findsOneWidget);
-    });
+    expect(topicFinder, findsOneWidget);
+    expect(descriptionFinder, findsOneWidget);
   });
 }

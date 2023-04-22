@@ -1,12 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-
 import 'package:blindspot_app/screens/login_screen.dart';
 
 void main() {
   testWidgets('Login screen title text UI', (WidgetTester tester) async {
     // Build the LoginScreen widget
-    await tester.pumpWidget(MaterialApp(home: LoginScreen()));
+    await tester.pumpWidget(const MaterialApp(home: LoginScreen()));
 
     // Find the title text widget
     final titleTextFinder = find.text('BLIND SPOT');

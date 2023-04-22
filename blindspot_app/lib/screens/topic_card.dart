@@ -18,7 +18,6 @@ class TopicCard extends GetView<TopicController> {
           borderRadius: BorderRadius.circular(8),
           child: InkWell(
             onTap: () {
-              // check if user is logged
               controller.navigateToQuestions(quiz: model);
             },
             child: Stack(
@@ -31,8 +30,6 @@ class TopicCard extends GetView<TopicController> {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                           colors: [
-                            // Color(0xFF0061ff),
-                            // Color(0xFFA061F2),
                             Color(0XFF69AFF1),
                             Color(0XFFDDC6FA)
                           ])),
@@ -49,9 +46,6 @@ class TopicCard extends GetView<TopicController> {
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
-                        // const SizedBox(
-                        //   height: 4,
-                        // ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(

@@ -1,7 +1,6 @@
 import 'package:blindspot_app/controllers/topic_controller.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/topic_card.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +22,7 @@ void main() {
   testWidgets('HomeScreen displays the correct number of topic cards',
       (WidgetTester tester) async {
     // Build the HomeScreen widget
-    await tester.pumpWidget(GetMaterialApp(home: HomeScreen()));
+    await tester.pumpWidget(const GetMaterialApp(home: HomeScreen()));
 
     // Verify that the widget displays a certain number of TopicCard widgets
     expect(find.byType(TopicCard),

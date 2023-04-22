@@ -7,7 +7,6 @@ class DatabaseStorageService extends GetxService {
     if (imageName == null) {
       return null;
     }
-
     try {
       var storageRef =
           storage.child("topic_images").child('${imageName.toLowerCase()}.png');

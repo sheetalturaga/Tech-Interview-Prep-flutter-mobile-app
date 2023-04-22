@@ -1,7 +1,6 @@
 import 'package:blindspot_app/firestore_references/collection_refs.dart';
 import 'package:blindspot_app/screens/data_upload_screen.dart';
 import 'package:blindspot_app/services/database_uploadService.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,7 @@
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 
+// Custom designed background for the Quiz part of the App
 class QuestionDisplayPageDecor extends StatelessWidget {
   final Widget child;
   const QuestionDisplayPageDecor({super.key, required this.child});

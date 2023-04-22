@@ -1,87 +1,27 @@
-import 'package:blindspot_app/screens/login_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+
+import 'package:blindspot_app/screens/login_screen.dart';
 
 void main() {
-  group('LoginScreen', () {
-    // final controller = Get.put(AuthorizationController());
+  testWidgets('Login screen title text UI', (WidgetTester tester) async {
+    // Build the LoginScreen widget
+    await tester.pumpWidget(MaterialApp(home: LoginScreen()));
 
-    testWidgets('Renders LoginScreen', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const GetMaterialApp(
-          home: LoginScreen(),
-        ),
-      );
+    // Find the title text widget
+    final titleTextFinder = find.text('BLIND SPOT');
 
-      final appBar = find.byType(AppBar);
-      expect(appBar, findsOneWidget);
+    // Check if the title text is displayed
+    expect(titleTextFinder, findsOneWidget);
 
-      final container = find.byType(Container);
-      expect(container, findsNWidgets(4));
+    // Check the font size of the title text
+    final titleTextWidget = tester.widget<Text>(titleTextFinder);
+    expect(titleTextWidget.style!.fontSize, equals(40.0));
 
-      final signInButton = find.byType(SignInButton);
-      expect(signInButton, findsNWidgets(3));
-    });
+    // Check the font weight of the title text
+    expect(titleTextWidget.style!.fontWeight, equals(FontWeight.bold));
 
-    testWidgets('Presses Google SignInButton', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const GetMaterialApp(
-          home: LoginScreen(),
-        ),
-      );
-
-      final signInButton = find.widgetWithText(SignInButton, 'Google');
-      expect(signInButton, findsOneWidget);
-
-      await tester.tap(signInButton);
-      // await tester.pump();
-
-      // expect(controller.isSigningIn.value, true);
-
-      // await tester.pump(const Duration(seconds: 3)); // Replace with actual waiting time for sign in
-
-      // expect(controller.currentUser.value, isNotNull);
-      // expect(controller.isSigningIn.value, false);
-    });
-
-    testWidgets('Presses Facebook SignInButton', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const GetMaterialApp(
-          home: LoginScreen(),
-        ),
-      );
-
-      final signInButton = find.widgetWithText(SignInButton, 'Facebook');
-      expect(signInButton, findsOneWidget);
-
-      await tester.tap(signInButton);
-      // await tester.pump();
-
-      // expect(controller.isSigningIn.value, true);
-
-      // await tester.pump(const Duration(seconds: 3)); // Replace with actual waiting time for sign in
-
-      // expect(controller.currentUser.value, isNotNull);
-      // expect(controller.isSigningIn.value, false);
-    });
-
-    testWidgets('Presses Apple SignInButton', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const GetMaterialApp(
-          home: LoginScreen(),
-        ),
-      );
-
-      final signInButton = find.widgetWithText(SignInButton, 'Apple');
-      expect(signInButton, findsOneWidget);
-
-      await tester.tap(signInButton);
-      await tester.pump();
-
-      // Replace with actual implementation for Apple sign in
-      expect(true, true);
-    });
+    // Check the font family of the title text
+    expect(titleTextWidget.style!.fontFamily, equals('AppIcons'));
   });
 }

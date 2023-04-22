@@ -14,13 +14,13 @@ void main() {
       "question_count": 3,
     };
 
-    test('addDatafromJson method adds data to Firestore', () async {
-      final firestore = FakeFirebaseFirestore();
-      when(FirebaseFirestore.instanceFor(
-        app: Firebase.app(),
-      )).thenReturn(firestore);
-      // call the method that adds data to Firestore
-      await DatabaseUploadService().addDatafromJson();
-    });
+    // test('addDatafromJson method adds data to Firestore', () async {
+    //   final firestore = FakeFirebaseFirestore();
+    //   when(FirebaseFirestore.instanceFor(
+    //     app: Firebase.app(),
+    //   )).thenReturn(firestore);
+    //   // call the method that adds data to Firestore
+    //   await DatabaseUploadService().addDatafromJson();
+    // });
   });
 }

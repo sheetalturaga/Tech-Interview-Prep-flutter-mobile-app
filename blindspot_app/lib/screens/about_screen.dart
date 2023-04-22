@@ -13,7 +13,6 @@ class AboutScreen extends StatelessWidget {
     // ignore: sized_box_for_whitespace
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,

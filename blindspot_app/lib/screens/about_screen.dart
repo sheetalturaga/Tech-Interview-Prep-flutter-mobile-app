@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../custom_widgets/custom_appbar.dart';
+import '../ui/shared/color.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
   static const String routeName = '/aboutscreen';
 
- @override
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //total size of our screen
     // ignore: sized_box_for_whitespace
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -20,21 +22,18 @@ class AboutScreen extends StatelessWidget {
           child: Container(
             height: 300,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+            color: mainAppColor,
             child: Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 5.0),
+              padding: const EdgeInsets.only(top: 35, bottom: 5.0),
               child: Column(
                 children: const [
-                  Center(
-                    heightFactor: 1,
-                    child: Text(
-                      "BLIND SPOT",
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'AppIcons',
-                      ),
+                  Text(
+                    "BLIND SPOT",
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AppIcons',
                     ),
                   ),
                   Text(
@@ -73,40 +72,65 @@ class AboutScreen extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.arrow_right,
-                    color: Colors.blue,
+                    color: mainAppColor,
+                    size: 50,
                   ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      "Pick the topic of your choice and take the quiz."
-                      " Each Quiz renders 10 questions with multiple option to choose from."
-                      " The option tile will turn red if the answer is incorrect, else it will turn green"
-                      " You can always quit by clicking the home button",
+                      "Pick the topic of your choice and take the quiz. Each Quiz renders 10 questions with multiple option to choose from. The option tile will turn red if the answer is incorrect, else it will turn green, You can always quit by clicking the home button",
+                      maxLines: 8,
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'AppIcons',
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
               ),
             ),
-            // const SizedBox(height: 0.5),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Icon(
                     Icons.arrow_right,
-                    color: Colors.blue,
+                    color: mainAppColor,
+                    size: 50,
                   ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
                       "The questions answered incorrectly are automatically saved to your notebook so you can read the right explanation for it.",
+                      maxLines: 3,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'AppIcons',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.justify,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.arrow_right,
+                    color: mainAppColor,
+                    size: 50,
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      "The Results will be provided at the end of each quiz that tells you how many questions you answered correctly and in which topic",
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'AppIcons',
@@ -119,14 +143,14 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // const SizedBox(height: 1),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Icon(
                     Icons.arrow_right,
-                    color: Colors.blue,
+                    color: mainAppColor,
+                    size: 50,
                   ),
                   SizedBox(width: 10),
                   Expanded(
@@ -144,7 +168,7 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 50),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,

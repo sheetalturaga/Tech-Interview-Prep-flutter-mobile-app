@@ -1,10 +1,10 @@
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../custom_widgets/custom_appbar.dart';
 import '../ui/shared/color.dart';
-import 'landing_screen.dart';
 import 'notebook_screen.dart';
 
 class ProgressScreen extends StatefulWidget {
@@ -31,25 +31,21 @@ class _ProgressScreenState extends State<ProgressScreen> {
             height: 300,
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 30),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Center(
-                    heightFactor: 1,
-                    child: Text(
-                      "PROGRESS",
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'AppIcons',
-                      ),
+            child: Column(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(top: 60, bottom: 5.0),
+                  child: Text(
+                    "PROGRESS",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AppIcons',
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -67,7 +63,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
         ),
         child: Center(
           child: ListView(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(5),
             children: <Widget>[
               const Text(
                 "Completed Questions",
@@ -83,9 +79,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
               const SizedBox(
                 height: 20.0,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -105,7 +101,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFFB268BA),
                 ),
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -125,7 +121,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: tabPurpleColor,
                 ),
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -150,7 +146,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -170,7 +166,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFFBA7068),
                 ),
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -190,7 +186,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   progressColor: const Color(0xFF69BAB2),
                 ),
                 CircularPercentIndicator(
-                  radius: 50.0,
+                  radius: 52.0,
                   lineWidth: 13.0,
                   animation: true,
                   animationDuration: 5000,
@@ -224,7 +220,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
               );
               break;
             case 1:

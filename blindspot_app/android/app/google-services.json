@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "687784936826-draq2cdr4lrrdi6u9n8sqnaoo83jcr8q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blindspot_app",
+            "certificate_hash": "5051190b2e11ec2e84b258abd636688c794962ca"
+          }
+        },
+        {
           "client_id": "687784936826-l7l4hnhp67gk1eugq1grg6n667dn4j30.apps.googleusercontent.com",
           "client_type": 3
         }

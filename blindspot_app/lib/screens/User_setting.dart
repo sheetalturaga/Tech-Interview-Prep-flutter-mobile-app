@@ -1,4 +1,5 @@
 import 'package:blindspot_app/screens/profile_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,54 +19,58 @@ class SettingScreen extends GetView<AuthorizationController> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 300,
+        toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
-              child: Column(
-                children: [
-                  Center(
-                      heightFactor: 5,
-                      child: Text(
-                        displayName,
-                        style:
-                            const TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+            height: 300,
+            width: MediaQuery.of(context).size.width,
+            color: mainAppColor,
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0, bottom: 5.0),
+                child: Center(
+                  child: Text(
+                    "Hello, $displayName!",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                ),
+              )
+            ]),
+          ),
         ),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.6,
+                // width: MediaQuery.of(context).size.width * 0.6,
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Image.asset(
-                  'assets/images/settingImg.png',
-                  height: 64,
+                child: const CircleAvatar(
+                  radius: 120,
+                  backgroundImage: AssetImage('assets/images/settingImg.png'),
                 ),
               ),
               const SizedBox(height: 16),
               const SizedBox(height: 35),
               const Text(
-                'Want to change your username?',
+                'Update your username?',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 35),
               Container(
-                width: MediaQuery.of(context).size.width * 0.6,
+                width: MediaQuery.of(context).size.width * 0.8,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    hintText: 'Enter your new username',
+                    hintText: 'Enter your new username....',
                     border: OutlineInputBorder(),
                   ),
                   onChanged: (value) async {
@@ -80,7 +85,8 @@ class SettingScreen extends GetView<AuthorizationController> {
                   // Handle submit button press
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(70, 30),
+
+                  minimumSize: const Size(70, 30),
                 ),
                 child: const Text('Submit'),
               ),
@@ -89,9 +95,10 @@ class SettingScreen extends GetView<AuthorizationController> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: mainAppColor,
         currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         onTap: (int index) {
           switch (index) {
             case 0:

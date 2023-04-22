@@ -1,0 +1,4 @@
+#Fri Apr 21 14:31:49 PDT 2023
+base.0=/Users/sheetalturaga/Documents/GitHub/final-project-sailor-senshi/blindspot_app/android/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

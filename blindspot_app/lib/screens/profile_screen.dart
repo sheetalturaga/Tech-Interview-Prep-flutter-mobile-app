@@ -1,5 +1,6 @@
 import 'package:blindspot_app/screens/landing_screen.dart';
 import 'package:blindspot_app/screens/progress_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,90 +21,110 @@ class ProfileScreen extends GetView<AuthorizationController> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 300,
+        toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-            height: 250,
+            height: 300,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+            color: mainAppColor,
             child: Column(children: [
-              Center(
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0, bottom: 5.0),
                 child: Center(
-                    heightFactor: 5,
-                    child: Text(
-                      displayName,
-                      style: const TextStyle(fontSize: 25, color: Colors.white),
-                    )),
+                  child: Text(
+                    "Hello, $displayName!",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                ),
               )
             ]),
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProgressScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(
-                      double.infinity, 64), // Set button height to 64
+      body: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(32),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              scale: 2.0,
+              image: const AssetImage("assets/images/blindspot-notext.png"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(0.2), BlendMode.dstATop)),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 250,
+                height: 75,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProgressScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(
+                        double.infinity, 64), // Set button height to 64
+                  ),
+                  child: const Text('Progress',
+                      style: TextStyle(fontSize: 20, fontFamily: "AppIcons")),
                 ),
-                child: const Text('Progress'),
               ),
-            ),
-            const SizedBox(height: 16), // Add some spacing between the buttons
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: ElevatedButton(
-                onPressed: () {
-                  Get.toNamed(SettingScreen.routeName);
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(
-                      double.infinity, 64), // Set button height to 64
+              const SizedBox(
+                  height: 25), // Add some spacing between the buttons
+              SizedBox(
+                width: 250,
+                height: 75,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(SettingScreen.routeName);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(
+                        double.infinity, 64), // Set button height to 64
+                  ),
+                  child: const Text('Settings',
+                      style: TextStyle(fontSize: 20, fontFamily: "AppIcons")),
                 ),
-                child: const Text('Settings'),
               ),
-            ),
-            const SizedBox(height: 35),
-            TextButton(
-              onPressed: () async {
-                await controller.signOutGoogle(context: context);
-                Get.offAll(() => const LandingScreen());
-              },
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.blue),
-                textStyle:
-                    MaterialStateProperty.all(const TextStyle(fontSize: 16)),
-                padding: MaterialStateProperty.all(
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+              const SizedBox(height: 40),
+              TextButton(
+                onPressed: () async {
+                  await controller.signOutGoogle(context: context);
+                  Get.offAll(() => const LandingScreen());
+                },
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all(Colors.blue),
+                  textStyle: MaterialStateProperty.all(const TextStyle(
+                      fontSize: 16,
+                      fontFamily: "AppIcons",
+                      color: Colors.white)),
+                  padding: MaterialStateProperty.all(
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 24)),
+                  backgroundColor:
+                      MaterialStateProperty.all(mainAppColor.withOpacity(0.3)),
+                ),
+                child: const Text("Logout"),
               ),
-              child: const Text("Logout"),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: mainAppColor,
         currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         onTap: (int index) {
           switch (index) {
             case 0:

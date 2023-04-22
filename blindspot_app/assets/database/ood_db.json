@@ -171,6 +171,78 @@
       ],
       "correct_option": "A",
       "explanation": "The SOLID principles of object-oriented design are a set of guidelines that help developers create flexible and maintainable software. The Single Responsibility Principle (SRP) states that a class should have only one reason to change, meaning it should only have one responsibility or job."
+    },
+    {
+      "id": "topic003q008",
+      "question": "Which of the following is NOT a fundamental principle of Object-Oriented Design?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Encapsulation"
+        },
+        {
+          "identifier": "B",
+          "option": "Inheritance"
+        },
+        {
+          "identifier": "C",
+          "option": "Abstraction"
+        },
+        {
+          "identifier": "D",
+          "option": "Complexity"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The fundamental principles of OOD are Encapsulation, Inheritance, and Abstraction. These principles help developers create software that is modular, flexible, and easy to maintain. Encapsulation refers to the practice of bundling data and methods together in a single unit, while inheritance allows objects to inherit properties and behavior from their parent objects. Abstraction involves defining general concepts that can be used across different classes and objects, allowing developers to write code that is more reusable and modular. Complexity, on the other hand, is not a fundamental principle of OOD, although it is an important consideration when designing software."
+    },
+    {
+      "id": "topic003q009",
+      "question": "Which of the following concepts is used to describe the ability of an object to take on many forms?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Encapsulation"
+        },
+        {
+          "identifier": "B",
+          "option": "Inheritance"
+        },
+        {
+          "identifier": "C",
+          "option": "Abstraction"
+        },
+        {
+          "identifier": "D",
+          "option": "Polymorphism"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "Polymorphism is the ability of an object to take on many forms. In the context of Object-Oriented Design, polymorphism refers to the ability of objects to behave in different ways depending on their context or the messages they receive. This is often achieved through the use of inheritance and interfaces"
+    },
+    {
+      "id": "topic003q010",
+      "question": "Which of the following is a design pattern that separates the construction of a complex object from its representation, allowing the same construction process to create different representations?",
+      "options": [
+        {
+          "identifier": "A",
+          "option": "Singleton pattern"
+        },
+        {
+          "identifier": "B",
+          "option": "Factory pattern"
+        },
+        {
+          "identifier": "C",
+          "option": "Builder pattern"
+        },
+        {
+          "identifier": "D",
+          "option": "Prototype pattern"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The Builder pattern is a design pattern that separates the construction of a complex object from its representation, allowing the same construction process to create different representations. This pattern is often used to create complex objects that have many different parts or attributes that can be configured in different ways. The Builder pattern is typically implemented using a Builder class, which is responsible for constructing the object, and a Director class, which is responsible for managing the construction process."
     }
   ]
 }

@@ -18,7 +18,7 @@ void main() {
     // Verify that the body text is displayed.
     expect(
       find.text(
-        'Pick the topic of your choice and take the quiz. Each Quiz renders 10 questions with multiple option to choose from. The option tile will turn red if the answer is incorrect, else it will turn green You can always quit by clicking the home button',
+        'Pick the topic of your choice and take the quiz. Each Quiz renders 10 questions with multiple option to choose from. The option tile will turn red if the answer is incorrect, else it will turn green, You can always quit by clicking the home button',
       ),
       findsOneWidget,
     );

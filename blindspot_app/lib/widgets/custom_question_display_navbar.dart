@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 
 import '../firestore_references/collection_refs.dart';
 
+// Custom Navbar used in the Quiz part of the App.
+
 class CustomQuestionDisplayNavbar extends StatelessWidget
     implements PreferredSizeWidget {
   final String title;

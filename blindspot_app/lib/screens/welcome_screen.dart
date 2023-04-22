@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../ui/shared/color.dart';
 
+// The Welcome Screen displaying the Logo of the App
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 

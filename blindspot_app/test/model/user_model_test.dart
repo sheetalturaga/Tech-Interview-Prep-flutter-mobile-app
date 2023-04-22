@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:blindspot_app/model/user_model.dart';
 
@@ -17,7 +16,7 @@ void main() {
 
     test('should create a user in Firestore with email', () async {
       // Create a test email
-      final email = 'test@test.com';
+      const email = 'test@test.com';
 
       // Create a user in Firestore with the test email
       final docId = await UserModel.createUserWithEmail(email);

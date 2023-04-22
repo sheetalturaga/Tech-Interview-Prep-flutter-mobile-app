@@ -8,6 +8,8 @@ import '../controllers/authorization_controller.dart';
 import 'home_screen.dart';
 import 'notebook_screen.dart';
 
+// The User Settings Page
+
 class SettingScreen extends GetView<AuthorizationController> {
   const SettingScreen({super.key});
   static const String routeName = '/settingscreen';
@@ -85,7 +87,6 @@ class SettingScreen extends GetView<AuthorizationController> {
                   // Handle submit button press
                 },
                 style: ElevatedButton.styleFrom(
-
                   minimumSize: const Size(70, 30),
                 ),
                 child: const Text('Submit'),

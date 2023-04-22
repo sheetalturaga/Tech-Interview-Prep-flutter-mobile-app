@@ -6,7 +6,7 @@ void main() {
   testWidgets('AboutScreen UI Test', (WidgetTester tester) async {
     // Build the AboutScreen widget.
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: AboutScreen(),
       ),
     );

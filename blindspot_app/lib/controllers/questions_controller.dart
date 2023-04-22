@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -13,7 +11,7 @@ import '../model/quiz_model.dart';
 
 class QuestionsController extends GetxController {
   final loadStatus = LoadStatus.loading.obs;
-  late QuizModel _quizModel;
+  late QuizModel quizModel;
   final listOfAllQuestionsInTopic = <Questions>[];
   final uniqueRandomQuestions = <Questions>[];
   final currentSessionQuestionList = <Questions>[];
@@ -26,13 +24,12 @@ class QuestionsController extends GetxController {
   @override
   void onReady() {
     final questionsInTopic = Get.arguments as QuizModel;
-    // print(questionsInTopic.id);
     loadDataFromTopic(questionsInTopic);
     super.onReady();
   }
 
   void loadDataFromTopic(QuizModel topicBasedQuestionsInModel) async {
-    _quizModel = topicBasedQuestionsInModel; // Java/Python etc
+    quizModel = topicBasedQuestionsInModel; // Java/Python etc
     loadStatus.value = LoadStatus.loading;
     try {
       // Step 1: Get all the questions based on the topicID in the questions
@@ -89,7 +86,6 @@ class QuestionsController extends GetxController {
           currTopic.value = topicBasedQuestionsInModel.topic;
           currQ.value = topicBasedQuestionsInModel.questions![0];
 
-          // print(topicBasedQuestionsInModel.questions![0]);
           loadStatus.value = LoadStatus.complete;
         } else {
           loadStatus.value = LoadStatus.error;
@@ -109,8 +105,6 @@ class QuestionsController extends GetxController {
 
   // The option selected by the user
   void choseOption(String? answerProvided) {
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User? user = auth.currentUser;
     currQ.value!.chosenOption = answerProvided;
     currQ.value!.isLocked = true;
 

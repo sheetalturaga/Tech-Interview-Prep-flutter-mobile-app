@@ -3,7 +3,6 @@ import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../custom_widgets/custom_appbar.dart';
 import 'notebook_screen.dart';
 
@@ -102,10 +101,8 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
                 const SizedBox(height: 20),
                 const Center(
                   child: Text(
-                    // 'Correct Option: ${data['correctOption']}',
                     "Explanation",
                     textAlign: TextAlign.center,
-
                     style: TextStyle(
                         color: stdHeaderTextColor,
                         fontSize: 20,

@@ -32,7 +32,7 @@ class TopicController extends GetxController {
           .map((topic) => QuizModel.fromSnapshot(topic))
           .toList();
       allTopics.assignAll(topicsDataList);
-      // print(topicsDataList);
+      // ignore: unused_local_variable
       for (var topic in topicsDataList) {
         // // Gives us the complete image path from the storage
         // final imgRef =
@@ -51,7 +51,6 @@ class TopicController extends GetxController {
   }
 
   void navigateToQuestions({required QuizModel quiz, bool tryAgain = false}) {
-    // TODO: CHeck for login
     Get.toNamed(QuestionDisplayScreen.routeName, arguments: quiz);
   }
 

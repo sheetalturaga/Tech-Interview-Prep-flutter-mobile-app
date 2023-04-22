@@ -1,6 +1,8 @@
 import 'package:blindspot_app/screens/about_screen.dart';
 import 'package:blindspot_app/screens/login_screen.dart';
+import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:blindspot_app/screens/progress_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../custom_widgets/custom_appbar.dart';
@@ -25,22 +27,18 @@ class LandingScreen extends StatelessWidget {
           child: Container(
             height: 300,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+            color: mainAppColor,
             child: Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 5.0),
+              padding: const EdgeInsets.only(top: 35, bottom: 5.0),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Center(
-                    heightFactor: 1,
-                    child: Text(
-                      "BLIND SPOT",
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'AppIcons',
-                      ),
+                  Text(
+                    "BLIND SPOT",
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AppIcons',
                     ),
                   ),
                   Text(

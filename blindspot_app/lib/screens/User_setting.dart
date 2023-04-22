@@ -1,4 +1,5 @@
 import 'package:blindspot_app/screens/profile_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,99 +18,86 @@ class SettingScreen extends GetView<AuthorizationController> {
     String displayName = user.displayName ?? 'Unknown';
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 300,
+        automaticallyImplyLeading: false,
+        toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Center(
-                      heightFactor: 5,
-                      child: Text(
-                        displayName,
-                        style:
-                            const TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+            height: 300,
+            width: MediaQuery.of(context).size.width,
+            color: mainAppColor,
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0, bottom: 5.0),
+                child: Center(
+                  child: Text(
+                    "Hello, $displayName!",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                ),
+              )
+            ]),
+          ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width *
-                  0.6, // Set button width to 80% of screen width
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Image.asset(
-                'assets/images/settingImg.png',
-                height: 64, // Set image height to 64
-              ),
-            ),
-            const SizedBox(height: 16), // Add some spacing between the buttons
-
-            const SizedBox(height: 35),
-            const Text(
-              'Want to change your username?',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 35),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.6,
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Enter your new username',
-                  border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                // width: MediaQuery.of(context).size.width * 0.6,
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: const CircleAvatar(
+                  radius: 120,
+                  backgroundImage: AssetImage('assets/images/settingImg.png'),
                 ),
-                onChanged: (value) async {
-                  user.updateDisplayName(value);
-                  controller.writeUserData(user);
+              ),
+              const SizedBox(height: 16),
+              const SizedBox(height: 35),
+              const Text(
+                'Update your username?',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 35),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your new username....',
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (value) async {
+                    user.updateDisplayName(value);
+                    controller.writeUserData(user);
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle submit button press
                 },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(70, 30),
+                ),
+                child: const Text('Submit'),
               ),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Handle submit button press
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(100, 40),
-              ),
-              child: Text('Submit'),
-            ),
-            //  Container(
-            //   width: MediaQuery.of(context).size.width * 0.4,
-            //   child: ElevatedButton(
-            //     onPressed: () async {
-            //       await controller._writeUserData(user);
-            //       ScaffoldMessenger.of(context).showSnackBar(
-            //         const SnackBar(
-            //           content: Text('Username updated successfully!'),
-            //         ),
-            //       );
-            //     },
-            //     style: ElevatedButton.styleFrom(
-            //       minimumSize: const Size(double.infinity, 48),
-            //       padding: const EdgeInsets.symmetric(horizontal: 16),
-            //     ),
-            //     child: const Text('Submit'),
-            //   ),
-            // ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: mainAppColor,
         currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         onTap: (int index) {
           switch (index) {
             case 0:

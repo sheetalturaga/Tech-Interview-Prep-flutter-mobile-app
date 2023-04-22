@@ -96,6 +96,7 @@ flutter:
       - assets/database/java_db.json
       - assets/database/ood_db.json
       - assets/database/python_db.json
+      - test/assets/test.json
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

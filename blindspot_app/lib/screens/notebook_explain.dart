@@ -1,5 +1,6 @@
 import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
+import 'package:blindspot_app/ui/shared/color.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,38 +33,32 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 200,
+        toolbarHeight: 150,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         flexibleSpace: ClipPath(
           clipper: ReviseSize(),
           child: Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              color: const Color(0xFF1683E9),
-              child: Column(
-                children: [
-                  Row(
-                    children: const [
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                          )),
-                      Spacer(),
-                      Align(
-                        alignment: Alignment.center,
-                      ),
-                    ],
+            height: 300,
+            width: MediaQuery.of(context).size.width,
+            color: mainAppColor,
+            child: Column(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(top: 60.0, bottom: 5.0),
+                  child: Text(
+                    'MY NOTEBOOK',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AppIcons',
+                    ),
                   ),
-                  const Center(
-                      heightFactor: 5,
-                      child: Text(
-                        "My Notebook",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
       body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
@@ -82,39 +77,52 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
 
           return Container(
             alignment: Alignment.center,
-            color: const Color(0xFF1683E9),
-            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 50),
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(32),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  scale: 2.0,
+                  image: const AssetImage("assets/images/blindspot-notext.png"),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.white.withOpacity(0.1), BlendMode.dstATop)),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   '${data['question']}',
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+                    color: stdHeaderTextColor,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
+                    fontFamily: "AppIcons",
                   ),
                 ),
-                const SizedBox(height: 16),
-                Center(
+                const SizedBox(height: 20),
+                const Center(
                   child: Text(
-                    'Correct Option: ${data['correctOption']}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    // 'Correct Option: ${data['correctOption']}',
+                    "Explanation",
+                    textAlign: TextAlign.center,
+
+                    style: TextStyle(
+                        color: stdHeaderTextColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "AppIcons",
+                        decoration: TextDecoration.underline),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 10),
                 Text(
-                  'Explanation: ${data['explanation']}',
+                  '${data['explanation']}',
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      color: stdHeaderTextColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "AppIcons"),
                 ),
               ],
             ),
@@ -122,19 +130,31 @@ class _NoteExplainScreenState extends State<NoteExplainScreen> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: mainAppColor,
         currentIndex: 0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         onTap: (int index) {
           switch (index) {
             case 0:
-              Get.toNamed(HomeScreen.routeName);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
+              );
               break;
             case 1:
-              Get.toNamed(NotebookScreen.routeName);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NotebookScreen()),
+              );
+              // Handle navigation to Notebook screen
               break;
             case 2:
-              Get.toNamed(ProfileScreen.routeName);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
+              );
+              // Handle navigation to User screen
               break;
           }
         },

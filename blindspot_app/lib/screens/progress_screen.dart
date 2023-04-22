@@ -1,10 +1,10 @@
+import 'package:blindspot_app/screens/home_screen.dart';
 import 'package:blindspot_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../custom_widgets/custom_appbar.dart';
 import '../ui/shared/color.dart';
-import 'landing_screen.dart';
 import 'notebook_screen.dart';
 
 class ProgressScreen extends StatefulWidget {
@@ -220,7 +220,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
               );
               break;
             case 1:

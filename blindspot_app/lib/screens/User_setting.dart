@@ -85,6 +85,7 @@ class SettingScreen extends GetView<AuthorizationController> {
                   // Handle submit button press
                 },
                 style: ElevatedButton.styleFrom(
+
                   minimumSize: const Size(70, 30),
                 ),
                 child: const Text('Submit'),

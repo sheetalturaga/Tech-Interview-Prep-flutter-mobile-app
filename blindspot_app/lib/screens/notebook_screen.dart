@@ -75,8 +75,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
           } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
             return const Center(child: Text('No data found'));
           } else {
-            // This listView will show a dialog to confirm the deletion.
-
+            // This listView will not show the confirming dialog, but delete
+            // the item immediately
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
@@ -94,28 +94,6 @@ class _NotebookScreenState extends State<NotebookScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  confirmDismiss: (DismissDirection direction) async {
-                    return await showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text("Confirm"),
-                          content: const Text(
-                              "Are you sure you want to delete this item?"),
-                          actions: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pop(false),
-                                child: const Text("Cancel")),
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pop(true),
-                                child: const Text("Delete")),
-                          ],
-                        );
-                      },
-                    );
-                  },
                   onDismissed: (DismissDirection direction) {
                     // Delete the item from Firestore
                     FirebaseFirestore.instance
@@ -125,17 +103,18 @@ class _NotebookScreenState extends State<NotebookScreen> {
                   },
                   child: Container(
                     margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                    child: Column(children: [
-                      DecoratedBox(
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                              colors: [Color(0XFF69AFF1), Color(0XFFDDC6FA)]),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: SizedBox(
-                          height: 80,
-                          width: MediaQuery.of(context).size.width * 0.85,
-                          child: ElevatedButton(
+                    child: Column(
+                      children: [
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                                colors: [Color(0XFF69AFF1), Color(0XFFDDC6FA)]),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: SizedBox(
+                            height: 80,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                   context,
@@ -147,92 +126,25 @@ class _NotebookScreenState extends State<NotebookScreen> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.transparent,
-                                  shadowColor: Colors.white10.withOpacity(0.1)),
+                                backgroundColor: Colors.transparent,
+                                shadowColor: Colors.white10.withOpacity(0.1),
+                              ),
                               child: Text(
                                 'Question${index + 1}',
                                 style: const TextStyle(
-                                    fontSize: 20, color: stdHeaderTextColor),
-                              )),
+                                  fontSize: 20,
+                                  color: stdHeaderTextColor,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ]),
+                      ],
+                    ),
                   ),
                 );
               },
             );
-
-            // This listView will not show the confirming dialog, but delete the
-            // item immediately
-
-            // return ListView.builder(
-            //   itemCount: snapshot.data!.docs.length,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     DocumentSnapshot question = snapshot.data!.docs[index];
-            //     NoteBookModel notebookModel =
-            //         NoteBookModel.fromFirestore(question);
-            //     return Dismissible(
-            //       key: ValueKey(notebookModel.questionId),
-            //       direction: DismissDirection.endToStart,
-            //       background: Container(
-            //         alignment: Alignment.centerRight,
-            //         color: Colors.red,
-            //         child: const Icon(
-            //           Icons.delete,
-            //           color: Colors.white,
-            //         ),
-            //       ),
-            //       onDismissed: (DismissDirection direction) {
-            //         // Delete the item from Firestore
-            //         FirebaseFirestore.instance
-            //             .collection('notebook')
-            //             .doc(notebookModel.questionId)
-            //             .delete();
-            //       },
-            //       child: Container(
-            //         margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-            //         child: Column(
-            //           children: [
-            //             DecoratedBox(
-            //               decoration: BoxDecoration(
-            //                 gradient: const LinearGradient(
-            //                     colors: [Color(0XFF69AFF1), Color(0XFFDDC6FA)]),
-            //                 borderRadius: BorderRadius.circular(10.0),
-            //               ),
-            //               child: SizedBox(
-            //                 height: 80,
-            //                 width: MediaQuery.of(context).size.width * 0.85,
-            //                 child: ElevatedButton(
-            //                   onPressed: () {
-            //                     Navigator.push(
-            //                       context,
-            //                       MaterialPageRoute(
-            //                         builder: (context) => NoteExplainScreen(
-            //                           questionId: notebookModel.questionId!,
-            //                         ),
-            //                       ),
-            //                     );
-            //                   },
-            //                   style: ElevatedButton.styleFrom(
-            //                     backgroundColor: Colors.transparent,
-            //                     shadowColor: Colors.white10.withOpacity(0.1),
-            //                   ),
-            //                   child: Text(
-            //                     'Question${index + 1}',
-            //                     style: const TextStyle(
-            //                       fontSize: 20,
-            //                       color: stdHeaderTextColor,
-            //                     ),
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     );
-            //   },
-            // );
           }
         },
       ),

@@ -1,7 +1,6 @@
 import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:blindspot_app/constants.dart';
 import 'package:blindspot_app/firebase_options.dart';
-import 'package:blindspot_app/screens/data_upload_screen.dart';
 import 'package:blindspot_app/services/database_storageService.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

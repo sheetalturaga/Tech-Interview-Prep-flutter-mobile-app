@@ -75,46 +75,73 @@ class _NotebookScreenState extends State<NotebookScreen> {
           } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
             return const Center(child: Text('No data found'));
           } else {
+            // This listView will not show the confirming dialog, but delete
+            // the item immediately
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
                 DocumentSnapshot question = snapshot.data!.docs[index];
                 NoteBookModel notebookModel =
                     NoteBookModel.fromFirestore(question);
-                return Container(
-                  margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: Column(children: [
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                            colors: [Color(0XFF69AFF1), Color(0XFFDDC6FA)]),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: SizedBox(
-                        height: 80,
-                        width: MediaQuery.of(context).size.width * 0.85,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NoteExplainScreen(
-                                    questionId: notebookModel.questionId!,
-                                  ),
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                shadowColor: Colors.white10.withOpacity(0.1)),
-                            child: Text(
-                              'Question${index + 1}',
-                              style: const TextStyle(
-                                  fontSize: 20, color: stdHeaderTextColor),
-                            )),
-                      ),
+                return Dismissible(
+                  key: ValueKey(notebookModel.questionId),
+                  direction: DismissDirection.endToStart,
+                  background: Container(
+                    alignment: Alignment.centerRight,
+                    color: Colors.red,
+                    child: const Icon(
+                      Icons.delete,
+                      color: Colors.white,
                     ),
-                  ]),
+                  ),
+                  onDismissed: (DismissDirection direction) {
+                    // Delete the item from Firestore
+                    FirebaseFirestore.instance
+                        .collection('notebook')
+                        .doc(notebookModel.questionId)
+                        .delete();
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                    child: Column(
+                      children: [
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                                colors: [Color(0XFF69AFF1), Color(0XFFDDC6FA)]),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: SizedBox(
+                            height: 80,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NoteExplainScreen(
+                                      questionId: notebookModel.questionId!,
+                                    ),
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.transparent,
+                                shadowColor: Colors.white10.withOpacity(0.1),
+                              ),
+                              child: Text(
+                                'Question${index + 1}',
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  color: stdHeaderTextColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 );
               },
             );

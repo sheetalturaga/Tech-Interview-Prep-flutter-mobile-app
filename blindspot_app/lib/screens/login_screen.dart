@@ -1,6 +1,5 @@
 import 'package:blindspot_app/controllers/authorization_controller.dart';
 import 'package:blindspot_app/screens/home_screen.dart';
-import 'package:blindspot_app/screens/notebook_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';

@@ -75,7 +75,8 @@ class _NotebookScreenState extends State<NotebookScreen> {
           } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
             return const Center(child: Text('No data found'));
           } else {
-            // This listView will show a dialog to confirm the deletion
+            // This listView will show a dialog to confirm the deletion.
+
             return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {

@@ -1,7 +1,9 @@
+import 'package:blindspot_app/app_routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:blindspot_app/screens/landing_screen.dart';
+import 'package:get/get_instance/src/bindings_interface.dart';
 
 void main() {
   testWidgets('Landing screen displays the correct widgets',
@@ -17,9 +19,6 @@ void main() {
 
     // Check that the about button is displayed
     expect(find.widgetWithText(ElevatedButton, 'About'), findsOneWidget);
-
-    // Check that the arrow button is displayed
-    expect(find.byType(ArrowButton), findsOneWidget);
   });
 
   testWidgets('Pressing the login button navigates to the login screen',
@@ -50,5 +49,19 @@ void main() {
 
     // Check that the AboutScreen is displayed
     // expect(find.byType(AboutScreen), findsOneWidget);
+  });
+
+  group('AppRoutes', () {
+    test('should have the correct /landingscreen route', () {
+      final routes = AppRoutes.routesList();
+
+      final landingPageRoute =
+          routes.firstWhere((route) => route.name == '/landingscreen');
+
+      expect(landingPageRoute, isNotNull);
+      expect(landingPageRoute.page, isA<Function>());
+      expect(landingPageRoute.page(), isA<LandingScreen>());
+      expect(landingPageRoute.binding, isA<BindingsBuilder>());
+    });
   });
 }

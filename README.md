@@ -10,11 +10,15 @@ The purpose of our Technical Interview Prep App is to provide a comprehensive an
 
 ## Overall Description
 
+### Development Process:
+
+The development process involved the use of Model-View-Controller architecture. It was implemented by using the Getx microframework that combines state management, route management and dependency injection. The use of this framework helped us in decoupling the business logic from the view and the presentation code.
+
+For database storage, we chose to go with Firebase Firestore for store and retrieving data for the questions collection, the collection of question in a specific user's notebook and also the users data. Since we also used third party authentication for the login process, we also used Firebase Auth feature to implement our authentication process for the app. 
+
 ### Features and Functionality: 
 
 - The mobile app is designed to cater to two types of users - undergraduate/graduate students preparing for technical interviews and K-12 students aspiring to get into computer science. The app has several features that cater to the needs of the users.
-
-### User Stories: 
 
 _Welcome + Landing Page:_ 
 
@@ -67,7 +71,8 @@ _Additional Features:_
 - User Collaboration: As a user I would like to be able to create a study group so I could invite other users to my network and do competitive time-based group quiz session. This could be a way to make studying fun and ensures we stick to the study plan.
 - The questions are unique for each session of the quiz for all the different topics so that the user is never asked the same questions again. The user can report a problem if the question is not correct. The app provides an explanation, either right or wrong, after each question.
 
-_App Workflow:_
+
+### App Workflow: 
 
 ![BlindSpot_Appworkflow](https://user-images.githubusercontent.com/46464544/227097683-49ecfc96-6e55-498d-872d-4a62437d6272.jpeg)
 
@@ -106,24 +111,29 @@ https://cdn-uploads.piazza.com/paste/kes5if5dl0j55h/4390b76e58986960c92d7bfa6177
 ![BlindSpot_ClassDiagram - UML Class](https://user-images.githubusercontent.com/46464544/233766139-64110428-5f3a-4709-9e24-2177fc9fc30c.png)
 
 
-
 ## Gantt Diagram
 ![SailorSenshi_BlindSpot_Ganttchart](https://user-images.githubusercontent.com/46464544/224565780-fe4b81a7-95c7-4ee0-8130-8b70bc636259.png)
 
 ## Traceability Matrix
 
-| Requirements | Design of Pages |      Code     |     Test      |
-|--------------|-----------------|---------------|---------------|
-| Welcome page |                 |               |               |
-| Register page|                 |               |               |
-| Quiz Page    |                 |               |               |
-| Question Page|                 |               |               |
-| Result page  |                 |               |               |
-| Notebook page|                 |               |               |
-| Progress page|                 |               |               |
-| Profile page |                 |               |               |
-
-
+| Requirements                                               | Design of Pages    | Business Logic | Code       | Test         |
+| ---------------------------------------------------------- | ------------------ | -------------- | ---------- | ------------ |
+| Logo Design                                                | Sheetal            |                |            |              |
+| Welcome Page                                               | Xiaoxiao           | Xiaoxiao       | PR # 12    | Jing         |
+| Landing Page                                               | Xiaoxiao           | Xiaoxiao       | PR # 12    | Jing         |
+| About Page                                                 | Xiaoxiao           |                | PR # 12    |              |
+| Home Page                                                  | Sheetal/Jing       | Sheetal        | PR # 12    | Jing         |
+| Quiz Display Page                                          | Sheetal/Jing       | Sheetal        | PR # 25    | Jing         |
+| Result page                                                | Sheetal            | Sheetal        | PR # 34    | Jing         |
+| Notebook Page                                              | Xiaoxiao           | Chu            | PR # 23    | Jing         |
+| Explanation Page                                           | Sheetal            | Sheetal        | Deprecated |              |
+| Progress page                                              | Jing               |                | PR # 20    |              |
+| Settings Page                                              | Xiaoxiao / Sheetal | Xiaoxiao       |            | Jing         |
+| Profile Page                                               | Xiaoxiao           |                | PR # 30    |              |
+| Firestore DB setup and connections to Questions Collection | Sheetal            | Sheetal        | PR # 18    | Sheetal/Jing |
+| Firestore DB connections to notebook Collections           | Chu                | Chu            |            |              |
+| UI Updates to all pages                                    | Sheetal            |                | PR # 38    |              |
+| Updates workflow                                           | Chu                |                | PR # 35    |              |
 
 
 

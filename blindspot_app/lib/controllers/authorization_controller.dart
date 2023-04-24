@@ -16,7 +16,7 @@ class AuthorizationController extends GetxController {
   }
 
   late FirebaseAuth authorization;
-  final user = Rxn<User>();
+  late final user = Rxn<User>();
   // this is dynamic user
 
   void initialAuth() {
@@ -74,6 +74,7 @@ class AuthorizationController extends GetxController {
               ),
             );
           } else if (e.code == 'invalid-credential') {
+            // ignore: use_build_context_synchronously
             ScaffoldMessenger.of(context).showSnackBar(
               customSnackBar(
                 content:

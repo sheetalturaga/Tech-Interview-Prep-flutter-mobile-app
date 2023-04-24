@@ -120,18 +120,20 @@ https://cdn-uploads.piazza.com/paste/kes5if5dl0j55h/4390b76e58986960c92d7bfa6177
 | ---------------------------------------------------------- | ------------------ | -------------- | ---------- | ------------ |
 | Logo Design                                                | Sheetal            |                |            |              |
 | Welcome Page                                               | Xiaoxiao           | Xiaoxiao       | PR # 12    | Jing         |
-| Landing Page                                               | Xiaoxiao           | Xiaoxiao       | PR # 12    | Jing         |
+| Landing Page                                               | Xiaoxiao           | Xiaoxiao / Chu | PR # 12    | Jing         |
 | About Page                                                 | Xiaoxiao           |                | PR # 12    |              |
 | Home Page                                                  | Sheetal/Jing       | Sheetal        | PR # 12    | Jing         |
 | Quiz Display Page                                          | Sheetal/Jing       | Sheetal        | PR # 25    | Jing         |
 | Result page                                                | Sheetal            | Sheetal        | PR # 34    | Jing         |
-| Notebook Page                                              | Xiaoxiao           | Chu            | PR # 23    | Jing         |
+| Notebook Page                                              | Xiaoxiao / Chu     | Chu            | PR # 23    | Jing         |
 | Explanation Page                                           | Sheetal            | Sheetal        | Deprecated |              |
-| Progress page                                              | Jing               |                | PR # 20    |              |
+| Progress page                                              | Jing               | Jing           | PR # 20    |              |
 | Settings Page                                              | Xiaoxiao / Sheetal | Xiaoxiao       |            | Jing         |
 | Profile Page                                               | Xiaoxiao           |                | PR # 30    |              |
-| Firestore DB setup and connections to Questions Collection | Sheetal            | Sheetal        | PR # 18    | Sheetal/Jing |
-| Firestore DB connections to notebook Collections           | Chu                | Chu            |            |              |
+| Firestore DB setup and data models setup up                | Sheetal / Chu      | Sheetal / Chu  | PR # 18    | Sheetal/Jing |
+| Firestore DB connections to Questions Collection           | Sheetal            | Sheetal        | PR # 18    | Sheetal/Jing |
+| Firestore DB connections to Notebook Collection            | Chu                | Chu            | PR # 21    |              |
+| Firestore DB connections to User Collection                | Chu                | Chu            | PR # 27    |              |
 | UI Updates to all pages                                    | Sheetal            |                | PR # 38    |              |
 | Updates workflow                                           | Chu                |                | PR # 35    |              |
 

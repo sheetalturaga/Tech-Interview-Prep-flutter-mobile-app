@@ -10,39 +10,54 @@ The purpose of our Technical Interview Prep App is to provide a comprehensive an
 
 ## Overall Description
 
-### User Characteristics: 
+### Features and Functionality: 
 
-- Undergrad / Grad student preparing for technical interview. 
-- Must some basic level understanding of programming languages, paradigms. 
-- In the future, it can also be used as learning tool for K-12 students aspiring to get into Computer science. 
+- The mobile app is designed to cater to two types of users - undergraduate/graduate students preparing for technical interviews and K-12 students aspiring to get into computer science. The app has several features that cater to the needs of the users.
 
 ### User Stories: 
 
-_Sign-in/Log-in Page:_ 
+_Welcome + Landing Page:_ 
 
-- As a user, I want to be able to create and log in to my profile so I can keep track of my progress. 
-- As a user, I want to be able to access the settings and logout with the help of an icon, so that I can easily navigate to profile or logout of the app. 
+- The Welcome + Landing page is the first page the user encounters. The landing page is the entry point into the app that gives the user access to the login page and an about page. 
 
-_Quiz Page:_
+_Login Page_:
 
-- As a user, I want a button for each topic so that I can easily choose which topic I want to play quiz on.
-- As a user, I want the questions to be unique for each session of quiz for all the different topics so that I’m never asked the same questions again. 
-- As a user, I want to have a report button so that I can report a problem if I find the question is not correct. 
-- As a user, I want to have an explanation, either right or wrong, after each question. 
-- As a user, I want to have one question being displayed at a time during a session with a next button, so that it reduces clutter and helps with the flow of the quiz. 
-- As a user, I would like to have a star mark that I can use to store that specific question to my study center so I can track the questions I was not sure about or need to follow up on. 
+As users, they are able to log in to the app so that they can access the quiz and also keep track of their progress. The user is able to log in with their existing google and facebook accounts with the help of third-party authentications services. The user can also access the settings and logout with the help of an icon on the bottom navbar that enables them to easily navigate to their profile or logout of the app.
+
+_Home Page:_
+
+The Home page is where the user is able to see the various topics that they have access to. As a user, they have a button for each topic so that they can easily choose a topic to take the quiz on. 
+
+_Question Display Pages_:
+
+One question is displayed at a time during a quiz with a next button, so that it reduces clutter and helps with the flow of the quiz. The color of the selected option for questions turns red or green based on the answer provided to show the user if they chose the right or wrong answer. The app automatically saves incorrectly answered questions, irrespective of the topic, to the user's notebook for convenient tracking of areas that require further attention.
 
 _User Progress:_
 
-- As a user, I want a button that can take me to my personal scoreboard so that I can see the progress I have made so far. 
+The User Progress feature allows the user to track their progress. As a user, they have a button that takes them to their personal scoreboard so that they track their progress. This feature allows the user to see the percentage of how many questions they've got correct in a given topic and the percentage of how many questions they've answered overall.
 
 _Notebook Page:_
 
-- As a user, I want the app to have a collection of all the questions/problems I got wrong or wasn’t sure of, so that I can revisit and review those concepts thoroughly.
+The Notebook page allows the user to keep track of the questions they answered incorrectly. As a user, the app has a collection of all the questions they answered incorrectly, irrespective of the topic, so that they can revisit and review those concepts thoroughly.
+
+_Explanation Page:_
+
+The explanation page was initially planned for the app but later deprioritized. The prioritization of the notebook page over the explanation page was a strategic decision made to enhance the user experience. The quiz display pages already provide the user with instant feedback on whether their answers are correct or incorrect, making the addition of another button for accessing the explanation page unnecessary.
 
 _General:_  
 
-- As a user, I want the color scheme to be bright and pleasant so that the app is inviting. 
+The mobile app has a bright and pleasant color scheme that is user-friendly and easy on the eyes.
+
+_Backlog:_
+
+- Comprehensive testing of most of the widgets and functions in the app is yet to be completed.
+- Although the option to select specific questions for the notebook is still pending, the app currently adds all incorrectly answered questions automatically.
+- The randomization of questions presented to the user is yet to be implemented. To ensure optimal performance, the database has been kept small, with users receiving only ten questions per quiz & topic.
+- Due to several setup issues encountered during development, Facebook and Apple login were deprioritized.
+- During the implementation phase, the proposed explanation page was withdrawn in favor of giving the notebook feature greater prominence.
+- The app allows users to edit only their Username within the app at this time. Allowing edits to their Account settings including change password function, edit profile, change color themes, add profile picture, etc is yet to be implemented
+- The app can allow users to share their progress and achievements, being able to create study groups to compete with friends in the leaderboards and challenges.
+- The app can allow users to search filter the search by topic, difficulty level, questions, and other criteria in the future.
 
 _Additional Features:_
 
@@ -50,6 +65,7 @@ _Additional Features:_
 - Calendar feature: As a user, I would like to have a calendar feature, so I can mark how often I am able to practice and visualize my streak.
 - Customizable profile picture/edit profile: As a user, I would like to personalize my profile by being able to customize my profile page /picture so that it keeps my profile unique.
 - User Collaboration: As a user I would like to be able to create a study group so I could invite other users to my network and do competitive time-based group quiz session. This could be a way to make studying fun and ensures we stick to the study plan.
+- The questions are unique for each session of the quiz for all the different topics so that the user is never asked the same questions again. The user can report a problem if the question is not correct. The app provides an explanation, either right or wrong, after each question.
 
 _App Workflow:_
 
@@ -61,15 +77,12 @@ _App Workflow:_
 ### Functional: 
 
 - The app should allow users to register an account and securely authenticate their identity. Authentication System to be implemented such that the user is automatically logged in once they have signed up. 
-- The app allows users to edit their Account settings including change password function, edit profile, add profile picture, etc. 
-- The app can allow users who are not logged in to play a quiz and answer questions, but their progress will not be saved.  
+- The app cannot allow users who are not logged in to play a quiz and answer questions.
 - The app should provide a database of unique MCQ types of questions with options, answers, and explanation for the questions for different topics with the functionality that allows users to test their knowledge and track their progress. 
-- The app should provide personalized learning through the study center for users to save and review specific questions and topics to further study. 
-- Each trivia session can consist of 10 questions for the selection topic 
-- The app should allow users to search filter the search by topic for this time, and include other filters like difficulty level, questions, and other criteria in the future. 
+- The app should provide personalized learning through the notebook for users to save and review specific questions and topics to further study. 
+- Each quiz topic can consist of 10 questions for the selection topic 
 - The background color for the app windows should be in pleasant in presentation and pleasing to the eye 
 - The system must store the count of how many questions the user got right and wrong for the personal scoreboard. 
-- In the future, the app should allow users to share their progress and achievements, being able to create study groups to compete with friends in the leaderboards and challenges.
 
 ### Non-functional：
 
@@ -81,7 +94,6 @@ _App Workflow:_
 - The app should support English language at this time and must have the potential for other languages in the future. 
 - The app should be designed to be accessible to users with disabilities like carousels for questions and keyboard navigation. 
 - The app should be designed to allow for future updates and improvements to meet evolving needs of users and technical interview landscapes.	 
-
 
 ## Wireframes
 

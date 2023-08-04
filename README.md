@@ -1,5 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9981754&assignment_repo_type=AssignmentRepo)
-# Final Project: BLINDSPOT APP - LEARNING THE GAP
+# Mobile App Development Team Project: BLINDSPOT APP - LEARNING THE GAP
 
  ![BLINDSPOT-Brain](https://user-images.githubusercontent.com/46464544/227097873-20c15afa-33fb-4d8f-bc26-085f562cd145.gif)
 
